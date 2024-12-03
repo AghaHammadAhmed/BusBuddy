@@ -33,9 +33,9 @@
 ---
 
 ## **Tech Stack**
-- **Frontend**: React Native (Mobile), React.js (Web)  
-- **Backend**: Node.js, Express.js  
-- **Database**: MongoDB  
+- **Frontend**: Flutter (for cross-platform mobile app development)  
+- **Backend**: Firebase (Authentication, Firestore, and Realtime Database)  
+- **Database**: Firebase Firestore  
 - **APIs**: Google Maps API, Payment Gateway Integration  
 - **AI System**: Intelligent route optimization and traffic predictions.  
 
@@ -44,10 +44,9 @@
 ## **Installation Instructions**
 
 ### **Requirements**
-- Node.js (v14 or higher)
-- MongoDB
-- Git
-- React Native CLI (for mobile development)
+- Flutter SDK (latest version)  
+- Firebase account with enabled services (Firestore, Authentication)  
+- Git  
 
 ### **Steps**
 1. Clone the repository:
@@ -55,28 +54,20 @@
    git clone https://github.com/yourusername/BusBuddy.git
    cd BusBuddy
    ```
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Set up the database:
-   - Start your MongoDB server.
-   - Update the database connection string in `config.js`.
+2. Set up Firebase:
+   - Create a new project on [Firebase Console](https://console.firebase.google.com/).  
+   - Enable Firestore, Authentication, and Realtime Database.  
+   - Download the `google-services.json` file and place it in the `android/app` directory.  
+   - For iOS, download the `GoogleService-Info.plist` file and place it in the `ios/Runner` directory.  
 
-4. Start the backend server:
+3. Install dependencies:
    ```bash
-   npm run server
+   flutter pub get
    ```
-5. Start the frontend (React):
+
+4. Run the app:
    ```bash
-   cd client
-   npm start
-   ```
-6. For the mobile app, navigate to the mobile app directory:
-   ```bash
-   cd mobile
-   npm install
-   npm run start
+   flutter run
    ```
 
 ---
@@ -120,8 +111,3 @@ We welcome contributions to improve BusBuddy!
 5. Open a pull request.  
 
 ---
-
-
-## **Contact**
-For any queries or feedback, please contact:  
-- **Email**: support@busbuddy.com  
