@@ -1,11 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'views/screens/AuthScreen/Auth_Screen.dart';
-import 'views/screens/AvailableDriversScreen/AvailableDriversScreen.dart';
-import 'views/screens/HomePage.dart';
 import 'views/screens/LocationSelection.dart';
-import 'views/screens/ProfileManagment/ProfileManagment.dart';
-import "firebase_options.dart";
 
 void main() {
   runApp(MyApp());
