@@ -20,3 +20,10 @@ User and Van Assignment: Automatic suggestions based on proximity and schedules.
 Real-Time Monitoring: Comprehensive dashboard for tracking all vans.
 Payment Management: Overdue payment warnings and automated fee calculations.
 Analytics: Monthly reports on efficiency, payments, and driver performance.
+
+Tech Stack
+Frontend: React Native (Mobile), React.js (Web)
+Backend: Node.js, Express.js
+Database: MongoDB
+APIs: Google Maps API, Payment Gateway Integration
+AI System: Intelligent route optimization and traffic predictions.
