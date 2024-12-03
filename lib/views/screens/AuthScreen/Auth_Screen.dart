@@ -13,7 +13,6 @@ class _AuthScreenState extends State<AuthScreen> {
   bool isLogin = true;
   final _formKey = GlobalKey<FormState>();
 
-  // Form controllers
   final _nameController = TextEditingController();
   final _emailController = TextEditingController();
   final _phoneController = TextEditingController();
@@ -177,8 +176,8 @@ class _AuthScreenState extends State<AuthScreen> {
     return ElevatedButton(
       onPressed: () {
         if (_formKey.currentState!.validate()) {
-          // Handle login/signup logic here
-          //navigate to the home screen
+          // Handle login/Signup logic here
+          //navigate to the Home screen
           Navigator.of(context).push(
               MaterialPageRoute(builder: (context) => ProfileDetailsScreen()));
           print('Form is valid');

@@ -17,7 +17,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   final _schoolController = TextEditingController();
   final _addressController = TextEditingController();
 
-  // Sample initial data - in real app, would be passed in or fetched
+  // Sample Initial data - in real app, would be passed in or fetched
   @override
   void initState() {
     super.initState();

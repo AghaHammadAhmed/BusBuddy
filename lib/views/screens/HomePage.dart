@@ -73,7 +73,7 @@ class _MainScreenState extends State<MainScreen> {
                       IconButton(
                         icon: const Icon(Icons.menu),
                         onPressed: () {
-                          // Add menu navigation here
+                          // Add Menu navigation here
                         },
                       ),
                       IconButton(
@@ -259,5 +259,4 @@ class _MainScreenState extends State<MainScreen> {
       ),
     );
   }
-
 }

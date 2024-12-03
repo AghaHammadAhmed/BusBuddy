@@ -46,7 +46,7 @@ class _AvailableDriversScreenState extends State<AvailableDriversScreen> {
     'City Center'
   ];
 
-  // Sample drivers data
+  // Sample Drivers data
   final List<Driver> drivers = [
     Driver(
       driverID: 'D001',
@@ -96,7 +96,7 @@ class _AvailableDriversScreenState extends State<AvailableDriversScreen> {
           IconButton(
             icon: const Icon(Icons.filter_list, color: Colors.black),
             onPressed: () {
-              // Show filter options
+              // Show Filter options
             },
           ),
         ],

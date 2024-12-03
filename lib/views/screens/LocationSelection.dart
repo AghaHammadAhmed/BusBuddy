@@ -150,7 +150,7 @@ class MapSampleState extends State<MapSample> {
   @override
   void initState() {
     super.initState();
-    _getCurrentLocation(); // Fetch and set the current location when the app starts
+    _getCurrentLocation(); // Fetch and Set the current location when the app starts
   }
 
   // Fetch the current location
