@@ -15,15 +15,15 @@ class DriverHomePage extends StatefulWidget {
 class _DriverHomePageState extends State<DriverHomePage> {
   final List<Map<String, dynamic>> _rides = [
     {
-      'studentName': 'John Doe',
-      'pickupLocation': '123 Main Street',
+      'studentName': 'Shaheen ghani',
+      'pickupLocation': 'Perfume chowk',
       'destination': 'ABC School',
       'time': '7:30 AM',
       'status': 'Scheduled'
     },
     {
-      'studentName': 'Jane Smith',
-      'pickupLocation': '456 Park Avenue',
+      'studentName': 'Virat kholi',
+      'pickupLocation': 'Anda mor',
       'destination': 'XYZ School',
       'time': '8:00 AM',
       'status': 'Completed'
