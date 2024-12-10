@@ -30,7 +30,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
     DocumentSnapshot<Map<String, dynamic>> driverSnapshot =
         await FirebaseFirestore.instance
             .collection('drivers')
-            .doc(user.currentDriverId)
+            .doc(user!.currentDriverId)
             .get();
 
     if (driverSnapshot.exists) {
