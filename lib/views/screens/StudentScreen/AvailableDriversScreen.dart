@@ -14,7 +14,7 @@ class AvailableDriversScreen extends StatefulWidget {
 class _AvailableDriversScreenState extends State<AvailableDriversScreen> {
   String selectedArea = 'All Areas';
   final List<String> areas = [
-    'All Areas',
+    'All areas',
     'North Campus',
     'South Campus',
     'City Center'
