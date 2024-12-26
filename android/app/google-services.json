@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "491360243985",
+    "firebase_url": "https://bus-buddy-7cedb-default-rtdb.firebaseio.com",
+    "project_id": "bus-buddy-7cedb",
+    "storage_bucket": "bus-buddy-7cedb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491360243985:android:2227908e3ad1651b27fcb0",
+        "android_client_info": {
+          "package_name": "com.example.busbuddy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaRLXXh_26f4VDDh_PEhuLai5lfespZTs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
