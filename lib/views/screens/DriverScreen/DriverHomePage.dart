@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // ignore_for_file: prefer_const_constructors
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -5,6 +6,14 @@ import 'package:flutter/material.dart';
 import '../../../models/driver.dart';
 import 'DriverMapView.dart';
 import 'PendingStudentRequest.dart';
+=======
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+
+import '../../../models/driver.dart';
+import 'DriverMapView.dart';
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
 
 class DriverHomePage extends StatefulWidget {
   const DriverHomePage({super.key});
@@ -14,6 +23,7 @@ class DriverHomePage extends StatefulWidget {
 }
 
 class _DriverHomePageState extends State<DriverHomePage> {
+<<<<<<< HEAD
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
   // final DriverService _driverService = DriverService();
@@ -22,6 +32,27 @@ class _DriverHomePageState extends State<DriverHomePage> {
 
   Driver? _driver;
   bool _isLoading = true;
+=======
+  final List<Map<String, dynamic>> _rides = [
+    {
+      'studentName': 'Shaheen ghani',
+      'pickupLocation': 'Perfume chowk',
+      'destination': 'ABC School',
+      'time': '7:30 AM',
+      'status': 'Scheduled'
+    },
+    {
+      'studentName': 'Virat kholi',
+      'pickupLocation': 'Anda mor',
+      'destination': 'XYZ School',
+      'time': '8:00 AM',
+      'status': 'Completed'
+    },
+  ];
+
+  FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  FirebaseAuth userCredential = FirebaseAuth.instance;
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
 
   @override
   void initState() {
@@ -29,25 +60,45 @@ class _DriverHomePageState extends State<DriverHomePage> {
     _loadDriver();
   }
 
+<<<<<<< HEAD
+=======
+  Driver? _driver; // Driver instance
+  bool _isLoading = true; // Loading state
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
   Future<Driver?> _fetchDriverByUserId() async {
     try {
       QuerySnapshot<Map<String, dynamic>> driverQuery = await _firestore
           .collection('drivers')
+<<<<<<< HEAD
           .where('userID', isEqualTo: _auth.currentUser!.uid)
           .limit(1)
+=======
+          .where('userID', isEqualTo: userCredential.currentUser!.uid)
+          .limit(1) // Fetch only one document
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
           .get();
 
       if (driverQuery.docs.isNotEmpty) {
         final driverData = driverQuery.docs.first.data();
+<<<<<<< HEAD
         return Driver.fromJson(driverData);
       }
       return null;
+=======
+        print("Driver fetched: ${driverData}");
+        return Driver.fromJson(driverData); // Convert to Driver object
+      }
+      print("No driver found.");
+      return null; // No driver found
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
     } catch (e) {
       print("Failed to fetch driver: $e");
       return null;
     }
   }
 
+<<<<<<< HEAD
   Future<void> _fetchStudents(String driverId) async {
     try {
       QuerySnapshot<Map<String, dynamic>> studentQuery = await _firestore
@@ -93,6 +144,11 @@ class _DriverHomePageState extends State<DriverHomePage> {
         await _fetchStudents(fetchedDriver.driverID);
         await _fetchBookingRequests(fetchedDriver.driverID);
       }
+=======
+  Future<void> _loadDriver() async {
+    try {
+      Driver? fetchedDriver = await _fetchDriverByUserId();
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
       setState(() {
         _driver = fetchedDriver;
         _isLoading = false;
@@ -106,6 +162,7 @@ class _DriverHomePageState extends State<DriverHomePage> {
     }
   }
 
+<<<<<<< HEAD
   Future<void> _respondToBooking(String bookingId, bool isAccepted) async {
     try {
       await _firestore.collection('booking_requests').doc(bookingId).update({
@@ -130,11 +187,19 @@ class _DriverHomePageState extends State<DriverHomePage> {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
+=======
+  @override
+  Widget build(BuildContext context) {
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         toolbarHeight: 50,
         elevation: 0,
+<<<<<<< HEAD
+=======
+        //menu icon button
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
         leading: IconButton(
           color: Colors.black,
           icon: const Icon(Icons.menu),
@@ -163,6 +228,7 @@ class _DriverHomePageState extends State<DriverHomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+<<<<<<< HEAD
                           _buildProfileSection(_driver!),
                           const SizedBox(height: 20),
                           _buildStudentsSection(_driver!.driverID),
@@ -170,6 +236,17 @@ class _DriverHomePageState extends State<DriverHomePage> {
                           // _buildBookingRequestsSection(),
                           const SizedBox(height: 20),
                           _buildManageSection(screenWidth),
+=======
+                          if (_isLoading) ...[
+                            const LinearProgressIndicator(),
+                            const SizedBox(height: 8),
+                          ],
+                          _buildProfileSection(_driver!),
+                          const SizedBox(height: 20),
+                          _buildRidesSection(),
+                          const SizedBox(height: 20),
+                          _buildManageSection(),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
                         ],
                       ),
                     ),
@@ -180,7 +257,11 @@ class _DriverHomePageState extends State<DriverHomePage> {
 
   Widget _buildProfileSection(Driver driver) {
     return Padding(
+<<<<<<< HEAD
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
+=======
+      padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
       child: Row(
         children: [
           const SizedBox(width: 16),
@@ -190,7 +271,11 @@ class _DriverHomePageState extends State<DriverHomePage> {
               children: [
                 Text(
                   driver.name,
+<<<<<<< HEAD
                   style: const TextStyle(
+=======
+                  style: TextStyle(
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
                   ),
@@ -219,6 +304,7 @@ class _DriverHomePageState extends State<DriverHomePage> {
     );
   }
 
+<<<<<<< HEAD
   Widget _buildStudentsSection(String driverId) {
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
       stream: _firestore
@@ -277,6 +363,66 @@ class _DriverHomePageState extends State<DriverHomePage> {
   }
 
   Widget _buildManageSection(double screenWidth) {
+=======
+  Widget _buildRidesSection() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Your Rides',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 12),
+        ListView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: _rides.length,
+          itemBuilder: (context, index) {
+            final ride = _rides[index];
+            return Card(
+              elevation: 2,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8)),
+              child: ListTile(
+                leading: const Icon(Icons.directions_bus, color: Colors.blue),
+                title: Text(
+                  ride['studentName'],
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Pickup: ${ride['pickupLocation']}'),
+                    Text('Drop: ${ride['destination']}'),
+                    Text('Time: ${ride['time']}'),
+                  ],
+                ),
+                trailing: Text(
+                  ride['status'],
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: ride['status'] == 'Completed'
+                        ? Colors.green
+                        : Colors.orange,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  // Navigate to ride details screen
+                },
+              ),
+            );
+          },
+        ),
+      ],
+    );
+  }
+
+  Widget _buildManageSection() {
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -292,27 +438,42 @@ class _DriverHomePageState extends State<DriverHomePage> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _buildManageCard(
+<<<<<<< HEAD
               screenWidth: screenWidth,
               icon: Icons.map_outlined,
               label: 'Map View',
               onTap: () {
                 
+=======
+              icon: Icons.map_outlined,
+              label: 'Map View',
+              onTap: () {
+                // Navigate to map screen
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => DriverLiveLocation(
+<<<<<<< HEAD
                               driverId: _driver!.driverID,
+=======
+                            driverId: _driver!.driverID,
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
                             )));
               },
             ),
             _buildManageCard(
+<<<<<<< HEAD
               screenWidth: screenWidth,
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
               icon: Icons.schedule_outlined,
               label: 'Schedule',
               onTap: () {
                 // Navigate to schedule screen
               },
             ),
+<<<<<<< HEAD
           ],
         ),
         const SizedBox(height: 12),
@@ -336,6 +497,13 @@ class _DriverHomePageState extends State<DriverHomePage> {
               label: 'Ride History',
               onTap: () {
                 // Navigate to ride history screen
+=======
+            _buildManageCard(
+              icon: Icons.message_outlined,
+              label: 'Messages',
+              onTap: () {
+                // Navigate to message screen
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
               },
             ),
           ],
@@ -348,6 +516,7 @@ class _DriverHomePageState extends State<DriverHomePage> {
     required IconData icon,
     required String label,
     required VoidCallback onTap,
+<<<<<<< HEAD
     required double screenWidth,
   }) {
     return GestureDetector(
@@ -384,6 +553,29 @@ class _DriverHomePageState extends State<DriverHomePage> {
               ),
             ),
           ],
+=======
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        elevation: 3,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        child: SizedBox(
+          width: 100,
+          height: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon, size: 30, color: Colors.blue),
+              const SizedBox(height: 8),
+              Text(
+                label,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 14),
+              ),
+            ],
+          ),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
         ),
       ),
     );

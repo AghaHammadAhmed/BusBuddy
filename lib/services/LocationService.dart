@@ -1,5 +1,6 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:geolocator/geolocator.dart';
+<<<<<<< HEAD
 
 class LocationService {
   final DatabaseReference _ridesRef =
@@ -73,6 +74,17 @@ class LocationService {
   Future<void> updateDriverLocation(String driverId, Position position) async {
     try {
       await _driverRef.child(driverId).set({
+=======
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
+class LocationService {
+  final FirebaseDatabase _database = FirebaseDatabase.instance;
+
+  /// Update the driver's location in Realtime Database
+  Future<void> updateDriverLocation(String driverId, Position position) async {
+    try {
+      await _database.ref('driverLocations/$driverId').set({
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
         'latitude': position.latitude,
         'longitude': position.longitude,
         'timestamp': ServerValue.timestamp, // Realtime Database timestamp
@@ -82,6 +94,7 @@ class LocationService {
     }
   }
 
+<<<<<<< HEAD
   Future<Map<String, dynamic>?> fetchStudentCoordinates(
       String studentId) async {
     try {
@@ -127,5 +140,28 @@ class LocationService {
     } catch (e) {
       throw Exception('Failed to update student coordinates: $e');
     }
+=======
+  /// Update the student's location in Realtime Database
+  Future<void> updateStudentLocation(String studentId, LatLng latLng) async {
+    try {
+      await _database.ref('studentLocations/$studentId').set({
+        'latitude': latLng.latitude,
+        'longitude': latLng.longitude,
+        'timestamp': ServerValue.timestamp, // Realtime Database timestamp
+      });
+    } catch (e) {
+      throw Exception("Error updating student location: $e");
+    }
+  }
+
+  /// Get real-time updates for a driver's location
+  Stream<DatabaseEvent> getDriverLocationUpdates(String driverId) {
+    return _database.ref('driverLocations/$driverId').onValue;
+  }
+
+  /// Get real-time updates for a student's location
+  Stream<DatabaseEvent> getStudentLocationUpdates(String studentId) {
+    return _database.ref('studentLocations/$studentId').onValue;
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
   }
 }

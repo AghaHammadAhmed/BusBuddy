@@ -4,8 +4,11 @@
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<<<<<<< HEAD
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
    <application
         android:label="busbuddy"
         android:name="${applicationName}"

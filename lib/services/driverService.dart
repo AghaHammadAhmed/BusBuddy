@@ -1,11 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
 class DriverService {
   final CollectionReference _driverCollection =
       FirebaseFirestore.instance.collection('drivers');
   final CollectionReference _userCollection =
       FirebaseFirestore.instance.collection('users');
+<<<<<<< HEAD
   final CollectionReference _bookingRequestCollection =
       FirebaseFirestore.instance.collection('booking_requests');
 
@@ -18,27 +23,50 @@ class DriverService {
       throw Exception("Error fetching user details: $e");
     }
   }
+=======
+  final auth = FirebaseAuth.instance.currentUser!.uid;
+  final _firestore = FirebaseFirestore.instance;
+
+  final CollectionReference<Map<String, dynamic>> _driverCollection1 =
+      FirebaseFirestore.instance
+          .collection('drivers')
+          .withConverter<Map<String, dynamic>>(
+            fromFirestore: (snapshot, _) => snapshot.data()!,
+            toFirestore: (data, _) => data,
+          );
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
 
   // Add a new driver
   Future<void> addDriver(String userID, Map<String, dynamic> driverData) async {
     try {
+<<<<<<< HEAD
       DocumentReference docRef = _driverCollection.doc();
       driverData['createdAt'] = FieldValue.serverTimestamp();
       driverData['updatedAt'] = FieldValue.serverTimestamp();
       driverData['userID'] = userID;
       driverData['driverID'] = docRef.id;
+=======
+      driverData['createdAt'] = FieldValue.serverTimestamp();
+      driverData['updatedAt'] = FieldValue.serverTimestamp();
+      driverData['userID'] = userID;
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
       await _driverCollection.add(driverData);
     } catch (e) {
       throw Exception("Error adding driver: $e");
     }
   }
 
+<<<<<<< HEAD
   Future<void> bookDriver(String userId, String driverId, String duration,
       String pickup, String dropoff) async {
+=======
+  Future<void> bookDriver(String userId, String driverId) async {
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
     try {
       await _userCollection.doc(userId).update({
         'currentDriverId': driverId,
       });
+<<<<<<< HEAD
 
       final bookingRequest = {
         "student_id": FirebaseAuth.instance.currentUser!.uid,
@@ -55,11 +83,14 @@ class DriverService {
       };
 
       await _bookingRequestCollection.add(bookingRequest);
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
     } catch (e) {
       throw Exception('Failed to book driver: $e');
     }
   }
 
+<<<<<<< HEAD
   Future<void> respondToBookingByDriver(
       String bookingId, double proposedFare) async {
     await _bookingRequestCollection.doc(bookingId).update({
@@ -139,10 +170,16 @@ class DriverService {
     }
   }
 
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
   // Fetch all drivers
   Future<List<Map<String, dynamic>>> fetchAllDrivers() async {
     try {
       final querySnapshot = await _driverCollection.get();
+<<<<<<< HEAD
+=======
+      print("querySnapshot: $querySnapshot.docs.length");
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
       return querySnapshot.docs
           .map((doc) => {'id': doc.id, ...doc.data() as Map<String, dynamic>})
           .toList();
@@ -151,6 +188,7 @@ class DriverService {
     }
   }
 
+<<<<<<< HEAD
   // Cancel a booking
   Future<void> cancelBooking(String bookingId) async {
     try {
@@ -203,6 +241,8 @@ class DriverService {
     }
   }
 
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
   // Update driver details
   Future<void> updateDriver(
       String driverId, Map<String, dynamic> updatedData) async {

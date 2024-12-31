@@ -1,7 +1,12 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
 class UserModel {
   final String userID;
   final String name;
   final String email;
+<<<<<<< HEAD
   final int? age;
   final String? gender;
   final String phone;
@@ -14,6 +19,13 @@ class UserModel {
   final double? pickupLongitude;
   final double? dropOffLatitude;
   final double? dropOffLongitude;
+=======
+  final int? age; // Nullable
+  final String? gender; // Nullable in case gender is optional
+  final String phone;
+  final String? address; // Nullable
+  final String? role; // 'student' or 'driver'
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
   final String? currentDriverId;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -25,6 +37,7 @@ class UserModel {
     this.age,
     this.gender,
     required this.phone,
+<<<<<<< HEAD
     this.school,
     this.address,
     this.dropOffLocation,
@@ -33,6 +46,9 @@ class UserModel {
     this.pickupLongitude,
     this.dropOffLatitude,
     this.dropOffLongitude,
+=======
+    this.address,
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
     this.role,
     this.currentDriverId,
     this.createdAt,
@@ -44,6 +60,7 @@ class UserModel {
       userID: map['userID'] ?? '',
       name: map['name'] ?? '',
       email: map['email'] ?? '',
+<<<<<<< HEAD
       age: map['age'],
       gender: map['gender'],
       phone: map['phone'] ?? '',
@@ -61,6 +78,16 @@ class UserModel {
           map['createdAt'] != null ? DateTime.parse(map['createdAt']) : null,
       updatedAt:
           map['updatedAt'] != null ? DateTime.parse(map['updatedAt']) : null,
+=======
+      age: map ['age'] ?? '',
+      gender: map['gender'] ?? '',
+      phone: map['phone'] ?? '',
+      address: map['address'] ?? '',
+      role: map['role'] ?? '',
+      currentDriverId: map['currentDriverId'] ?? '',
+      createdAt: map['createdAt'] != null ? DateTime.parse(map['createdAt']) : null,
+      updatedAt: map['updatedAt'] != null ? DateTime.parse(map['updatedAt']) : null,
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
     );
   }
 
@@ -69,6 +96,7 @@ class UserModel {
       'userID': userID,
       'name': name,
       'email': email,
+<<<<<<< HEAD
       'age': age,
       'gender': gender,
       'phone': phone,
@@ -80,13 +108,26 @@ class UserModel {
       'pickupLongitude': pickupLongitude,
       'dropOffLatitude': dropOffLatitude,
       'dropOffLongitude': dropOffLongitude,
+=======
+      'age' : age,
+      'gender' : gender,
+      'phone': phone,
+      'address': address,
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
       'role': role,
       'currentDriverId': currentDriverId,
       'createdAt': createdAt?.toIso8601String(),
       'updatedAt': updatedAt?.toIso8601String(),
     };
   }
+<<<<<<< HEAD
 
+=======
+  
+
+
+  // Factory constructor for deserialization
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
       userID: json['userID'],
@@ -95,6 +136,7 @@ class UserModel {
       age: json['age'],
       gender: json['gender'],
       phone: json['phone'],
+<<<<<<< HEAD
       school: json['school'],
       address: json['address'],
       dropOffLocation: json['dropOffLocation'],
@@ -103,6 +145,9 @@ class UserModel {
       pickupLongitude: json['pickupLongitude'],
       dropOffLatitude: json['dropOffLatitude'],
       dropOffLongitude: json['dropOffLongitude'],
+=======
+      address: json['address'],
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
       role: json['role'],
       currentDriverId: json['currentDriverId'],
       createdAt:
@@ -112,6 +157,10 @@ class UserModel {
     );
   }
 
+<<<<<<< HEAD
+=======
+  // Method to serialize the object to JSON
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
   Map<String, dynamic> toJson() {
     return {
       'userID': userID,
@@ -121,12 +170,15 @@ class UserModel {
       'gender': gender,
       'phone': phone,
       'address': address,
+<<<<<<< HEAD
       'dropOffLocation': dropOffLocation,
       'profilePicture': profilePicture,
       'pickupLatitude': pickupLatitude,
       'pickupLongitude': pickupLongitude,
       'dropOffLatitude': dropOffLatitude,
       'dropOffLongitude': dropOffLongitude,
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
       'role': role,
       'currentDriverId': currentDriverId,
       'createdAt': createdAt?.toIso8601String(),

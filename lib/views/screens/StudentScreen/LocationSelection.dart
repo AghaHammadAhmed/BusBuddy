@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // // ignore_for_file: use_build_context_synchronously
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:firebase_auth/firebase_auth.dart';
@@ -311,15 +312,23 @@
 //   }
 // }
 
+=======
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
+<<<<<<< HEAD
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../../../models/user.dart';
 import '../../../services/AuthService.dart';
+=======
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
 import '../../../services/LocationService.dart';
 
 class LocationPickerScreen extends StatefulWidget {
@@ -331,6 +340,7 @@ class LocationPickerScreen extends StatefulWidget {
 
 class _LocationPickerScreenState extends State<LocationPickerScreen> {
   late GoogleMapController _mapController;
+<<<<<<< HEAD
 
   // Location states
   LatLng _pickupLatLng =
@@ -349,6 +359,14 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
 
   final TextEditingController _pickupController = TextEditingController();
   final TextEditingController _dropoffController = TextEditingController();
+=======
+  LatLng _currentLatLng = const LatLng(25.3791973, 68.3219916); // Default to SF
+  String _currentAddress = "Fetching address...";
+  bool _isDragging = false;
+  String userID =
+      FirebaseAuth.instance.currentUser?.uid ?? "ZUXmaewWH9MzkPLL8zPb75TW4T82";
+  final LocationService _locationService = LocationService();
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
 
   @override
   void initState() {
@@ -357,6 +375,7 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
   }
 
   void _getCurrentLocation() async {
+<<<<<<< HEAD
     try {
       LocationPermission permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied ||
@@ -380,6 +399,27 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
   }
 
   void _updateAddress(LatLng latLng, {required bool isPickup}) async {
+=======
+    LocationPermission permission = await Geolocator.requestPermission();
+    if (permission == LocationPermission.denied ||
+        permission == LocationPermission.deniedForever) {
+      return; // Handle permission denial
+    }
+
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+
+    setState(() {
+      _currentLatLng = LatLng(position.latitude, position.longitude);
+    });
+
+    _mapController.animateCamera(CameraUpdate.newLatLng(_currentLatLng));
+
+    _updateAddress(_currentLatLng);
+  }
+
+  void _updateAddress(LatLng latLng) async {
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
     try {
       List<Placemark> placemarks =
           await placemarkFromCoordinates(latLng.latitude, latLng.longitude);
@@ -387,6 +427,7 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
       if (placemarks.isNotEmpty) {
         Placemark place = placemarks.first;
         setState(() {
+<<<<<<< HEAD
           String formattedAddress = "${place.name ?? ''}, "
                   "${place.locality ?? ''}, "
                   "${place.administrativeArea ?? ''}, "
@@ -400,10 +441,15 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
             _dropoffAddress = formattedAddress;
             _dropoffController.text = formattedAddress;
           }
+=======
+          _currentAddress =
+              "${place.name}, ${place.locality}, ${place.administrativeArea}, ${place.country}";
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
         });
       }
     } catch (e) {
       setState(() {
+<<<<<<< HEAD
         if (isPickup) {
           _pickupAddress = "Unable to get address";
           _pickupController.text = "Unable to get address";
@@ -411,11 +457,15 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
           _dropoffAddress = "Unable to get address";
           _dropoffController.text = "Unable to get address";
         }
+=======
+        _currentAddress = "Unable to get address";
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
       });
     }
   }
 
   void _saveLocation() async {
+<<<<<<< HEAD
     if (_dropoffLatLng.latitude == 0 && _dropoffLatLng.longitude == 0) {
       _showErrorDialog('Please select a dropoff location');
       return;
@@ -495,6 +545,25 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
     );
   }
 
+=======
+    try {
+      print(userID);
+      await FirebaseFirestore.instance.collection('users').doc(userID).update({
+        'address': _currentAddress,
+      });
+
+      await _locationService.updateStudentLocation(userID, _currentLatLng);
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Location Saved: $_currentAddress')),
+      );
+      Navigator.pop(context);
+    } catch (e) {
+      print(e);
+    }
+  }
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -505,7 +574,11 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
             myLocationEnabled: true,
             mapToolbarEnabled: false,
             initialCameraPosition: CameraPosition(
+<<<<<<< HEAD
               target: _pickupLatLng,
+=======
+              target: _currentLatLng,
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
               zoom: 14.0,
             ),
             onMapCreated: (controller) {
@@ -515,17 +588,22 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
             onCameraMove: (CameraPosition position) {
               setState(() {
                 _isDragging = true;
+<<<<<<< HEAD
                 if (_isPickupMode) {
                   _pickupLatLng = position.target;
                 } else {
                   _dropoffLatLng = position.target;
                 }
+=======
+                _currentLatLng = position.target;
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
               });
             },
             onCameraIdle: () {
               setState(() {
                 _isDragging = false;
               });
+<<<<<<< HEAD
               if (_isPickupMode) {
                 _updateAddress(_pickupLatLng, isPickup: true);
               } else {
@@ -535,25 +613,46 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
           ),
 
           // Location Marker
+=======
+              _updateAddress(_currentLatLng);
+            },
+          ),
+
+          // Current Location Marker
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+<<<<<<< HEAD
                 Icon(
                   Icons.location_on,
                   size: 50,
                   color: _isPickupMode ? Colors.green : Colors.red,
+=======
+                const Icon(
+                  Icons.location_on,
+                  size: 50,
+                  color: Colors.red,
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
                 ),
                 const SizedBox(height: 8),
                 if (!_isDragging)
                   Container(
+<<<<<<< HEAD
                     margin: const EdgeInsets.symmetric(horizontal: 20),
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
                     padding:
                         const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8),
+<<<<<<< HEAD
                       boxShadow: const [
+=======
+                      boxShadow: [
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
                         BoxShadow(
                           color: Colors.black12,
                           offset: Offset(0, 4),
@@ -562,17 +661,24 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                       ],
                     ),
                     child: Text(
+<<<<<<< HEAD
                       _isPickupMode ? _pickupAddress : _dropoffAddress,
                       style: const TextStyle(fontSize: 12),
                       textAlign: TextAlign.center,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
+=======
+                      _currentAddress,
+                      style: const TextStyle(fontSize: 12),
+                      textAlign: TextAlign.center,
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
                     ),
                   ),
               ],
             ),
           ),
 
+<<<<<<< HEAD
           // Bottom Sheet
           Positioned(
             bottom: 0,
@@ -590,10 +696,26 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                     spreadRadius: 2,
                     blurRadius: 7,
                     offset: const Offset(0, -3),
+=======
+          // Bottom Section
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Container(
+              padding: const EdgeInsets.all(16.0),
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black12,
+                    offset: Offset(0, -4),
+                    blurRadius: 10,
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
                   ),
                 ],
               ),
               child: Column(
+<<<<<<< HEAD
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Pickup Location
@@ -647,6 +769,34 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                   const SizedBox(height: 16),
 
                   // Confirm Button
+=======
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    "Select Your Location",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  TextField(
+                    decoration: InputDecoration(
+                      hintText: 'Search for a location',
+                      prefixIcon: const Icon(Icons.search),
+                      filled: true,
+                      fillColor: Colors.grey[100],
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(8),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+
+                  // Save Location Button
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
@@ -655,11 +805,19 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                         backgroundColor: const Color(0xFF0047BA),
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         shape: RoundedRectangleBorder(
+<<<<<<< HEAD
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                       child: const Text(
                         'Confirm Route',
+=======
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: const Text(
+                        'Save Location',
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -668,6 +826,35 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                       ),
                     ),
                   ),
+<<<<<<< HEAD
+=======
+
+                  const SizedBox(height: 8),
+
+                  // Current Location Button
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: _getCurrentLocation,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        side: const BorderSide(color: Color(0xFF0047BA)),
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      ),
+                      child: const Text(
+                        'Use Current Location',
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xFF0047BA),
+                        ),
+                      ),
+                    ),
+                  ),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
                 ],
               ),
             ),
