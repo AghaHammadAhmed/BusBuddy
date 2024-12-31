@@ -72,14 +72,14 @@ class MyApp extends StatelessWidget {
     }
 
     // Navigate based on user type
-    switch (userType) {
-      case 'student':
-        return const StudentHomePage();
-      case 'driver':
-        return const DriverHomePage();
-      default:
-        return const SignInScreen();
-    }
+   // switch (userType) {
+    //  case 'student':
+    //    return const StudentHomePage();
+    //  case 'driver':
+    //    return const DriverHomePage();
+    //  default:
+       // return const SignInScreen();
+  //  }
   }
 }
 
