@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 <<<<<<< HEAD
 import '../../../services/AuthService.dart';
@@ -6,6 +7,14 @@ import '../../../models/user.dart';
 import '../../../services/AuthService.dart';
 import 'SignUpScreen.dart';
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+import 'package:flutter/material.dart';
+import '../../../services/AuthService.dart';
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
@@ -16,7 +25,15 @@ class SignInScreen extends StatefulWidget {
 
 class _SignInScreenState extends State<SignInScreen> {
   final _formKey = GlobalKey<FormState>();
+<<<<<<< HEAD
   final _emailController = TextEditingController(text: "student@gmail.com");
+=======
+<<<<<<< HEAD
+  final _emailController = TextEditingController(text: "student@gmail.com");
+=======
+  final _emailController = TextEditingController(text: "shaffayqazi641@gmail.com");
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   final _passwordController = TextEditingController(text: "123456789");
   final UserService _userService = UserService();
   bool _isLoading = false;
@@ -70,6 +87,10 @@ class _SignInScreenState extends State<SignInScreen> {
                     _buildAuthButton(),
                     const SizedBox(height: 24),
                     _buildToggleButton(context),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
                     const SizedBox(height: 20),
                  Row(
@@ -90,6 +111,11 @@ class _SignInScreenState extends State<SignInScreen> {
                     ),
                   ],
                 ),
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                   ],
                 ),
               ),
@@ -202,6 +228,10 @@ class _SignInScreenState extends State<SignInScreen> {
     _passwordController.dispose();
     super.dispose();
   }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
   Widget _buildSocialButton({
     required IconData icon,
@@ -224,7 +254,14 @@ class _SignInScreenState extends State<SignInScreen> {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+=======
+}
+
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
 // import 'package:flutter/material.dart';
 // import 'package:firebase_core/firebase_core.dart';
@@ -542,4 +579,8 @@ class _SignInScreenState extends State<SignInScreen> {
 //     super.dispose();
 //   }
 // }
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a

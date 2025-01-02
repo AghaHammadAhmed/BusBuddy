@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import '../../../models/driver.dart';
 import '../../../models/user.dart';
 import '../../../services/driverService.dart';
+<<<<<<< HEAD
 import 'LocationSelection.dart';
 import 'OngoingTrip.dart';
 import 'SafetyScreen.dart';
@@ -370,14 +371,25 @@ import 'SafetyScreen.dart';
 //   }
 // }
 
+=======
+import 'OngoingTrip.dart';
+import 'SafetyScreen.dart';
+=======
+import 'package:busbuddy/services/AuthService.dart';
+import 'package:busbuddy/services/driverService.dart';
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../models/driver.dart';
 import '../../../models/user.dart';
+<<<<<<< HEAD
 import '../../../services/driverService.dart';
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
 class StudentHomePage extends StatefulWidget {
   const StudentHomePage({super.key});
@@ -387,9 +399,15 @@ class StudentHomePage extends StatefulWidget {
 }
 
 class _StudentHomePageState extends State<StudentHomePage> {
+<<<<<<< HEAD
   String userId = FirebaseAuth.instance.currentUser!.uid;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  String userId = FirebaseAuth.instance.currentUser!.uid;
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   Map<String, dynamic>? userBooking;
   final DriverService _driverService = DriverService();
   // String status = 'pending';
@@ -403,6 +421,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
       final booking = await _driverService.fetchUserBooking(user.uid);
       setState(() {
         userBooking = booking;
+<<<<<<< HEAD
 =======
   List<Map<String, dynamic>> userBookings = [];
   final DriverService _driverService = DriverService();
@@ -422,36 +441,101 @@ class _StudentHomePageState extends State<StudentHomePage> {
       });
     } catch (e) {
       print("Error fetching bookings: $e");
+=======
+
+      });
+    } catch (e) {
+      print("Error fetching bookings: $e");
+=======
+  final UserService _firebaseService = UserService();
+  final DriverService _driverService = DriverService();
+  UserModel? _user;
+  String userId = FirebaseAuth.instance.currentUser!.uid;
+  Driver? _selectedDriver;
+  Future<void> _fetchUserData() async {
+    UserModel? user = await _firebaseService.fetchUser(userId);
+    setState(() {
+      _user = user;
+    });
+
+    // Fetch a driver from the Firestore 'drivers' collection
+    DocumentSnapshot<Map<String, dynamic>> driverSnapshot =
+        await FirebaseFirestore.instance
+            .collection('drivers')
+            .doc(user!.currentDriverId)
+            .get();
+
+    if (driverSnapshot.exists) {
+      Driver fetchedDriver = Driver.fromMap(driverSnapshot.data()!);
+      setState(() {
+        _selectedDriver = fetchedDriver;
+      });
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     }
   }
 
   @override
   void initState() {
+<<<<<<< HEAD
     _fetchUserBookings();
 <<<<<<< HEAD
 =======
 
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+<<<<<<< HEAD
+    _fetchUserBookings();
+=======
+    _fetchUserData();
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     final double screenWidth = MediaQuery.of(context).size.width;
     final double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
 <<<<<<< HEAD
+<<<<<<< HEAD
       key: _scaffoldKey,
+=======
+      key: _scaffoldKey,
+=======
+    return Scaffold(
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         toolbarHeight: 50,
         elevation: 0,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+        //menu icon button
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         leading: IconButton(
           color: Colors.black,
           icon: const Icon(Icons.menu),
           onPressed: () {
+<<<<<<< HEAD
             _scaffoldKey.currentState!.openDrawer();
+=======
+<<<<<<< HEAD
+            _scaffoldKey.currentState!.openDrawer();
+=======
+            // Navigate to menu screen
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
           },
         ),
         actions: [
@@ -464,6 +548,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
           ),
         ],
       ),
+<<<<<<< HEAD
       drawer: _buildCustomDrawer(context),
       body: SafeArea(
         child: StreamBuilder<UserModel?>(
@@ -494,6 +579,12 @@ class _StudentHomePageState extends State<StudentHomePage> {
         body: SafeArea(
             child: StreamBuilder<UserModel?>(
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+<<<<<<< HEAD
+      drawer: _buildCustomDrawer(context),
+      body: SafeArea(
+        child: StreamBuilder<UserModel?>(
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
           stream: _userStream(userId),
           builder: (context, userSnapshot) {
             if (userSnapshot.connectionState == ConnectionState.waiting) {
@@ -520,12 +611,16 @@ class _StudentHomePageState extends State<StudentHomePage> {
                       child: Text('Error loading driver data.'));
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
                 Driver? driver = driverSnapshot.data;
 =======
 
                 Driver? driver = driverSnapshot.data;
 
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+                Driver? driver = driverSnapshot.data;
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                 return SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.all(screenWidth * 0.04),
@@ -535,12 +630,16 @@ class _StudentHomePageState extends State<StudentHomePage> {
                         _buildProfileSection(user, screenWidth),
                         SizedBox(height: screenHeight * 0.03),
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                         if (driverId == null)
                           _buildDriverCardPlaceholder(screenWidth),
                         if (driver != null)
                           _buildDriverCardPending(driver, screenWidth),
                         // if (driver != null && status == 'confirmed')
                         // _buildDriverCard(driver, screenWidth),
+<<<<<<< HEAD
                         SizedBox(height: screenHeight * 0.02),
 
 =======
@@ -552,6 +651,10 @@ class _StudentHomePageState extends State<StudentHomePage> {
                           _buildDriverCardPlaceholder(screenWidth),
                         SizedBox(height: screenHeight * 0.02),
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+
+                        SizedBox(height: screenHeight * 0.02),
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                         _buildManageSection(screenWidth),
                       ],
                     ),
@@ -561,12 +664,18 @@ class _StudentHomePageState extends State<StudentHomePage> {
             );
           },
 <<<<<<< HEAD
+<<<<<<< HEAD
         ),
       ),
     );
 =======
         )));
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+        ),
+      ),
+    );
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   }
 
   Stream<UserModel?> _userStream(String userId) {
@@ -590,6 +699,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
             snapshot.exists ? Driver.fromMap(snapshot.data()!) : null);
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   Future<Driver?> _fetchDriver(String? driverId) async {
@@ -617,11 +727,14 @@ class _StudentHomePageState extends State<StudentHomePage> {
   }
 
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   Widget _buildProfileSection(UserModel user, double screenWidth) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
       child: Row(
         children: [
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
           CircleAvatar(
@@ -631,11 +744,53 @@ class _StudentHomePageState extends State<StudentHomePage> {
           ),
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
           SizedBox(width: screenWidth * 0.04),
+=======
+  
+          SizedBox(width: screenWidth * 0.04),
+=======
+      body: _user == null
+          ? const Center(
+              child: CircularProgressIndicator(),
+            )
+          : SafeArea(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      _buildProfileSection(),
+                      const SizedBox(height: 20),
+                      _selectedDriver != null
+                          ? _buildDriverCard(_selectedDriver!)
+                          : _buildDriverCardPlaceholder(),
+                      const SizedBox(height: 5),
+                      _buildManageSection(),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+    );
+  }
+  
+  Widget _buildProfileSection() {
+    return Padding(
+      padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+      child: Row(
+        children: [
+          const SizedBox(width: 16),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                   user.name,
                   style: TextStyle(
                     fontSize: screenWidth * 0.06,
@@ -646,6 +801,9 @@ class _StudentHomePageState extends State<StudentHomePage> {
                 Row(
                   children: [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                     SizedBox(
                       width: screenWidth * 0.75,
                       child: Text(
@@ -664,6 +822,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
                       width: screenWidth * 0.75,
                       child: Text(
                         'Destination: ${user.dropOffLocation}',
+<<<<<<< HEAD
 =======
                     const Icon(Icons.pin_drop, size: 16, color: Colors.grey),
                     SizedBox(width: screenWidth * 0.01),
@@ -675,6 +834,27 @@ class _StudentHomePageState extends State<StudentHomePage> {
                         style: TextStyle(color: Colors.grey[600]),
                         overflow: TextOverflow.ellipsis,
                       ),
+=======
+                        style: TextStyle(color: Colors.grey[600]),
+                        overflow: TextOverflow.ellipsis,
+                      ),
+=======
+                  _user!.name,
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 4),
+                Row(
+                  children: [
+                    const Icon(Icons.pin_drop, size: 16, color: Colors.grey),
+                    const SizedBox(width: 4),
+                    Text(
+                      '${_user!.address}',
+                      style: TextStyle(color: Colors.grey[600]),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                     ),
                   ],
                 )
@@ -686,6 +866,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
     );
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   Widget _buildDriverCard(Driver driver, double screenWidth) {
@@ -773,40 +954,152 @@ class _StudentHomePageState extends State<StudentHomePage> {
   Widget _buildDriverCardPending(Driver driver, double screenWidth) {
     return Card(
       margin: EdgeInsets.only(bottom: screenWidth * 0.04),
+=======
+  Widget _buildDriverCardPending(Driver driver, double screenWidth) {
+    return Card(
+      margin: EdgeInsets.only(bottom: screenWidth * 0.04),
+=======
+  Widget _buildManageSection() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Manage',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 12),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            _buildManageCard(
+              icon: Icons.search_outlined,
+              label: 'Find Driver',
+              onTap: () {
+                // Navigate to find driver screen
+                Navigator.pushNamed(context, '/availableDrivers');
+              },
+            ),
+            _buildManageCard(
+              icon: Icons.location_on_outlined,
+              label: 'Set Pickup Point',
+              onTap: () {
+                // Navigate to set pickup point screen
+                Navigator.pushNamed(context, '/locationSelection');
+              },
+            ),
+          ],
+        ),
+        const SizedBox(height: 12),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            _buildManageCard(
+              icon: Icons.skip_next_outlined,
+              label: 'Skip a Ride',
+              onTap: () {
+                // Navigate to skip ride screen
+              },
+            ),
+            _buildManageCard(
+              icon: Icons.history_outlined,
+              label: 'Ride History',
+              onTap: () {
+                // Navigate to ride history screen
+              },
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildDriverCard(Driver driver) {
+    return Card(
+      margin: const EdgeInsets.only(bottom: 16),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
         side: BorderSide(color: Colors.grey[200]!),
       ),
       child: Padding(
+<<<<<<< HEAD
         padding: EdgeInsets.all(screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+        padding: EdgeInsets.all(screenWidth * 0.04),
+=======
+        padding: const EdgeInsets.all(16),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
               children: [
                 CircleAvatar(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                   radius: screenWidth * 0.08,
                   backgroundColor: Colors.grey[200],
                   child: const Icon(Icons.person, size: 35, color: Colors.grey),
                 ),
                 SizedBox(width: screenWidth * 0.04),
+<<<<<<< HEAD
+=======
+=======
+                  radius: 30,
+                  backgroundColor: Colors.grey[200],
+                  child: const Icon(Icons.person, size: 35, color: Colors.grey),
+                ),
+                const SizedBox(width: 16),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                 Expanded(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         driver.name,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                         style: TextStyle(
                           fontSize: screenWidth * 0.05,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       SizedBox(height: screenWidth * 0.02),
+<<<<<<< HEAD
+=======
+=======
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                       Text(
                         'Vehicle: ${driver.vehicleNumber}',
                         style: TextStyle(color: Colors.grey[600]),
                       ),
+<<<<<<< HEAD
                       SizedBox(height: screenWidth * 0.02),
+=======
+<<<<<<< HEAD
+                      SizedBox(height: screenWidth * 0.02),
+=======
+                      const SizedBox(height: 4),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                       Text(
                         'Available Seats: ${driver.seats}',
                         style: TextStyle(color: Colors.grey[600]),
@@ -816,12 +1109,30 @@ class _StudentHomePageState extends State<StudentHomePage> {
                 ),
               ],
             ),
+<<<<<<< HEAD
             SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+            SizedBox(height: screenWidth * 0.04),
+=======
+            const SizedBox(height: 16),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 OutlinedButton.icon(
+<<<<<<< HEAD
                   onPressed: () {},
+=======
+<<<<<<< HEAD
+                  onPressed: () {},
+=======
+                  onPressed: () {
+                    // Handle call action
+                  },
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                   icon: const Icon(Icons.phone),
                   label: const Text('Call'),
                   style: OutlinedButton.styleFrom(
@@ -845,6 +1156,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
                   label: const Text('Track Driver'),
                   style: OutlinedButton.styleFrom(
                     backgroundColor: const Color(0xFF0047BA),
+<<<<<<< HEAD
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
 =======
@@ -865,6 +1177,31 @@ class _StudentHomePageState extends State<StudentHomePage> {
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
                     ),
                   ),
+=======
+=======
+                ElevatedButton(
+                  onPressed: () {
+                    // Navigate to track driver screen
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => const TrackDriverScreen(),
+                    //   ),
+                    // );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF0047BA),
+                    foregroundColor: Colors.white,
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+<<<<<<< HEAD
+=======
+                  child: const Text('Track Your Driver'),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                 ),
               ],
             ),
@@ -874,6 +1211,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
     );
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
   Future<void> _cancelBooking(String bookingId) async {
@@ -969,11 +1307,25 @@ class _StudentHomePageState extends State<StudentHomePage> {
   Widget _buildDriverCardPlaceholder(double screenWidth) {
     return Container(
       height: screenWidth * 0.3,
+=======
+  Widget _buildDriverCardPlaceholder(double screenWidth) {
+    return Container(
+      height: screenWidth * 0.3,
+=======
+  Widget _buildDriverCardPlaceholder() {
+    return Container(
+      height: 150,
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
       width: double.infinity,
       decoration: BoxDecoration(
         color: Colors.grey[200],
         borderRadius: BorderRadius.circular(12),
       ),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
       margin: EdgeInsets.only(bottom: screenWidth * 0.04),
       child: const Center(
         child: Text(
@@ -997,6 +1349,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
         ),
         SizedBox(height: screenWidth * 0.03),
         Wrap(
+<<<<<<< HEAD
 <<<<<<< HEAD
             spacing: screenWidth * 0.02,
             runSpacing: screenWidth * 0.02,
@@ -1126,10 +1479,58 @@ class _StudentHomePageState extends State<StudentHomePage> {
               label: 'Find Driver',
               onTap: () {
                 Navigator.pushNamed(context, '/availableDrivers');
+=======
+          spacing: screenWidth * 0.02,
+          runSpacing: screenWidth * 0.02,
+          children: [
+            if (userBooking == null) ...[
+              // If there are no bookings, show the "Find Driver" and "Set Pickup Point" cards.
+              _buildManageCard(
+                icon: Icons.search_outlined,
+                label: 'Find Driver',
+                onTap: () {
+                  Navigator.pushNamed(context, '/availableDrivers');
+                },
+                screenWidth: screenWidth,
+              ),
+              _buildManageCard(
+                icon: Icons.location_on_outlined,
+                label: 'Set Pickup Point',
+                onTap: () {
+                  Navigator.pushNamed(context, '/locationSelection');
+                },
+                screenWidth: screenWidth,
+              ),
+            ] else if (userBooking?['status'] != 'confirmed') ...[
+              // If bookings exist but the status is not 'confirmed', show the same cards.
+              _buildManageCard(
+                icon: Icons.search_outlined,
+                label: 'Find Driver',
+                onTap: () {
+                  Navigator.pushNamed(context, '/availableDrivers');
+                },
+                screenWidth: screenWidth,
+              ),
+              _buildManageCard(
+                icon: Icons.location_on_outlined,
+                label: 'Set Pickup Point',
+                onTap: () {
+                  Navigator.pushNamed(context, '/locationSelection');
+                },
+                screenWidth: screenWidth,
+              )
+            ],
+            _buildManageCard(
+              icon: Icons.schedule_outlined,
+              label: 'Schedule Ride',
+              onTap: () {
+                Navigator.pushNamed(context, '/schedule');
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
               },
               screenWidth: screenWidth,
             ),
             _buildManageCard(
+<<<<<<< HEAD
               icon: Icons.location_on_outlined,
               label: 'Set Pickup Point',
               onTap: () {
@@ -1171,6 +1572,47 @@ class _StudentHomePageState extends State<StudentHomePage> {
         ),
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
       ],
+=======
+              icon: Icons.history_outlined,
+              label: 'Ride History',
+              onTap: () {
+                Navigator.pushNamed(context, '/rideHistory');
+              },
+              screenWidth: screenWidth,
+            ),
+            _buildManageCard(
+              icon: Icons.book_outlined,
+              label: 'Booking Requests',
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return DriverBookingDetail();
+                }));
+              },
+              screenWidth: screenWidth,
+            ),
+            _buildManageCard(
+              icon: Icons.safety_check_outlined,
+              label: 'Safety',
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return SafetyScreen();
+                }));
+              },
+              screenWidth: screenWidth,
+            ),
+          ],
+        ),
+      ],
+=======
+      margin: const EdgeInsets.only(bottom: 16),
+      child: const Padding(
+          padding: EdgeInsets.all(16),
+          child: Center(
+            child: Text("No Driver Selected",
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+          )),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     );
   }
 
@@ -1178,6 +1620,10 @@ class _StudentHomePageState extends State<StudentHomePage> {
     required IconData icon,
     required String label,
     required VoidCallback onTap,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     required double screenWidth,
   }) {
     return GestureDetector(
@@ -1214,10 +1660,40 @@ class _StudentHomePageState extends State<StudentHomePage> {
               ),
             ),
           ],
+<<<<<<< HEAD
+=======
+=======
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        elevation: 3,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        child: SizedBox(
+          width: 150,
+          height: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon, size: 30, color: Colors.blue),
+              const SizedBox(height: 8),
+              Text(
+                label,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 14),
+              ),
+            ],
+          ),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         ),
       ),
     );
   }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
   Widget _buildCustomDrawer(BuildContext context) {
     return Drawer(
@@ -1236,16 +1712,22 @@ class _StudentHomePageState extends State<StudentHomePage> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                 const CircleAvatar(
                   radius: 40,
                   backgroundColor: Colors.white,
                   child: Icon(
+<<<<<<< HEAD
 =======
                 CircleAvatar(
                   radius: 40,
                   backgroundColor: Colors.white,
                   child: const Icon(
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                     Icons.person,
                     size: 50,
                     color: Colors.blue,
@@ -1370,4 +1852,9 @@ class _StudentHomePageState extends State<StudentHomePage> {
           const Icon(Icons.arrow_forward_ios, size: 16, color: Colors.grey),
     );
   }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 }

@@ -4,11 +4,19 @@ import 'package:busbuddy/views/screens/StudentScreen/OngoingTrip.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+<<<<<<< HEAD
+=======
+import 'services/NotificationService.dart';
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 =======
 import 'package:busbuddy/views/screens/DriverScreen/DriverMapView.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 import 'views/navigation_bar.dart';
 import 'views/screens/AuthScreen/SignInScreen.dart';
 import 'views/screens/StudentScreen/AvailableDriversScreen.dart';
@@ -17,6 +25,7 @@ import 'views/screens/DriverScreen/DriverDetail.dart';
 import 'views/screens/StudentScreen/DriverBookingDetail.dart';
 import 'views/screens/StudentScreen/RideHistory.dart';
 import 'views/screens/StudentScreen/ScheduleSreen.dart';
+<<<<<<< HEAD
 import 'views/screens/DriverScreen/DriverHomePage.dart';
 import 'views/screens/AuthScreen/SignUpScreen.dart';
 import 'views/screens/StudentScreen/StudentHomePage.dart';
@@ -33,6 +42,17 @@ import 'views/screens/ProfileManagment/ProfileManagment.dart';
 import "firebase_options.dart";
 
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+=======
+import 'views/screens/StudentScreen/TrackDriver.dart';
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+import 'views/screens/DriverScreen/DriverHomePage.dart';
+import 'views/screens/AuthScreen/SignUpScreen.dart';
+import 'views/screens/StudentScreen/StudentHomePage.dart';
+import 'views/screens/StudentScreen/LocationSelection.dart';
+import "firebase_options.dart";
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -62,7 +82,11 @@ class MyApp extends StatelessWidget {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
   @override
   Widget build(BuildContext context) {
@@ -91,7 +115,10 @@ class MyApp extends StatelessWidget {
       home:  _getInitialScreen(),
     );
   }
+<<<<<<< HEAD
   
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   Widget _getInitialScreen() {
     if (!isLoggedIn) {
       return const SignInScreen();
@@ -124,4 +151,8 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a

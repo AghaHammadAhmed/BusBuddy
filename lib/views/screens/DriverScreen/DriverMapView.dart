@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 // import 'package:flutter/material.dart';
 // import 'package:geocoding/geocoding.dart';
 // import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -95,6 +99,9 @@
 // }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 // import 'package:cloud_firestore/cloud_firestore.dart';
 // import 'package:flutter/material.dart';
 // import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -258,23 +265,44 @@
 //   }
 // }
 import 'package:cloud_firestore/cloud_firestore.dart';
+<<<<<<< HEAD
 =======
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:firebase_database/firebase_database.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+=======
+import 'package:flutter/material.dart';
+import 'package:geocoding/geocoding.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:firebase_database/firebase_database.dart';
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 import '../../../services/LocationService.dart';
 
 class DriverLiveLocation extends StatefulWidget {
   final String driverId;
   const DriverLiveLocation({Key? key, required this.driverId})
       : super(key: key);
+<<<<<<< HEAD
 
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   @override
   _DriverLiveLocationState createState() => _DriverLiveLocationState();
 }
@@ -295,22 +323,35 @@ class _DriverLiveLocationState extends State<DriverLiveLocation> {
   bool _showTraffic = false;
 =======
   final LocationService _locationService = LocationService();
+<<<<<<< HEAD
 
   LatLng _driverLocation = const LatLng(0.0, 0.0); // Initial driver location
   Map<String, LatLng> _studentLocations =
       {}; // Map of student IDs to their coordinates
   bool _isLocationLoading = true;
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+  LatLng _currentLocation = const LatLng(0.0, 0.0); // Initial LatLng
+  bool _isLocationLoading = true;
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
   @override
   void initState() {
     super.initState();
     _startLocationTracking();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     _fetchStudentLocations();
   }
 
   Future<void> _startLocationTracking() async {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     try {
       LocationPermission permission = await Geolocator.requestPermission();
       if (permission == LocationPermission.denied) {
@@ -348,6 +389,7 @@ class _DriverLiveLocationState extends State<DriverLiveLocation> {
         behavior: SnackBarBehavior.floating,
       ),
     );
+<<<<<<< HEAD
 =======
     // Request location permissions
     LocationPermission permission = await Geolocator.requestPermission();
@@ -372,6 +414,8 @@ class _DriverLiveLocationState extends State<DriverLiveLocation> {
       _updateDriverLocation(position);
     });
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   }
 
   void _updateDriverLocation(Position position) {
@@ -381,6 +425,9 @@ class _DriverLiveLocationState extends State<DriverLiveLocation> {
     });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     try {
       _locationService.updateDriverLocation(widget.driverId, position);
       _updateDriverLocationInFirestore();
@@ -398,6 +445,7 @@ class _DriverLiveLocationState extends State<DriverLiveLocation> {
       });
     } catch (e) {
       _showErrorSnackBar('Error updating driver location: $e');
+<<<<<<< HEAD
 =======
     // Update driver's location in the database
     try {
@@ -405,11 +453,16 @@ class _DriverLiveLocationState extends State<DriverLiveLocation> {
     } catch (e) {
       print("Error updating driver location: $e");
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     }
   }
 
   void _fetchStudentLocations() {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     _database.child('rides/${widget.driverId}').onValue.listen(
       (event) {
         if (event.snapshot.value != null) {
@@ -458,6 +511,7 @@ class _DriverLiveLocationState extends State<DriverLiveLocation> {
         ),
       ),
     );
+<<<<<<< HEAD
 =======
     // Listen for changes in the rides/<driverId> node
     _database.child('rides/${widget.driverId}').onValue.listen((event) {
@@ -481,6 +535,51 @@ class _DriverLiveLocationState extends State<DriverLiveLocation> {
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
   }
 
+=======
+  }
+
+=======
+  }
+
+  Future<void> _startLocationTracking() async {
+    // Check permission
+    LocationPermission permission = await Geolocator.requestPermission();
+    if (permission == LocationPermission.denied) {
+      setState(() {
+        _isLocationLoading = false;
+      });
+      return;
+    }
+
+    // Get initial position
+    Position position = await Geolocator.getCurrentPosition(
+        desiredAccuracy: LocationAccuracy.high);
+    _updateLocation(position);
+
+    // Listen for location updates
+    Geolocator.getPositionStream(
+        locationSettings: const LocationSettings(
+      accuracy: LocationAccuracy.high,
+      distanceFilter: 1, // Update location every 10 meters
+    )).listen((Position position) {
+      _updateLocation(position);
+    });
+  }
+
+  void _updateLocation(Position position) {
+    setState(() {
+      _currentLocation = LatLng(position.latitude, position.longitude);
+      _isLocationLoading = false;
+    });
+    try{
+      _locationService.updateDriverLocation(widget.driverId, position);
+    } catch (e) {
+      print("Error updating driver location: $e");
+    }
+  }
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -749,13 +848,18 @@ class StudentInfo {
           : GoogleMap(
               compassEnabled: false,
               initialCameraPosition: CameraPosition(
+<<<<<<< HEAD
                 target: _driverLocation,
+=======
+                target: _currentLocation,
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                 zoom: 15,
               ),
               onMapCreated: (GoogleMapController controller) {
                 _mapController = controller;
               },
               markers: {
+<<<<<<< HEAD
                 // Add driver's marker
                 Marker(
                   markerId: const MarkerId("driver"),
@@ -776,9 +880,20 @@ class StudentInfo {
                     ),
                   );
                 }),
+=======
+                Marker(
+                  markerId: const MarkerId("driver"),
+                  position: _currentLocation,
+                  infoWindow: const InfoWindow(title: "Driver Location"),
+                ),
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
               },
             ),
     );
   }
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 }

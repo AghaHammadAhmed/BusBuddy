@@ -7,6 +7,7 @@ import '../../../models/driver.dart';
 import 'DriverMapView.dart';
 import 'PendingStudentRequest.dart';
 =======
+<<<<<<< HEAD
 // // ignore_for_file: prefer_const_constructors
 
 // import 'package:cloud_firestore/cloud_firestore.dart';
@@ -341,13 +342,19 @@ import 'PendingStudentRequest.dart';
 
 // ignore_for_file: prefer_const_constructors
 
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../../models/driver.dart';
 import 'DriverMapView.dart';
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
 class DriverHomePage extends StatefulWidget {
   const DriverHomePage({super.key});
@@ -357,6 +364,7 @@ class DriverHomePage extends StatefulWidget {
 }
 
 class _DriverHomePageState extends State<DriverHomePage> {
+<<<<<<< HEAD
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
 <<<<<<< HEAD
@@ -370,6 +378,38 @@ class _DriverHomePageState extends State<DriverHomePage> {
 
   Driver? _driver;
   bool _isLoading = true;
+=======
+<<<<<<< HEAD
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  // final DriverService _driverService = DriverService();
+  // List<Map<String, dynamic>> _students = [];
+  // List<Map<String, dynamic>> _bookingRequests = [];
+
+  Driver? _driver;
+  bool _isLoading = true;
+=======
+  final List<Map<String, dynamic>> _rides = [
+    {
+      'studentName': 'Shaheen ghani',
+      'pickupLocation': 'Perfume chowk',
+      'destination': 'ABC School',
+      'time': '7:30 AM',
+      'status': 'Scheduled'
+    },
+    {
+      'studentName': 'Virat kholi',
+      'pickupLocation': 'Anda mor',
+      'destination': 'XYZ School',
+      'time': '8:00 AM',
+      'status': 'Completed'
+    },
+  ];
+
+  FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  FirebaseAuth userCredential = FirebaseAuth.instance;
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
   @override
   void initState() {
@@ -377,25 +417,62 @@ class _DriverHomePageState extends State<DriverHomePage> {
     _loadDriver();
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+  Driver? _driver; // Driver instance
+  bool _isLoading = true; // Loading state
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   Future<Driver?> _fetchDriverByUserId() async {
     try {
       QuerySnapshot<Map<String, dynamic>> driverQuery = await _firestore
           .collection('drivers')
+<<<<<<< HEAD
           .where('userID', isEqualTo: _auth.currentUser!.uid)
           .limit(1)
+=======
+<<<<<<< HEAD
+          .where('userID', isEqualTo: _auth.currentUser!.uid)
+          .limit(1)
+=======
+          .where('userID', isEqualTo: userCredential.currentUser!.uid)
+          .limit(1) // Fetch only one document
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
           .get();
 
       if (driverQuery.docs.isNotEmpty) {
         final driverData = driverQuery.docs.first.data();
+<<<<<<< HEAD
         return Driver.fromJson(driverData);
       }
       return null;
+=======
+<<<<<<< HEAD
+        return Driver.fromJson(driverData);
+      }
+      return null;
+=======
+        print("Driver fetched: ${driverData}");
+        return Driver.fromJson(driverData); // Convert to Driver object
+      }
+      print("No driver found.");
+      return null; // No driver found
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     } catch (e) {
       print("Failed to fetch driver: $e");
       return null;
     }
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   Future<void> _fetchStudents(String driverId) async {
     try {
       QuerySnapshot<Map<String, dynamic>> studentQuery = await _firestore
@@ -407,10 +484,14 @@ class _DriverHomePageState extends State<DriverHomePage> {
       if (studentQuery.docs.isNotEmpty) {
         setState(() {
 <<<<<<< HEAD
+<<<<<<< HEAD
           // _students = studentQuery.docs.map((doc) => doc.data()).toList();
 =======
           _students = studentQuery.docs.map((doc) => doc.data()).toList();
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+          // _students = studentQuery.docs.map((doc) => doc.data()).toList();
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         });
       }
     } catch (e) {
@@ -429,6 +510,7 @@ class _DriverHomePageState extends State<DriverHomePage> {
       if (bookingQuery.docs.isNotEmpty) {
         setState(() {
 <<<<<<< HEAD
+<<<<<<< HEAD
           // _bookingRequests = bookingQuery.docs
           //     .map((doc) => {'id': doc.id, ...doc.data()})
           //     .toList();
@@ -437,6 +519,11 @@ class _DriverHomePageState extends State<DriverHomePage> {
               .map((doc) => {'id': doc.id, ...doc.data()})
               .toList();
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+          // _bookingRequests = bookingQuery.docs
+          //     .map((doc) => {'id': doc.id, ...doc.data()})
+          //     .toList();
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         });
       }
     } catch (e) {
@@ -448,13 +535,24 @@ class _DriverHomePageState extends State<DriverHomePage> {
     try {
       Driver? fetchedDriver = await _fetchDriverByUserId();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
       if (fetchedDriver != null) {
         await _fetchStudents(fetchedDriver.driverID);
         await _fetchBookingRequests(fetchedDriver.driverID);
       }
+<<<<<<< HEAD
+=======
+=======
+  Future<void> _loadDriver() async {
+    try {
+      Driver? fetchedDriver = await _fetchDriverByUserId();
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
       setState(() {
         _driver = fetchedDriver;
         _isLoading = false;
@@ -468,6 +566,10 @@ class _DriverHomePageState extends State<DriverHomePage> {
     }
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   Future<void> _respondToBooking(String bookingId, bool isAccepted) async {
     try {
       await _firestore.collection('booking_requests').doc(bookingId).update({
@@ -491,15 +593,31 @@ class _DriverHomePageState extends State<DriverHomePage> {
   @override
   Widget build(BuildContext context) {
 <<<<<<< HEAD
+<<<<<<< HEAD
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 =======
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+=======
+  @override
+  Widget build(BuildContext context) {
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         toolbarHeight: 50,
         elevation: 0,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+        //menu icon button
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         leading: IconButton(
           color: Colors.black,
           icon: const Icon(Icons.menu),
@@ -528,21 +646,40 @@ class _DriverHomePageState extends State<DriverHomePage> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
+<<<<<<< HEAD
                           _buildProfileSection(_driver!),
                           const SizedBox(height: 20),
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+                          _buildProfileSection(_driver!),
+                          const SizedBox(height: 20),
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                           _buildStudentsSection(_driver!.driverID),
                           const SizedBox(height: 20),
                           // _buildBookingRequestsSection(),
                           const SizedBox(height: 20),
                           _buildManageSection(screenWidth),
 =======
+<<<<<<< HEAD
                           _buildStudentsSection(),
                           const SizedBox(height: 20),
                           _buildBookingRequestsSection(),
                           const SizedBox(height: 20),
                           // _buildManageSection(),
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+                          if (_isLoading) ...[
+                            const LinearProgressIndicator(),
+                            const SizedBox(height: 8),
+                          ],
+                          _buildProfileSection(_driver!),
+                          const SizedBox(height: 20),
+                          _buildRidesSection(),
+                          const SizedBox(height: 20),
+                          _buildManageSection(),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                         ],
                       ),
                     ),
@@ -553,7 +690,15 @@ class _DriverHomePageState extends State<DriverHomePage> {
 
   Widget _buildProfileSection(Driver driver) {
     return Padding(
+<<<<<<< HEAD
       padding: const EdgeInsets.symmetric(horizontal: 16.0),
+=======
+<<<<<<< HEAD
+      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+=======
+      padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
       child: Row(
         children: [
           const SizedBox(width: 16),
@@ -563,7 +708,15 @@ class _DriverHomePageState extends State<DriverHomePage> {
               children: [
                 Text(
                   driver.name,
+<<<<<<< HEAD
                   style: const TextStyle(
+=======
+<<<<<<< HEAD
+                  style: const TextStyle(
+=======
+                  style: TextStyle(
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
                   ),
@@ -652,17 +805,25 @@ class _DriverHomePageState extends State<DriverHomePage> {
 
   Widget _buildManageSection(double screenWidth) {
 =======
+<<<<<<< HEAD
   Widget _buildStudentsSection() {
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+  Widget _buildRidesSection() {
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
 <<<<<<< HEAD
+<<<<<<< HEAD
           'Manage',
 =======
           'Your Rides',
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+          'Your Rides',
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
@@ -670,31 +831,124 @@ class _DriverHomePageState extends State<DriverHomePage> {
         ),
         const SizedBox(height: 12),
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        ListView.builder(
+          shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
+          itemCount: _rides.length,
+          itemBuilder: (context, index) {
+            final ride = _rides[index];
+            return Card(
+              elevation: 2,
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8)),
+              child: ListTile(
+                leading: const Icon(Icons.directions_bus, color: Colors.blue),
+                title: Text(
+                  ride['studentName'],
+                  style: const TextStyle(fontWeight: FontWeight.bold),
+                ),
+                subtitle: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Pickup: ${ride['pickupLocation']}'),
+                    Text('Drop: ${ride['destination']}'),
+                    Text('Time: ${ride['time']}'),
+                  ],
+                ),
+                trailing: Text(
+                  ride['status'],
+                  style: TextStyle(
+                    fontSize: 12,
+                    color: ride['status'] == 'Completed'
+                        ? Colors.green
+                        : Colors.orange,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                onTap: () {
+                  // Navigate to ride details screen
+                },
+              ),
+            );
+          },
+        ),
+      ],
+    );
+  }
+
+  Widget _buildManageSection() {
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Manage',
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        const SizedBox(height: 12),
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             _buildManageCard(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
               screenWidth: screenWidth,
               icon: Icons.map_outlined,
               label: 'Map View',
               onTap: () {
                 
+<<<<<<< HEAD
+=======
+=======
+              icon: Icons.map_outlined,
+              label: 'Map View',
+              onTap: () {
+                // Navigate to map screen
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                         builder: (context) => DriverLiveLocation(
+<<<<<<< HEAD
                               driverId: _driver!.driverID,
+=======
+<<<<<<< HEAD
+                              driverId: _driver!.driverID,
+=======
+                            driverId: _driver!.driverID,
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                             )));
               },
             ),
             _buildManageCard(
+<<<<<<< HEAD
               screenWidth: screenWidth,
+=======
+<<<<<<< HEAD
+              screenWidth: screenWidth,
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
               icon: Icons.schedule_outlined,
               label: 'Schedule',
               onTap: () {
                 // Navigate to schedule screen
               },
             ),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
           ],
         ),
         const SizedBox(height: 12),
@@ -718,10 +972,21 @@ class _DriverHomePageState extends State<DriverHomePage> {
               label: 'Ride History',
               onTap: () {
                 // Navigate to ride history screen
+<<<<<<< HEAD
+=======
+=======
+            _buildManageCard(
+              icon: Icons.message_outlined,
+              label: 'Messages',
+              onTap: () {
+                // Navigate to message screen
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
               },
             ),
           ],
         ),
+<<<<<<< HEAD
 =======
         _students.isEmpty
             ? SizedBox(
@@ -756,15 +1021,24 @@ class _DriverHomePageState extends State<DriverHomePage> {
                 },
               ),
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
       ],
     );
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   Widget _buildManageCard({
     required IconData icon,
     required String label,
     required VoidCallback onTap,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     required double screenWidth,
   }) {
     return GestureDetector(
@@ -801,6 +1075,7 @@ class _DriverHomePageState extends State<DriverHomePage> {
               ),
             ),
           ],
+<<<<<<< HEAD
         ),
       ),
 =======
@@ -895,6 +1170,33 @@ class _DriverHomePageState extends State<DriverHomePage> {
         ),
       ],
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+=======
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        elevation: 3,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        child: SizedBox(
+          width: 100,
+          height: 100,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(icon, size: 30, color: Colors.blue),
+              const SizedBox(height: 8),
+              Text(
+                label,
+                textAlign: TextAlign.center,
+                style: const TextStyle(fontSize: 14),
+              ),
+            ],
+          ),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+        ),
+      ),
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     );
   }
 }

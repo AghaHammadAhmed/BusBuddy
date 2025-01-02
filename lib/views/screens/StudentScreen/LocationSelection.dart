@@ -313,10 +313,16 @@
 // }
 
 =======
+<<<<<<< HEAD
 // ignore_for_file: use_build_context_synchronously
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
@@ -324,11 +330,20 @@ import 'package:geocoding/geocoding.dart';
 <<<<<<< HEAD
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+<<<<<<< HEAD
 =======
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
 
 import '../../../models/user.dart';
 import '../../../services/AuthService.dart';
+=======
+
+import '../../../models/user.dart';
+import '../../../services/AuthService.dart';
+=======
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 import '../../../services/LocationService.dart';
 
 class LocationPickerScreen extends StatefulWidget {
@@ -361,14 +376,22 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
   final TextEditingController _dropoffController = TextEditingController();
 =======
   LatLng _currentLatLng = const LatLng(25.3791973, 68.3219916); // Default to SF
+<<<<<<< HEAD
   String _currentAddress = "";
+=======
+  String _currentAddress = "Fetching address...";
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   bool _isDragging = false;
   String userID =
       FirebaseAuth.instance.currentUser?.uid ?? "ZUXmaewWH9MzkPLL8zPb75TW4T82";
   final LocationService _locationService = LocationService();
+<<<<<<< HEAD
 
   final UserService _userService = UserService();
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
   @override
   void initState() {
@@ -421,7 +444,11 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
   }
 
   void _updateAddress(LatLng latLng) async {
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     try {
       List<Placemark> placemarks =
           await placemarkFromCoordinates(latLng.latitude, latLng.longitude);
@@ -446,7 +473,11 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
 =======
           _currentAddress =
               "${place.name}, ${place.locality}, ${place.administrativeArea}, ${place.country}";
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         });
       }
     } catch (e) {
@@ -461,13 +492,22 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
         }
 =======
         _currentAddress = "Unable to get address";
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
       });
     }
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   void _saveLocation() async {
+=======
+  void _saveLocation() async {
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     if (_dropoffLatLng.latitude == 0 && _dropoffLatLng.longitude == 0) {
       _showErrorDialog('Please select a dropoff location');
       return;
@@ -475,6 +515,7 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
 
     try {
       UserModel? user = await _userService.fetchUser(userID);
+<<<<<<< HEAD
       if (user == null) {
         _showErrorDialog('Please allocate a driver first');
 =======
@@ -513,12 +554,19 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
           const SnackBar(content: Text('Please allocate a driver first')),
         );
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+      if (user == null || user.currentDriverId == null) {
+        _showErrorDialog('Please allocate a driver first');
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         return;
       }
 
       // Update user's location in Firestore
       await FirebaseFirestore.instance.collection('users').doc(userID).update({
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         'address': _pickupAddress,
         'pickupLatitude': _pickupLatLng.latitude,
         'pickupLongitude': _pickupLatLng.longitude,
@@ -540,9 +588,14 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
 
       // Update student location and allocate driver
       await _locationService.updateStudentLocation(userID, pickupCoordinates);
+<<<<<<< HEAD
 
       // await _locationService.allocateDriverToStudent(
       //     user.currentDriverId!, userID, pickupCoordinates, dropoffCoordinates);
+=======
+      await _locationService.allocateDriverToStudent(
+          user.currentDriverId!, userID, pickupCoordinates, dropoffCoordinates);
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
       // Navigate to main navigation screen
       Navigator.pushNamed(context, '/mainNavigation');
@@ -586,6 +639,7 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
   }
 
 =======
+<<<<<<< HEAD
         'address': _currentAddress,
         'latitude': _currentLatLng.latitude,
         'longitude': _currentLatLng.longitude,
@@ -622,6 +676,26 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
   }
 
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+    try {
+      print(userID);
+      await FirebaseFirestore.instance.collection('users').doc(userID).update({
+        'address': _currentAddress,
+      });
+
+      await _locationService.updateStudentLocation(userID, _currentLatLng);
+
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Location Saved: $_currentAddress')),
+      );
+      Navigator.pop(context);
+    } catch (e) {
+      print(e);
+    }
+  }
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -636,7 +710,11 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
               target: _pickupLatLng,
 =======
               target: _currentLatLng,
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
               zoom: 14.0,
             ),
             onMapCreated: (controller) {
@@ -654,7 +732,11 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                 }
 =======
                 _currentLatLng = position.target;
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
               });
             },
             onCameraIdle: () {
@@ -677,7 +759,11 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
           ),
 
           // Current Location Marker
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -692,7 +778,11 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                   Icons.location_on,
                   size: 50,
                   color: Colors.red,
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                 ),
                 const SizedBox(height: 8),
                 if (!_isDragging)
@@ -700,13 +790,25 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
 <<<<<<< HEAD
                     margin: const EdgeInsets.symmetric(horizontal: 20),
 =======
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                     padding:
                         const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(8),
+<<<<<<< HEAD
                       boxShadow: const [
+=======
+<<<<<<< HEAD
+                      boxShadow: const [
+=======
+                      boxShadow: [
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                         BoxShadow(
                           color: Colors.black12,
                           offset: Offset(0, 4),
@@ -725,7 +827,11 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                       _currentAddress,
                       style: const TextStyle(fontSize: 12),
                       textAlign: TextAlign.center,
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                     ),
                   ),
               ],
@@ -764,7 +870,11 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                     color: Colors.black12,
                     offset: Offset(0, -4),
                     blurRadius: 10,
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                   ),
                 ],
               ),
@@ -823,10 +933,13 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                   const SizedBox(height: 16),
 
                   // Confirm Button
+<<<<<<< HEAD
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: _saveLocation,
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 =======
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -852,12 +965,22 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                     ),
                   ),
                   const SizedBox(height: 16),
+<<<<<<< HEAD
                   // Save Location Button
                   SizedBox(
                     width: double.infinity,
                     child: ElevatedButton(
                       onPressed: _confirmAndSaveLocation,
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+
+                  // Save Location Button
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+                  SizedBox(
+                    width: double.infinity,
+                    child: ElevatedButton(
+                      onPressed: _saveLocation,
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF0047BA),
                         padding: const EdgeInsets.symmetric(vertical: 16),
@@ -874,7 +997,11 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                       ),
                       child: const Text(
                         'Save Location',
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
@@ -887,6 +1014,10 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
 =======
 
                   const SizedBox(height: 8),
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                   // Current Location Button
                   SizedBox(
                     width: double.infinity,
@@ -910,7 +1041,11 @@ class _LocationPickerScreenState extends State<LocationPickerScreen> {
                       ),
                     ),
                   ),
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                 ],
               ),
             ),

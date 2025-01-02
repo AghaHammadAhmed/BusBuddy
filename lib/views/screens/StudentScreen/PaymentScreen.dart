@@ -1,17 +1,35 @@
 <<<<<<< HEAD
 // ignore_for_file: prefer_const_constructors
 
+<<<<<<< HEAD
 =======
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
 import 'package:flutter/material.dart';
 
 class PaymentScreen extends StatelessWidget {
+=======
+import 'package:flutter/material.dart';
+
+class PaymentScreen extends StatelessWidget {
+=======
+import 'package:flutter/material.dart';
+
+
+class PaymentScreen extends StatelessWidget {
+
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   const PaymentScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
@@ -41,16 +59,64 @@ class PaymentScreen extends StatelessWidget {
                 Color.fromARGB(255, 13, 110, 0)),
             _buildPaymentMethod("NayaPay", "******* 684", Icons.credit_card,
                 Color.fromARGB(255, 228, 91, 0)),
+<<<<<<< HEAD
+=======
+=======
+        backgroundColor: Colors.white,
+        elevation: 0,
+        title: const Text(
+          'Payment',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        iconTheme: const IconThemeData(color: Colors.black),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              'Booking for driver.name',
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(height: 16),
+            Text(
+              'Amount: \$driver.monthlyFee',
+              style: TextStyle(fontSize: 18, color: Colors.grey[800]),
+            ),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
             const Spacer(),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                   
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(content: Text('Payment Successful!')),
                   );
                   Navigator.pushNamed(context, "/mainNavigation");
+<<<<<<< HEAD
+=======
+=======
+                  // Handle payment logic
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Payment Successful!')),
+                  );
+                  Navigator.pop(context); // Return to previous screen
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: const Color(0xFF0047BA),
@@ -70,6 +136,10 @@ class PaymentScreen extends StatelessWidget {
       ),
     );
   }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
   Widget _buildPaymentMethod(
       String title, String subtitle, IconData icon, Color color) {
@@ -95,4 +165,9 @@ class PaymentScreen extends StatelessWidget {
       ),
     );
   }
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 }

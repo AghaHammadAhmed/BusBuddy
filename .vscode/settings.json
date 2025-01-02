@@ -1,9 +1,13 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
   "git.ignoreLimitWarning": true,
   "editor.accessibilityPageSize": 30,
   "editor.fontSize": 16
 =======
   "git.ignoreLimitWarning": true
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+  "git.ignoreLimitWarning": true
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 }

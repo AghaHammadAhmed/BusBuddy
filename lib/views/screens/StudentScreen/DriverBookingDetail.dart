@@ -1,14 +1,23 @@
 // ignore_for_file: must_be_immutable, prefer_const_constructors
 
+<<<<<<< HEAD
 import 'dart:developer';
 
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+<<<<<<< HEAD
 import '../../../models/driver.dart';
 import '../../../models/user.dart';
 import '../../../services/LocationService.dart';
+=======
+
+import '../../../models/driver.dart';
+import '../../../models/user.dart';
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 import '../../../services/driverService.dart';
 
 class DriverBookingDetail extends StatefulWidget {
@@ -22,11 +31,17 @@ class DriverBookingDetail extends StatefulWidget {
 class _DriverBookingDetailState extends State<DriverBookingDetail> {
   // final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final DriverService _driverService = DriverService();
+<<<<<<< HEAD
   final LocationService _locationService = LocationService();
   // final CollectionReference _driverCollection =
   //     FirebaseFirestore.instance.collection('drivers');
   Map<String, dynamic>? userBooking;
   UserModel? _user;
+=======
+  // final CollectionReference _driverCollection =
+  //     FirebaseFirestore.instance.collection('drivers');
+  Map<String, dynamic>? userBooking;
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
 //initial state
   @override
@@ -37,8 +52,11 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
 
   final userID = FirebaseAuth.instance.currentUser!.uid;
 
+<<<<<<< HEAD
   //fetch the user details
 
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   Stream<UserModel?> _userStream(String userId) {
     return FirebaseFirestore.instance
         .collection('users')
@@ -73,8 +91,11 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     try {
       final FirebaseAuth auth = FirebaseAuth.instance;
       final User? user = auth.currentUser;
+<<<<<<< HEAD
       _user =
           UserModel.fromMap(await _driverService.fetchUserDetails(user!.uid));
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
       if (user == null) return;
 
@@ -491,7 +512,14 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     );
   }
 
+<<<<<<< HEAD
   void _launchDialer(String phoneNumber) {}
+=======
+
+  void _launchDialer(String phoneNumber) {
+
+  }
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
   Widget _buildDetailRow({
     required IconData icon,
@@ -535,20 +563,36 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     return StreamBuilder<Map<String, dynamic>>(
       stream: bookingStream,
       builder: (context, snapshot) {
+<<<<<<< HEAD
+=======
+     
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(child: CircularProgressIndicator());
         }
 
+<<<<<<< HEAD
+=======
+      
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         if (snapshot.hasError) {
           return Center(
             child: Text("Error loading booking details: ${snapshot.error}"),
           );
         }
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         if (!snapshot.hasData || snapshot.data == null) {
           return Center(child: Text("No booking details found."));
         }
 
+<<<<<<< HEAD
+=======
+   
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
         Map<String, dynamic> booking = snapshot.data!;
         String bookingId = booking['id'];
         String status = booking['status'];
@@ -570,6 +614,10 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+<<<<<<< HEAD
+=======
+              
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -600,7 +648,14 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
                     ),
                   ],
                 ),
+<<<<<<< HEAD
                 SizedBox(height: screenWidth * 0.04),
+=======
+
+                SizedBox(height: screenWidth * 0.04),
+
+              
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                 _buildDetailRowBook(
                   icon: Icons.location_on,
                   title: 'Pickup',
@@ -613,12 +668,26 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
                   subtitle: booking['dropoff_location'],
                   screenWidth: screenWidth,
                 ),
+<<<<<<< HEAD
                 SizedBox(height: screenWidth * 0.04),
+=======
+
+                SizedBox(height: screenWidth * 0.04),
+
+         
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                 _buildFareSection(
                     driverProposedFare: driverProposedFare,
                     studentCounterFare: studentCounterFare,
                     screenWidth: screenWidth),
+<<<<<<< HEAD
                 SizedBox(height: screenWidth * 0.04),
+=======
+
+                SizedBox(height: screenWidth * 0.04),
+
+           
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
                 _buildActionButtons(context, bookingId, status,
                     driverProposedFare, screenWidth),
               ],
@@ -629,6 +698,10 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     );
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   Widget _buildDetailRowBook({
     required IconData icon,
     required String title,
@@ -669,6 +742,10 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     );
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   Widget _buildFareSection({
     required double driverProposedFare,
     double? studentCounterFare,
@@ -731,6 +808,10 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     );
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   Widget _buildActionButtons(BuildContext context, String bookingId,
       String status, double driverProposedFare, double screenWidth) {
     return Row(
@@ -770,6 +851,10 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     );
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   Color _getStatusColor(String status) {
     switch (status) {
       case 'pending':
@@ -783,6 +868,10 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     }
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   void _showBookingOptions(
       BuildContext context, String bookingId, double driverProposedFare) {
     showModalBottomSheet(
@@ -804,6 +893,7 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
             ),
             SizedBox(height: 16),
             ElevatedButton(
+<<<<<<< HEAD
               onPressed: () {
                 final pickupCoordinates = {
                   'latitude': _user!.pickupLatitude,
@@ -829,6 +919,9 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
                   log('Error allocating driver to student: $e');
                 }
               },
+=======
+              onPressed: () => _acceptFare(bookingId, driverProposedFare),
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
               style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
               child: const Text('Accept Fare'),
             ),

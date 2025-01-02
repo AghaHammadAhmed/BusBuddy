@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -207,6 +208,24 @@ class _TrackDriverState extends State<TrackDriver> {
             ),
         ],
       ),
+=======
+import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
+import 'package:flutter/src/widgets/framework.dart';
+
+class OngoingTrip extends StatefulWidget {
+  const OngoingTrip({super.key});
+
+  @override
+  State<OngoingTrip> createState() => _OngoingTripState();
+}
+
+class _OngoingTripState extends State<OngoingTrip> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(child: Text("Text")),
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
     );
   }
 }

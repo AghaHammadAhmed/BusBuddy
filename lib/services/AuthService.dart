@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // ignore_for_file: use_build_context_synchronously
 
 <<<<<<< HEAD
@@ -7,16 +8,39 @@
 import 'dart:convert';
 import 'dart:io';
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+<<<<<<< HEAD
+// ignore_for_file: use_build_context_synchronously
+
+
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
+<<<<<<< HEAD
+=======
+=======
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 import '../models/user.dart';
 
 class UserService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+<<<<<<< HEAD
   String currentAddress = '';
+=======
+<<<<<<< HEAD
+  String currentAddress = '';
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
   /// Registers a new user using Firebase Authentication and saves user details in Firestore.
   Future<String> registerUser(UserModel user, String password) async {
@@ -67,19 +91,33 @@ class UserService {
 <<<<<<< HEAD
       
 =======
+<<<<<<< HEAD
       print(userDoc.exists);
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+          print(userDoc.exists);
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
       if (userDoc.exists) {
         String role = userDoc.get('role');
 
         if (role == 'student') {
           Navigator.pushReplacementNamed(context, '/mainNavigation');
         } else if (role == 'driver') {
+<<<<<<< HEAD
           QuerySnapshot driverQuery = await _firestore
+=======
+<<<<<<< HEAD
+          QuerySnapshot driverQuery = await _firestore
+=======
+           QuerySnapshot driverQuery = await _firestore
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
               .collection('drivers')
               .where('userID', isEqualTo: userCredential.user!.uid)
               .limit(1) // Fetch only one document
               .get();
+<<<<<<< HEAD
           currentAddress = userDoc.get('address');
 
 <<<<<<< HEAD
@@ -89,6 +127,18 @@ class UserService {
           print(driverQuery);
           print(userCredential.user!.uid);
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+<<<<<<< HEAD
+          currentAddress = userDoc.get('address');
+
+          // print(driverQuery);
+         
+=======
+
+          print(driverQuery);
+          print(userCredential.user!.uid);
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
           if (driverQuery.docs.isNotEmpty) {
             Navigator.pushReplacementNamed(context, '/driverHome');
             print("Driver document exists");
@@ -131,7 +181,11 @@ class UserService {
       Exception(e);
 =======
       print("Error fetching user: $e");
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
       return null;
     }
   }
@@ -148,7 +202,11 @@ class UserService {
           .collection('users')
           .doc(user.userID)
           .update(user.toJson());
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
       return "User updated successfully";
     } catch (e) {
       return "An error occurred while updating user: $e";
@@ -158,7 +216,11 @@ class UserService {
 <<<<<<< HEAD
 
 =======
+<<<<<<< HEAD
 >>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
   /// Deletes a user account from both Firebase Authentication and Firestore.
   Future<String> deleteUser(String userID) async {
     try {
@@ -178,6 +240,10 @@ class UserService {
       return "An unexpected error occurred: $e";
     }
   }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 
   // Future<void> uploadProfilePicture(String userID) async {
   //   final picker = ImagePicker();
@@ -216,4 +282,9 @@ class UserService {
   //   return null;
   // }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 }
