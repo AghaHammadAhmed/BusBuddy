@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 // ignore_for_file: prefer_const_constructors
 
+=======
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
 import 'package:flutter/material.dart';
 
 class PaymentScreen extends StatelessWidget {

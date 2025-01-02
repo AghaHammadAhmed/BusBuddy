@@ -5,6 +5,7 @@ class UserModel {
   final int? age;
   final String? gender;
   final String phone;
+<<<<<<< HEAD
   final String? school;
   final String? address;
   final String? dropOffLocation;
@@ -14,6 +15,13 @@ class UserModel {
   final double? pickupLongitude;
   final double? dropOffLatitude;
   final double? dropOffLongitude;
+=======
+  final String? address;
+  final String? profilePicture;
+  final String? role;
+  final double? latitude;
+  final double? longitude;
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
   final String? currentDriverId;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -25,6 +33,7 @@ class UserModel {
     this.age,
     this.gender,
     required this.phone,
+<<<<<<< HEAD
     this.school,
     this.address,
     this.dropOffLocation,
@@ -33,6 +42,12 @@ class UserModel {
     this.pickupLongitude,
     this.dropOffLatitude,
     this.dropOffLongitude,
+=======
+    this.address,
+    this.profilePicture,
+    this.latitude,
+    this.longitude,
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
     this.role,
     this.currentDriverId,
     this.createdAt,
@@ -47,6 +62,7 @@ class UserModel {
       age: map['age'],
       gender: map['gender'],
       phone: map['phone'] ?? '',
+<<<<<<< HEAD
       school: map['school'] ?? '',
       address: map['address'],
       dropOffLocation: map['dropOffLocation'],
@@ -55,6 +71,12 @@ class UserModel {
       pickupLongitude: map['pickupLongitude'],
       dropOffLatitude: map['dropOffLatitude'],
       dropOffLongitude: map['dropOffLongitude'],
+=======
+      address: map['address'],
+      profilePicture: map['profilePicture'],
+      latitude: map['latitude'],
+      longitude: map['longitude'],
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
       role: map['role'],
       currentDriverId: map['currentDriverId'],
       createdAt:
@@ -72,6 +94,7 @@ class UserModel {
       'age': age,
       'gender': gender,
       'phone': phone,
+<<<<<<< HEAD
       'school': school,
       'address': address,
       'dropOffLocation': dropOffLocation,
@@ -80,6 +103,12 @@ class UserModel {
       'pickupLongitude': pickupLongitude,
       'dropOffLatitude': dropOffLatitude,
       'dropOffLongitude': dropOffLongitude,
+=======
+      'address': address,
+      'profilePicture': profilePicture,
+      'latitude': latitude,
+      'longitude': longitude,
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
       'role': role,
       'currentDriverId': currentDriverId,
       'createdAt': createdAt?.toIso8601String(),
@@ -95,6 +124,7 @@ class UserModel {
       age: json['age'],
       gender: json['gender'],
       phone: json['phone'],
+<<<<<<< HEAD
       school: json['school'],
       address: json['address'],
       dropOffLocation: json['dropOffLocation'],
@@ -103,6 +133,12 @@ class UserModel {
       pickupLongitude: json['pickupLongitude'],
       dropOffLatitude: json['dropOffLatitude'],
       dropOffLongitude: json['dropOffLongitude'],
+=======
+      address: json['address'],
+      profilePicture: json['profilePicture'],
+      latitude: json['latitude'],
+      longitude: json['longitude'],
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
       role: json['role'],
       currentDriverId: json['currentDriverId'],
       createdAt:
@@ -121,12 +157,18 @@ class UserModel {
       'gender': gender,
       'phone': phone,
       'address': address,
+<<<<<<< HEAD
       'dropOffLocation': dropOffLocation,
       'profilePicture': profilePicture,
       'pickupLatitude': pickupLatitude,
       'pickupLongitude': pickupLongitude,
       'dropOffLatitude': dropOffLatitude,
       'dropOffLongitude': dropOffLongitude,
+=======
+      'profilePicture': profilePicture,
+      'latitude': latitude,
+      'longitude': longitude,
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
       'role': role,
       'currentDriverId': currentDriverId,
       'createdAt': createdAt?.toIso8601String(),

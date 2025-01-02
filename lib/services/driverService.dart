@@ -8,6 +8,7 @@ class DriverService {
       FirebaseFirestore.instance.collection('users');
   final CollectionReference _bookingRequestCollection =
       FirebaseFirestore.instance.collection('booking_requests');
+<<<<<<< HEAD
   final CollectionReference _ridesCollection =
       FirebaseFirestore.instance.collection('rides');
 
@@ -20,6 +21,8 @@ class DriverService {
       throw Exception("Error fetching user details: $e");
     }
   }
+=======
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
 
   // Add a new driver
   Future<void> addDriver(String userID, Map<String, dynamic> driverData) async {
@@ -45,23 +48,35 @@ class DriverService {
       final bookingRequest = {
         "student_id": FirebaseAuth.instance.currentUser!.uid,
         "driver_id": driverId,
+<<<<<<< HEAD
         // "doc_id": _bookingRequestCollection.doc().id,
+=======
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
         "status": "pending",
         "duration": duration,
         "pickup_location": pickup,
         "dropoff_location": dropoff,
         "fare_proposed_by_driver": 0.0,
+<<<<<<< HEAD
         "fare_counter_by_student": 0.0,
+=======
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
         "fare_agreed": 0.0,
         "timestamp": FieldValue.serverTimestamp(),
       };
 
+<<<<<<< HEAD
       await _bookingRequestCollection.add(bookingRequest);
+=======
+      await _bookingRequestCollection
+          .add(bookingRequest);
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
     } catch (e) {
       throw Exception('Failed to book driver: $e');
     }
   }
 
+<<<<<<< HEAD
   Future<void> respondToBookingByDriver(
       String bookingId, double proposedFare) async {
     await _bookingRequestCollection.doc(bookingId).update({
@@ -75,6 +90,16 @@ class DriverService {
       'fare_counter_by_student': fare,
       'status': 'pending',
     });
+=======
+  Future<void> respondToBooking(String bookingId, double proposedFare) async {
+    await _bookingRequestCollection
+        .doc(bookingId)
+        .update({
+      "fare_proposed_by_driver": proposedFare,
+      "status": "pending",
+    });
+
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
   }
 
   Future<void> negotiateFare(String bookingId, double newProposedFare) async {
@@ -82,7 +107,10 @@ class DriverService {
       await _bookingRequestCollection.doc(bookingId).update({
         "fare_proposed_by_driver": newProposedFare,
         "status": "pending",
+<<<<<<< HEAD
         "last_updated_by": "driver",
+=======
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
       });
 
       // Optionally notify the student about the new proposed fare
@@ -91,6 +119,7 @@ class DriverService {
     }
   }
 
+<<<<<<< HEAD
   // Future<void> finalizeAgreement(String bookingId, double agreedFare) async {
   //   try {
   //     await _bookingRequestCollection.doc(bookingId).update({
@@ -125,6 +154,9 @@ class DriverService {
   }
 
   // Accept fare and confirm booking
+=======
+ // Accept fare and confirm booking
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
   Future<void> acceptFare(String bookingId, double agreedFare) async {
     try {
       await _bookingRequestCollection.doc(bookingId).update({
@@ -136,6 +168,7 @@ class DriverService {
     }
   }
 
+<<<<<<< HEAD
   Future<void> rejectOffer(String bookingId) async {
     try {
       await _bookingRequestCollection.doc(bookingId).update({
@@ -160,6 +193,15 @@ class DriverService {
       });
     } catch (e) {
       throw Exception('Error adding negotiation step: $e');
+=======
+  Future<void> rejectBooking(String bookingId) async {
+    try {
+      await _bookingRequestCollection.doc(bookingId).update({
+        "status": "rejected",
+      });
+    } catch (e) {
+      throw Exception('Error rejecting booking: $e');
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
     }
   }
 
@@ -167,6 +209,10 @@ class DriverService {
   Future<List<Map<String, dynamic>>> fetchAllDrivers() async {
     try {
       final querySnapshot = await _driverCollection.get();
+<<<<<<< HEAD
+=======
+      print("querySnapshot: $querySnapshot.docs.length");
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
       return querySnapshot.docs
           .map((doc) => {'id': doc.id, ...doc.data() as Map<String, dynamic>})
           .toList();
@@ -175,21 +221,29 @@ class DriverService {
     }
   }
 
+<<<<<<< HEAD
   // Cancel a booking
+=======
+   // Cancel a booking
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
   Future<void> cancelBooking(String bookingId) async {
     try {
       await _bookingRequestCollection.doc(bookingId).update({
         "status": "cancelled",
       });
+<<<<<<< HEAD
       // update the user
       await _userCollection.doc(FirebaseAuth.instance.currentUser!.uid).update({
         'currentDriverId': null,
       });
+=======
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
     } catch (e) {
       throw Exception('Error cancelling booking: $e');
     }
   }
 
+<<<<<<< HEAD
   Future<Map<String, dynamic>> fetchUserBooking(String userId) async {
     try {
       final userDoc = await _userCollection.doc(userId).get();
@@ -212,6 +266,24 @@ class DriverService {
   }
 
   // Fetch bookings for a specific driver
+=======
+
+  Future<List<Map<String, dynamic>>> fetchUserBookings(String userId) async {
+    try {
+      final querySnapshot = await _bookingRequestCollection
+          .where("student_id", isEqualTo: userId)
+          .orderBy("timestamp", descending: true)
+          .get();
+      return querySnapshot.docs
+          .map((doc) => {'id': doc.id, ...doc.data() as Map<String, dynamic>})
+          .toList();
+    } catch (e) {
+      throw Exception("Error fetching bookings: $e");
+    }
+  }
+
+   // Fetch bookings for a specific driver
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
   Future<List<Map<String, dynamic>>> fetchDriverBookings(
       String driverId) async {
     try {
@@ -227,6 +299,12 @@ class DriverService {
     }
   }
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
   // Update driver details
   Future<void> updateDriver(
       String driverId, Map<String, dynamic> updatedData) async {

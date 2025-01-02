@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'package:busbuddy/views/screens/StudentScreen/DriverBookingDetail.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -8,6 +9,375 @@ import '../../../services/driverService.dart';
 import 'LocationSelection.dart';
 import 'OngoingTrip.dart';
 import 'SafetyScreen.dart';
+=======
+// import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:flutter/material.dart';
+
+// import '../../../models/driver.dart';
+// import '../../../models/user.dart';
+
+// class StudentHomePage extends StatefulWidget {
+//   const StudentHomePage({super.key});
+
+//   @override
+//   _StudentHomePageState createState() => _StudentHomePageState();
+// }
+
+// class _StudentHomePageState extends State<StudentHomePage> {
+//   String userId = FirebaseAuth.instance.currentUser!.uid;
+
+//   @override
+//   void initState() {
+//     super.initState();
+//   }
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         backgroundColor: Colors.transparent,
+//         toolbarHeight: 50,
+//         elevation: 0,
+//         leading: IconButton(
+//           color: Colors.black,
+//           icon: const Icon(Icons.menu),
+//           onPressed: () {
+//             // Navigate to menu screen
+//           },
+//         ),
+//         actions: [
+//           IconButton(
+//             color: Colors.black,
+//             icon: const Icon(Icons.notifications_none),
+//             onPressed: () {
+//               // Navigate to notifications screen
+//             },
+//           ),
+//         ],
+//       ),
+//       body: SafeArea(
+//         child: FutureBuilder<UserModel?>(
+//           future: _fetchUser(userId),
+//           builder: (context, userSnapshot) {
+//             if (userSnapshot.connectionState == ConnectionState.waiting) {
+//               return const Center(child: CircularProgressIndicator());
+//             }
+//             if (userSnapshot.hasError) {
+//               return const Center(child: Text('Error loading user data.'));
+//             }
+//             if (!userSnapshot.hasData || userSnapshot.data == null) {
+//               return const Center(child: Text('No user data found.'));
+//             }
+
+//             UserModel user = userSnapshot.data!;
+//             String? driverId = user.currentDriverId;
+
+//             return FutureBuilder<Driver?>(
+//               future: _fetchDriver(driverId),
+//               builder: (context, driverSnapshot) {
+//                 if (driverSnapshot.connectionState == ConnectionState.waiting) {
+//                   return const Center(child: CircularProgressIndicator());
+//                 }
+//                 if (driverSnapshot.hasError) {
+//                   return const Center(
+//                       child: Text('Error loading driver data.'));
+//                 }
+
+//                 Driver? driver = driverSnapshot.data;
+
+//                 return SingleChildScrollView(
+//                   child: Padding(
+//                     padding: const EdgeInsets.all(16.0),
+//                     child: Column(
+//                       crossAxisAlignment: CrossAxisAlignment.start,
+//                       children: [
+//                         _buildProfileSection(user),
+//                         const SizedBox(height: 20),
+//                         driver != null
+//                             ? _buildDriverCard(driver)
+//                             : _buildDriverCardPlaceholder(),
+//                         const SizedBox(height: 5),
+//                         _buildManageSection(),
+//                       ],
+//                     ),
+//                   ),
+//                 );
+//               },
+//             );
+//           },
+//         ),
+//       ),
+//     );
+//   }
+
+//   Future<Driver?> _fetchDriver(String? driverId) async {
+//     if (driverId == null || driverId.isEmpty) {
+//       return null; // Return null if no driver is assigned
+//     }
+
+//     DocumentSnapshot<Map<String, dynamic>> driverSnapshot =
+//         await FirebaseFirestore.instance
+//             .collection('drivers')
+//             .doc(driverId)
+//             .get();
+
+//     if (driverSnapshot.exists) {
+//       return Driver.fromMap(driverSnapshot.data()!);
+//     }
+//     return null; // Return null if the driver doesn't exist
+//   }
+
+//   Future<UserModel?> _fetchUser(String userId) async {
+//     return await FirebaseFirestore.instance
+//         .collection('users')
+//         .doc(userId)
+//         .get()
+//         .then((snapshot) =>
+//             snapshot.exists ? UserModel.fromMap(snapshot.data()!) : null);
+//   }
+
+//   Widget _buildProfileSection(UserModel user) {
+//     return Padding(
+//       padding: const EdgeInsets.only(left: 16.0, right: 16.0),
+//       child: Row(
+//         children: [
+//           const SizedBox(width: 16),
+//           Expanded(
+//             child: Column(
+//               crossAxisAlignment: CrossAxisAlignment.start,
+//               children: [
+//                 Text(
+//                   user.name,
+//                   style: const TextStyle(
+//                     fontSize: 22,
+//                     fontWeight: FontWeight.bold,
+//                   ),
+//                 ),
+//                 const SizedBox(height: 4),
+//                 Row(
+//                   children: [
+//                     const Icon(Icons.pin_drop, size: 16, color: Colors.grey),
+//                     const SizedBox(width: 4),
+//                     Text(
+//                       '${user.address}',
+//                       style: TextStyle(color: Colors.grey[600]),
+//                     ),
+//                   ],
+//                 )
+//               ],
+//             ),
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+
+//   Widget _buildManageSection() {
+//     return Column(
+//       crossAxisAlignment: CrossAxisAlignment.start,
+//       children: [
+//         const Text(
+//           'Manage',
+//           style: TextStyle(
+//             fontSize: 18,
+//             fontWeight: FontWeight.bold,
+//           ),
+//         ),
+//         const SizedBox(height: 12),
+//         Row(
+//           mainAxisAlignment: MainAxisAlignment.spaceAround,
+//           children: [
+//             _buildManageCard(
+//               icon: Icons.search_outlined,
+//               label: 'Find Driver',
+//               onTap: () {
+//                 // Navigate to find driver screen
+//                 Navigator.pushNamed(context, '/availableDrivers');
+//               },
+//             ),
+//             _buildManageCard(
+//               icon: Icons.location_on_outlined,
+//               label: 'Set Pickup Point',
+//               onTap: () {
+//                 // Navigate to set pickup point screen
+//                 Navigator.pushNamed(context, '/locationSelection');
+//               },
+//             ),
+//           ],
+//         ),
+//         const SizedBox(height: 12),
+//         Row(
+//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//           children: [
+//             _buildManageCard(
+//               icon: Icons.skip_next_outlined,
+//               label: 'Skip a Ride',
+//               onTap: () {
+//                 // Navigate to skip ride screen
+//               },
+//             ),
+//             _buildManageCard(
+//               icon: Icons.history_outlined,
+//               label: 'Ride History',
+//               onTap: () {
+//                 // Navigate to ride history screen
+//               },
+//             ),
+//           ],
+//         ),
+//       ],
+//     );
+//   }
+
+//   Widget _buildDriverCard(Driver driver) {
+//     return Card(
+//       margin: const EdgeInsets.only(bottom: 16),
+//       shape: RoundedRectangleBorder(
+//         borderRadius: BorderRadius.circular(12),
+//         side: BorderSide(color: Colors.grey[200]!),
+//       ),
+//       child: Padding(
+//         padding: const EdgeInsets.all(16),
+//         child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.start,
+//           children: [
+//             Row(
+//               children: [
+//                 CircleAvatar(
+//                   radius: 30,
+//                   backgroundColor: Colors.grey[200],
+//                   child: const Icon(Icons.person, size: 35, color: Colors.grey),
+//                 ),
+//                 const SizedBox(width: 16),
+//                 Expanded(
+//                   child: Column(
+//                     crossAxisAlignment: CrossAxisAlignment.start,
+//                     children: [
+//                       Text(
+//                         driver.name,
+//                         style: const TextStyle(
+//                           fontSize: 18,
+//                           fontWeight: FontWeight.bold,
+//                         ),
+//                       ),
+//                       const SizedBox(height: 4),
+//                       Text(
+//                         'Vehicle: ${driver.vehicleNumber}',
+//                         style: TextStyle(color: Colors.grey[600]),
+//                       ),
+//                       const SizedBox(height: 4),
+//                       Text(
+//                         'Available Seats: ${driver.seats}',
+//                         style: TextStyle(color: Colors.grey[600]),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ],
+//             ),
+//             const SizedBox(height: 16),
+//             Row(
+//               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: [
+//                 OutlinedButton.icon(
+//                   onPressed: () {
+//                     // Handle call action
+//                   },
+//                   icon: const Icon(Icons.phone),
+//                   label: const Text('Call'),
+//                   style: OutlinedButton.styleFrom(
+//                     foregroundColor: const Color(0xFF0047BA),
+//                     side: const BorderSide(color: Color(0xFF0047BA)),
+//                     shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(8),
+//                     ),
+//                   ),
+//                 ),
+//                 ElevatedButton(
+//                   onPressed: () {
+//                     // Navigate to track driver screen
+//                     // Navigator.push(
+//                     //   context,
+//                     //   MaterialPageRoute(
+//                     //     builder: (context) => const TrackDriverScreen(),
+//                     //   ),
+//                     // );
+//                   },
+//                   style: ElevatedButton.styleFrom(
+//                     backgroundColor: const Color(0xFF0047BA),
+//                     foregroundColor: Colors.white,
+//                     shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(8),
+//                     ),
+//                   ),
+//                   child: const Text('Track Your Driver'),
+//                 ),
+//               ],
+//             ),
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+
+//   Widget _buildDriverCardPlaceholder() {
+//     return Container(
+//       height: 150,
+//       width: double.infinity,
+//       decoration: BoxDecoration(
+//         color: Colors.grey[200],
+//         borderRadius: BorderRadius.circular(12),
+//       ),
+//       margin: const EdgeInsets.only(bottom: 16),
+//       child: const Padding(
+//           padding: EdgeInsets.all(16),
+//           child: Center(
+//             child: Text("No Driver Selected",
+//                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+//           )),
+//     );
+//   }
+
+//   Widget _buildManageCard({
+//     required IconData icon,
+//     required String label,
+//     required VoidCallback onTap,
+//   }) {
+//     return GestureDetector(
+//       onTap: onTap,
+//       child: Card(
+//         elevation: 3,
+//         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+//         child: SizedBox(
+//           width: 150,
+//           height: 100,
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.center,
+//             children: [
+//               Icon(icon, size: 30, color: Colors.blue),
+//               const SizedBox(height: 8),
+//               Text(
+//                 label,
+//                 textAlign: TextAlign.center,
+//                 style: const TextStyle(fontSize: 14),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+
+import '../../../models/driver.dart';
+import '../../../models/user.dart';
+import '../../../services/driverService.dart';
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
 
 class StudentHomePage extends StatefulWidget {
   const StudentHomePage({super.key});
@@ -19,6 +389,7 @@ class StudentHomePage extends StatefulWidget {
 class _StudentHomePageState extends State<StudentHomePage> {
   String userId = FirebaseAuth.instance.currentUser!.uid;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+<<<<<<< HEAD
   Map<String, dynamic>? userBooking;
   final DriverService _driverService = DriverService();
   // String status = 'pending';
@@ -32,6 +403,22 @@ class _StudentHomePageState extends State<StudentHomePage> {
       final booking = await _driverService.fetchUserBooking(user.uid);
       setState(() {
         userBooking = booking;
+=======
+  List<Map<String, dynamic>> userBookings = [];
+  final DriverService _driverService = DriverService();
+  String status = 'pending';
+
+  Future<void> _fetchUserBookings() async {
+    try {
+      final FirebaseAuth _auth = FirebaseAuth.instance;
+      final User? user = _auth.currentUser;
+
+      if (user == null) return;
+
+      final bookings = await _driverService.fetchUserBookings(user.uid);
+      setState(() {
+        userBookings = bookings;
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
       });
     } catch (e) {
       print("Error fetching bookings: $e");
@@ -41,6 +428,10 @@ class _StudentHomePageState extends State<StudentHomePage> {
   @override
   void initState() {
     _fetchUserBookings();
+<<<<<<< HEAD
+=======
+
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
     super.initState();
   }
 
@@ -50,6 +441,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
     final double screenHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
+<<<<<<< HEAD
       key: _scaffoldKey,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -75,6 +467,33 @@ class _StudentHomePageState extends State<StudentHomePage> {
       drawer: _buildCustomDrawer(context),
       body: SafeArea(
         child: StreamBuilder<UserModel?>(
+=======
+        key: _scaffoldKey,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          toolbarHeight: 50,
+          elevation: 0,
+          leading: IconButton(
+            color: Colors.black,
+            icon: const Icon(Icons.menu),
+            onPressed: () {
+              _scaffoldKey.currentState!.openDrawer();
+            },
+          ),
+          actions: [
+            IconButton(
+              color: Colors.black,
+              icon: const Icon(Icons.notifications_none),
+              onPressed: () {
+                // Navigate to notifications screen
+              },
+            ),
+          ],
+        ),
+        drawer: _buildCustomDrawer(context),
+        body: SafeArea(
+            child: StreamBuilder<UserModel?>(
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
           stream: _userStream(userId),
           builder: (context, userSnapshot) {
             if (userSnapshot.connectionState == ConnectionState.waiting) {
@@ -100,7 +519,13 @@ class _StudentHomePageState extends State<StudentHomePage> {
                   return const Center(
                       child: Text('Error loading driver data.'));
                 }
+<<<<<<< HEAD
                 Driver? driver = driverSnapshot.data;
+=======
+
+                Driver? driver = driverSnapshot.data;
+
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
                 return SingleChildScrollView(
                   child: Padding(
                     padding: EdgeInsets.all(screenWidth * 0.04),
@@ -109,6 +534,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
                       children: [
                         _buildProfileSection(user, screenWidth),
                         SizedBox(height: screenHeight * 0.03),
+<<<<<<< HEAD
                         if (driverId == null)
                           _buildDriverCardPlaceholder(screenWidth),
                         if (driver != null)
@@ -117,6 +543,15 @@ class _StudentHomePageState extends State<StudentHomePage> {
                         // _buildDriverCard(driver, screenWidth),
                         SizedBox(height: screenHeight * 0.02),
 
+=======
+                        if (driver != null && status == 'pending')
+                          _buildDriverCardPending(driver, screenWidth),
+                        if (driver != null && status != 'pending')
+                          _buildDriverCard(driver, screenWidth),
+                        if (driver == null)
+                          _buildDriverCardPlaceholder(screenWidth),
+                        SizedBox(height: screenHeight * 0.02),
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
                         _buildManageSection(screenWidth),
                       ],
                     ),
@@ -125,9 +560,13 @@ class _StudentHomePageState extends State<StudentHomePage> {
               },
             );
           },
+<<<<<<< HEAD
         ),
       ),
     );
+=======
+        )));
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
   }
 
   Stream<UserModel?> _userStream(String userId) {
@@ -151,11 +590,46 @@ class _StudentHomePageState extends State<StudentHomePage> {
             snapshot.exists ? Driver.fromMap(snapshot.data()!) : null);
   }
 
+<<<<<<< HEAD
+=======
+  Future<Driver?> _fetchDriver(String? driverId) async {
+    if (driverId == null || driverId.isEmpty) {
+      return null;
+    }
+    DocumentSnapshot<Map<String, dynamic>> driverSnapshot =
+        await FirebaseFirestore.instance
+            .collection('drivers')
+            .doc(driverId)
+            .get();
+    if (driverSnapshot.exists) {
+      return Driver.fromMap(driverSnapshot.data()!);
+    }
+    return null;
+  }
+
+  Future<UserModel?> _fetchUser(String userId) async {
+    return await FirebaseFirestore.instance
+        .collection('users')
+        .doc(userId)
+        .get()
+        .then((snapshot) =>
+            snapshot.exists ? UserModel.fromMap(snapshot.data()!) : null);
+  }
+
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
   Widget _buildProfileSection(UserModel user, double screenWidth) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.04),
       child: Row(
         children: [
+<<<<<<< HEAD
+=======
+          CircleAvatar(
+            radius: screenWidth * 0.08,
+            backgroundColor: Colors.grey[300],
+            child: const Icon(Icons.person, size: 35, color: Colors.grey),
+          ),
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
           SizedBox(width: screenWidth * 0.04),
           Expanded(
             child: Column(
@@ -171,6 +645,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
                 SizedBox(height: screenWidth * 0.01),
                 Row(
                   children: [
+<<<<<<< HEAD
                     SizedBox(
                       width: screenWidth * 0.75,
                       child: Text(
@@ -189,6 +664,14 @@ class _StudentHomePageState extends State<StudentHomePage> {
                       width: screenWidth * 0.75,
                       child: Text(
                         'Destination: ${user.dropOffLocation}',
+=======
+                    const Icon(Icons.pin_drop, size: 16, color: Colors.grey),
+                    SizedBox(width: screenWidth * 0.01),
+                    Container(
+                      width: screenWidth * 0.55,
+                      child: Text(
+                        '${user.address}',
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
                         style: TextStyle(color: Colors.grey[600]),
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -203,6 +686,90 @@ class _StudentHomePageState extends State<StudentHomePage> {
     );
   }
 
+<<<<<<< HEAD
+=======
+  Widget _buildDriverCard(Driver driver, double screenWidth) {
+    return Card(
+      margin: EdgeInsets.only(bottom: screenWidth * 0.04),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: BorderSide(color: Colors.grey[200]!),
+      ),
+      child: Padding(
+        padding: EdgeInsets.all(screenWidth * 0.04),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                CircleAvatar(
+                  radius: screenWidth * 0.08,
+                  backgroundColor: Colors.grey[200],
+                  child: const Icon(Icons.person, size: 35, color: Colors.grey),
+                ),
+                SizedBox(width: screenWidth * 0.04),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        driver.name,
+                        style: TextStyle(
+                          fontSize: screenWidth * 0.05,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: screenWidth * 0.02),
+                      Text(
+                        'Vehicle: ${driver.vehicleNumber}',
+                        style: TextStyle(color: Colors.grey[600]),
+                      ),
+                      SizedBox(height: screenWidth * 0.02),
+                      Text(
+                        'Available Seats: ${driver.seats}',
+                        style: TextStyle(color: Colors.grey[600]),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: screenWidth * 0.04),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                OutlinedButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(Icons.phone),
+                  label: const Text('Call'),
+                  style: OutlinedButton.styleFrom(
+                    foregroundColor: const Color(0xFF0047BA),
+                    side: const BorderSide(color: Color(0xFF0047BA)),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xFF0047BA),
+                    foregroundColor: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                  ),
+                  child: const Text('Track Your Driver'),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
   Widget _buildDriverCardPending(Driver driver, double screenWidth) {
     return Card(
       margin: EdgeInsets.only(bottom: screenWidth * 0.04),
@@ -265,6 +832,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
                     ),
                   ),
                 ),
+<<<<<<< HEAD
                 //Track your driver button
                 ElevatedButton.icon(
                   onPressed: () {
@@ -279,6 +847,22 @@ class _StudentHomePageState extends State<StudentHomePage> {
                     backgroundColor: const Color(0xFF0047BA),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
+=======
+                Container(
+                  padding: EdgeInsets.symmetric(
+                    vertical: screenWidth * 0.02,
+                    horizontal: screenWidth * 0.04,
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    'Pending',
+                    style: TextStyle(
+                      color: Colors.orange,
+                      fontWeight: FontWeight.bold,
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
                     ),
                   ),
                 ),
@@ -290,6 +874,98 @@ class _StudentHomePageState extends State<StudentHomePage> {
     );
   }
 
+<<<<<<< HEAD
+=======
+  Future<void> _cancelBooking(String bookingId) async {
+    try {
+      await _driverService.cancelBooking(bookingId);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Booking successfully canceled')),
+      );
+      _fetchUserBookings(); // Refresh bookings
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to cancel booking: $e')),
+      );
+    }
+  }
+
+  Widget _buildPendingRequestCard(double screenWidth) {
+    return StreamBuilder<DocumentSnapshot>(
+      stream: FirebaseFirestore.instance
+          .collection('pending_requests')
+          .doc(
+              'singleRequest') // assuming you have a specific doc for the pending request
+          .snapshots(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        if (snapshot.hasError) {
+          return const Center(child: Text('Error fetching request.'));
+        }
+        if (!snapshot.hasData || !snapshot.data!.exists) {
+          return const Center(child: Text('No pending requests.'));
+        }
+
+        var request = snapshot.data!.data() as Map<String, dynamic>;
+
+        return Card(
+          margin: EdgeInsets.symmetric(vertical: screenWidth * 0.04),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+            side: BorderSide(color: Colors.grey[200]!),
+          ),
+          child: Padding(
+            padding: EdgeInsets.all(screenWidth * 0.04),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Pending Request',
+                  style: TextStyle(
+                    fontSize: screenWidth * 0.05,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(height: screenWidth * 0.02),
+                Text('Name: ${request['name']}'),
+                Text('Pickup Point: ${request['pickup_point']}'),
+                Text('Destination: ${request['destination']}'),
+                SizedBox(height: screenWidth * 0.04),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle approve
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.green,
+                      ),
+                      child: const Text('Approve'),
+                    ),
+                    const SizedBox(width: 8),
+                    ElevatedButton(
+                      onPressed: () {
+                        // Handle decline
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.red,
+                      ),
+                      child: const Text('Decline'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
   Widget _buildDriverCardPlaceholder(double screenWidth) {
     return Container(
       height: screenWidth * 0.3,
@@ -321,6 +997,7 @@ class _StudentHomePageState extends State<StudentHomePage> {
         ),
         SizedBox(height: screenWidth * 0.03),
         Wrap(
+<<<<<<< HEAD
             spacing: screenWidth * 0.02,
             runSpacing: screenWidth * 0.02,
             children: [
@@ -440,6 +1117,59 @@ class _StudentHomePageState extends State<StudentHomePage> {
             ),
           )
         ],
+=======
+          spacing: screenWidth * 0.02,
+          runSpacing: screenWidth * 0.02,
+          children: [
+            _buildManageCard(
+              icon: Icons.search_outlined,
+              label: 'Find Driver',
+              onTap: () {
+                Navigator.pushNamed(context, '/availableDrivers');
+              },
+              screenWidth: screenWidth,
+            ),
+            _buildManageCard(
+              icon: Icons.location_on_outlined,
+              label: 'Set Pickup Point',
+              onTap: () {
+                Navigator.pushNamed(context, '/locationSelection');
+              },
+              screenWidth: screenWidth,
+            ),
+            _buildManageCard(
+              icon: Icons.skip_next_outlined,
+              label: 'Skip a Ride',
+              onTap: () {},
+              screenWidth: screenWidth,
+            ),
+            _buildManageCard(
+              icon: Icons.history_outlined,
+              label: 'Ride History',
+              onTap: () {},
+              screenWidth: screenWidth,
+            ),
+            //Section for the Driver Pending Request
+            userBookings.isEmpty
+                ? const Center(
+                    child: Text('No bookings found'),
+                  )
+                : ListTile(
+                    leading: const Icon(Icons.book_online),
+                    title: Text('Driver ID: ${userBookings[0]['driver_id']}'),
+                    subtitle: Text(
+                        'Status: ${userBookings[0]['status']}\nPickup: ${userBookings[0]['pickup_location']}\nDropoff: ${userBookings[0]['dropoff_location']}'),
+                    trailing: userBookings[0]['status'] == 'pending'
+                        ? ElevatedButton(
+                            onPressed: () =>
+                                _cancelBooking(userBookings[0]['id']),
+                            child: const Text('Cancel'),
+                          )
+                        : null,
+                  ),
+          ],
+        ),
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
       ],
     );
   }
@@ -505,10 +1235,17 @@ class _StudentHomePageState extends State<StudentHomePage> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+<<<<<<< HEAD
                 const CircleAvatar(
                   radius: 40,
                   backgroundColor: Colors.white,
                   child: Icon(
+=======
+                CircleAvatar(
+                  radius: 40,
+                  backgroundColor: Colors.white,
+                  child: const Icon(
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
                     Icons.person,
                     size: 50,
                     color: Colors.blue,

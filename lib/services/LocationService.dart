@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import 'dart:developer';
 
+=======
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
 import 'package:firebase_database/firebase_database.dart';
 import 'package:geolocator/geolocator.dart';
 
@@ -11,6 +14,7 @@ class LocationService {
   final DatabaseReference _studentRef =
       FirebaseDatabase.instance.ref().child('studentLocations');
 
+<<<<<<< HEAD
   Future<void> allocateDriverToStudent(
       String driverId,
       String studentId,
@@ -26,6 +30,19 @@ class LocationService {
       log('Driver allocated successfully to student.');
     } catch (e) {
       
+=======
+  Future<void> allocateDriverToStudent(String driverId, String studentId,
+      Map<String, dynamic> coordinates) async {
+    try {
+      await _ridesRef.child(driverId).child(studentId).set({
+        'coordinates': coordinates,
+        'status': 'active',
+        'allocatedAt': DateTime.now().toIso8601String(),
+      });
+      print('Driver allocated successfully to student.');
+    } catch (e) {
+      print('Error allocating driver: $e');
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
       throw Exception('Failed to allocate driver to student: $e');
     }
   }
@@ -39,7 +56,10 @@ class LocationService {
           final studentData = e.value as Map<String, dynamic>;
           return {
             'studentId': e.key,
+<<<<<<< HEAD
             
+=======
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
             'coordinates': studentData['coordinates'],
             'status': studentData['status'],
           };

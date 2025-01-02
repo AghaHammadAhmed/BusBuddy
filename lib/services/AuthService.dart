@@ -1,7 +1,12 @@
 // ignore_for_file: use_build_context_synchronously
 
+<<<<<<< HEAD
 
 
+=======
+import 'dart:convert';
+import 'dart:io';
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -59,7 +64,11 @@ class UserService {
           .collection('users')
           .doc(userCredential.user!.uid)
           .get();
+<<<<<<< HEAD
       
+=======
+      print(userDoc.exists);
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
       if (userDoc.exists) {
         String role = userDoc.get('role');
 
@@ -73,8 +82,13 @@ class UserService {
               .get();
           currentAddress = userDoc.get('address');
 
+<<<<<<< HEAD
           // print(driverQuery);
          
+=======
+          print(driverQuery);
+          print(userCredential.user!.uid);
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
           if (driverQuery.docs.isNotEmpty) {
             Navigator.pushReplacementNamed(context, '/driverHome');
             print("Driver document exists");
@@ -113,22 +127,38 @@ class UserService {
       }
       return null;
     } catch (e) {
+<<<<<<< HEAD
       Exception(e);
+=======
+      print("Error fetching user: $e");
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
       return null;
     }
   }
 
   /// Updates user details in Firestore.
+<<<<<<< HEAD
  Future<String> updateUser(String userID, Map<String, dynamic> data) async {
     try {
       await _firestore.collection('users').doc(userID).update(data);
+=======
+  Future<String> updateUser(UserModel user) async {
+    try {
+      await _firestore
+          .collection('users')
+          .doc(user.userID)
+          .update(user.toJson());
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
       return "User updated successfully";
     } catch (e) {
       return "An error occurred while updating user: $e";
     }
   }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
   /// Deletes a user account from both Firebase Authentication and Firestore.
   Future<String> deleteUser(String userID) async {
     try {

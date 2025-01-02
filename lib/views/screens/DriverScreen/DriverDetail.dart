@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // ignore_for_file: use_build_context_synchronously
+=======
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 

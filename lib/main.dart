@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 // ignore_for_file: prefer_const_constructors
 import 'package:busbuddy/views/screens/StudentScreen/OngoingTrip.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+=======
+import 'package:busbuddy/views/screens/DriverScreen/DriverMapView.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
 import 'views/navigation_bar.dart';
 import 'views/screens/AuthScreen/SignInScreen.dart';
 import 'views/screens/StudentScreen/AvailableDriversScreen.dart';
 import 'views/screens/DriverScreen/DriverDetail.dart';
+<<<<<<< HEAD
 import 'views/screens/StudentScreen/DriverBookingDetail.dart';
 import 'views/screens/StudentScreen/RideHistory.dart';
 import 'views/screens/StudentScreen/ScheduleSreen.dart';
@@ -15,11 +22,23 @@ import 'views/screens/AuthScreen/SignUpScreen.dart';
 import 'views/screens/StudentScreen/StudentHomePage.dart';
 import 'views/screens/StudentScreen/LocationSelection.dart';
 import "firebase_options.dart";
+=======
+import 'views/screens/StudentScreen/TrackDriver.dart';
+import 'views/screens/DriverScreen/DriverHomePage.dart';
+import 'views/screens/StudentScreen/PaymentScreen.dart';
+import 'views/screens/AuthScreen/SignUpScreen.dart';
+import 'views/screens/StudentScreen/StudentHomePage.dart';
+import 'views/screens/StudentScreen/LocationSelection.dart';
+import 'views/screens/ProfileManagment/ProfileManagment.dart';
+import "firebase_options.dart";
+
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+<<<<<<< HEAD
   //  final notificationService = NotificationService();
   // await notificationService.initialize();
 
@@ -37,6 +56,13 @@ class MyApp extends StatelessWidget {
     required this.isLoggedIn,
     this.userType,
   });
+=======
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +74,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
+<<<<<<< HEAD
         '/availableDrivers': (context) => const AvailableDriversScreen(),
         '/locationSelection': (context) => const LocationPickerScreen(),
         '/DriverBookingDetail': (context) => DriverBookingDetail(),
@@ -82,3 +109,19 @@ class MyApp extends StatelessWidget {
   }
 }
 
+=======
+        '/login': (context) => const SignInScreen(),
+        "/signUp": (context) => const SignUpScreen(),
+        '/mainNavigation': (context) => MainNavigation(),
+        '/studentHome': (context) => const StudentHomePage(),
+        '/driverHome': (context) => const DriverHomePage(),
+        '/locationSelection': (context) => const LocationPickerScreen(),
+        '/trackDriver': (context) => const TrackDriver(),
+        '/availableDrivers': (context) => const AvailableDriversScreen(),
+        '/driverDetail': (context) => const DriverDetailsScreen(),
+      },
+      home: const SignInScreen(),
+    );
+  }
+}
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
