@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // ignore_for_file: prefer_const_constructors
 import 'package:busbuddy/services/NotificationService.dart';
 import 'package:busbuddy/views/screens/StudentScreen/OngoingTrip.dart';
@@ -39,6 +40,18 @@ class MyApp extends StatelessWidget {
     required this.isLoggedIn,
     this.userType,
   });
+=======
+import 'package:flutter/material.dart';
+
+import 'views/screens/LocationSelection.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +61,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
+<<<<<<< HEAD
       initialRoute: '/',
       routes: {
         '/availableDrivers': (context) => const AvailableDriversScreen(),
@@ -82,4 +96,9 @@ class MyApp extends StatelessWidget {
         return const SignInScreen();
     }
   }
+=======
+      home: MapSample(),
+    );
+  }
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
 }

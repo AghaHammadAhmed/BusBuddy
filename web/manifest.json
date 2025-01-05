@@ -1,6 +1,11 @@
 {
+<<<<<<< HEAD
     "name": "busbuddy",
     "short_name": "busbuddy",
+=======
+    "name": "bus_buddy",
+    "short_name": "bus_buddy",
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

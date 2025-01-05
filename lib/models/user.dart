@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class UserModel {
   final String userID;
   final String name;
@@ -89,12 +90,38 @@ class UserModel {
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
     return UserModel(
+=======
+class User {
+  final String userID;
+  final String name;
+  final String email;
+  final int age;
+  final String gender;
+  final String phone;
+  final String address;
+  final String password;
+
+  User({
+    required this.userID,
+    required this.name,
+    required this.email,
+    required this.age,
+    required this.gender,
+    required this.phone,
+    required this.address,
+    required this.password,
+  });
+
+  factory User.fromJson(Map<String, dynamic> json) {
+    return User(
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
       userID: json['userID'],
       name: json['name'],
       email: json['email'],
       age: json['age'],
       gender: json['gender'],
       phone: json['phone'],
+<<<<<<< HEAD
       school: json['school'],
       address: json['address'],
       dropOffLocation: json['dropOffLocation'],
@@ -109,6 +136,10 @@ class UserModel {
           json['createdAt'] != null ? DateTime.parse(json['createdAt']) : null,
       updatedAt:
           json['updatedAt'] != null ? DateTime.parse(json['updatedAt']) : null,
+=======
+      address: json['address'],
+      password: json['password'],
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
     );
   }
 
@@ -121,6 +152,7 @@ class UserModel {
       'gender': gender,
       'phone': phone,
       'address': address,
+<<<<<<< HEAD
       'dropOffLocation': dropOffLocation,
       'profilePicture': profilePicture,
       'pickupLatitude': pickupLatitude,
@@ -131,6 +163,9 @@ class UserModel {
       'currentDriverId': currentDriverId,
       'createdAt': createdAt?.toIso8601String(),
       'updatedAt': updatedAt?.toIso8601String(),
+=======
+      'password': password,
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
     };
   }
 }

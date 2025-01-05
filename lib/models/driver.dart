@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Driver {
   final String driverID;
   final String userID;
+=======
+class Driver {
+  final String driverID;
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
   final String name;
   final int age;
   final String phone;
   final String drivingLicenseNumber;
+<<<<<<< HEAD
   final double? rating; // Nullable
   final int seats;
   final double? monthlyFee; // Nullable
@@ -15,6 +21,9 @@ class Driver {
   final bool isActive; // Whether the driver is available for booking
   final DateTime? createdAt;
   final DateTime? updatedAt;
+=======
+  final String password;
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
 
   Driver({
     required this.driverID,
@@ -22,6 +31,7 @@ class Driver {
     required this.age,
     required this.phone,
     required this.drivingLicenseNumber,
+<<<<<<< HEAD
     this.rating,
     this.seats = 0,
     this.monthlyFee,
@@ -91,6 +101,19 @@ class Driver {
               ? (json['updatedAt'] as Timestamp).toDate()
               : DateTime.parse(json['updatedAt']))
           : null,
+=======
+    required this.password,
+  });
+
+  factory Driver.fromJson(Map<String, dynamic> json) {
+    return Driver(
+      driverID: json['driverID'],
+      name: json['name'],
+      age: json['age'],
+      phone: json['phone'],
+      drivingLicenseNumber: json['drivingLicenseNumber'],
+      password: json['password'],
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
     );
   }
 
@@ -101,6 +124,7 @@ class Driver {
       'age': age,
       'phone': phone,
       'drivingLicenseNumber': drivingLicenseNumber,
+<<<<<<< HEAD
       'rating': rating,
       'seats': seats,
       'monthlyFee': monthlyFee,
@@ -110,6 +134,9 @@ class Driver {
       'isActive': isActive,
       'createdAt': createdAt?.toIso8601String(),
       'updatedAt': updatedAt?.toIso8601String(),
+=======
+      'password': password,
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
     };
   }
 }

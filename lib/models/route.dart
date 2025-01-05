@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
   // Future<void> _bookDriver(String driverId) async {
   //   final TextEditingController durationController = TextEditingController();
@@ -150,3 +151,6 @@
   //     ),
   //   );
   // }
+=======
+// Define your data model here
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
