@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
-# busbuddy
+# SecureShuttle
 
 A new Flutter project.
 
@@ -17,9 +17,9 @@ For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 =======
-README for BusBuddy
-BusBuddy - Intelligent Van Tracking and Management System
-BusBuddy is a safe, efficient, and user-friendly solution designed to revolutionize daily commuting for parents, students, and employees. With real-time tracking, optimized routes, and smart notifications, BusBuddy ensures reliable and secure transportation management.
+README for SecureShuttle
+SecureShuttle - Intelligent Van Tracking and Management System
+SecureShuttle is a safe, efficient, and user-friendly solution designed to revolutionize daily commuting for parents, students, and employees. With real-time tracking, optimized routes, and smart notifications, SecureShuttle ensures reliable and secure transportation management.
 
 Features
 User Module (Parents/Students/Employees)
@@ -44,7 +44,7 @@ Analytics: Monthly reports on efficiency, payments, and driver performance.
 =======
 <<<<<<< HEAD
 >>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
-# busbuddy
+# SecureShuttle
 
 A new Flutter project.
 
@@ -63,13 +63,13 @@ samples, guidance on mobile development, and a full API reference.
 <<<<<<< HEAD
 =======
 =======
-### **README for BusBuddy**
+### **README for SecureShuttle**
 
 ---
 
-# **BusBuddy - Intelligent Van Tracking and Management System**
+# **SecureShuttle - Intelligent Van Tracking and Management System**
 
-**BusBuddy** is a safe, efficient, and user-friendly solution designed to revolutionize daily commuting for parents, students, and employees. With real-time tracking, optimized routes, and smart notifications, BusBuddy ensures reliable and secure transportation management.
+**SecureShuttle** is a safe, efficient, and user-friendly solution designed to revolutionize daily commuting for parents, students, and employees. With real-time tracking, optimized routes, and smart notifications, SecureShuttle ensures reliable and secure transportation management.
 
 ---
 
@@ -116,8 +116,8 @@ samples, guidance on mobile development, and a full API reference.
 ### **Steps**
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/BusBuddy.git
-   cd BusBuddy
+   git clone https://github.com/yourusername/SecureShuttle.git
+   cd SecureShuttle
    ```
 2. Set up Firebase:
    - Create a new project on [Firebase Console](https://console.firebase.google.com/).  
@@ -168,7 +168,7 @@ samples, guidance on mobile development, and a full API reference.
 ---
 
 ## **Contributing**
-We welcome contributions to improve BusBuddy!  
+We welcome contributions to improve SecureShuttle!  
 1. Fork the repository.  
 2. Create a new branch for your feature: `git checkout -b feature-name`.  
 3. Commit your changes: `git commit -m "Add feature description"`.  
@@ -184,8 +184,8 @@ This project is licensed under the MIT License.
 
 ## **Contact**
 For any queries or feedback, please contact:  
-- **Email**: support@busbuddy.com  
-- **GitHub**: [https://github.com/yourusername/BusBuddy](https://github.com/yourusername/BusBuddy)  
+- **Email**: support@SecureShuttle.com  
+- **GitHub**: [https://github.com/yourusername/SecureShuttle](https://github.com/yourusername/SecureShuttle)  
 >>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
 >>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
 >>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
