@@ -6,10 +6,14 @@
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<string>Busbuddy</string>
 =======
 	<string>Bus Buddy</string>
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+	<string>Busbuddy</string>
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -18,10 +22,14 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<string>busbuddy</string>
 =======
 	<string>bus_buddy</string>
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+	<string>busbuddy</string>
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -50,10 +58,15 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 =======
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>

@@ -68,6 +68,7 @@ class NotificationService {
         ?.createNotificationChannel(channel);
   }
 
+<<<<<<< HEAD
    Future<void> showNotification(
       {required int id, required String title, required String body}) async {
     const AndroidNotificationDetails androidDetails =
@@ -84,6 +85,8 @@ class NotificationService {
     await _localNotifications.show(id, title, body, details);
   }
 
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
   void _handleForegroundMessage(RemoteMessage message) {
     RemoteNotification? notification = message.notification;
     AndroidNotification? android = notification?.android;

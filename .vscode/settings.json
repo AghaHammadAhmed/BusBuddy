@@ -1,10 +1,22 @@
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
   "git.ignoreLimitWarning": true,
   "editor.accessibilityPageSize": 30,
   "editor.fontSize": 16
 =======
+<<<<<<< HEAD
   "java.compile.nullAnalysis.mode": "disabled",
   "java.configuration.updateBuildConfiguration": "disabled"
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+  "git.ignoreLimitWarning": true
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+  "git.ignoreLimitWarning": true
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 }

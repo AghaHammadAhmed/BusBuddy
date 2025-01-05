@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 def localProperties = new Properties()
 def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
@@ -11,15 +12,22 @@ plugins {
     id "dev.flutter.flutter-gradle-plugin"
 }
 
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 def localProperties = new Properties()
-def localPropertiesFile = rootProject.file("local.properties")
+def localPropertiesFile = rootProject.file('local.properties')
 if (localPropertiesFile.exists()) {
+<<<<<<< HEAD
     localPropertiesFile.withReader("UTF-8") { reader ->
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+    localPropertiesFile.withReader('UTF-8') { reader ->
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
         localProperties.load(reader)
     }
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 def flutterRoot = localProperties.getProperty('flutter.sdk')
 if (flutterRoot == null) {
@@ -59,26 +67,61 @@ android {
 def flutterVersionCode = localProperties.getProperty("flutter.versionCode")
 if (flutterVersionCode == null) {
     flutterVersionCode = "1"
+=======
+def flutterRoot = localProperties.getProperty('flutter.sdk')
+if (flutterRoot == null) {
+    throw new GradleException("Flutter SDK not found. Define location with flutter.sdk in the local.properties file.")
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 }
 
-def flutterVersionName = localProperties.getProperty("flutter.versionName")
-if (flutterVersionName == null) {
-    flutterVersionName = "1.0"
+def flutterVersionCode = localProperties.getProperty('flutter.versionCode')
+if (flutterVersionCode == null) {
+    flutterVersionCode = '1'
 }
+
+def flutterVersionName = localProperties.getProperty('flutter.versionName')
+if (flutterVersionName == null) {
+    flutterVersionName = '1.0'
+}
+
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    namespace = "com.example.bus_buddy"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+<<<<<<< HEAD
+    compileSdkVersion 34
+=======
+    compileSdkVersion 33
+<<<<<<< HEAD
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+    ndkVersion flutter.ndkVersion
 
     compileOptions {
+<<<<<<< HEAD
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
     }
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
+<<<<<<< HEAD
 <<<<<<< HEAD
         applicationId "com.example.busbuddy"
         // You can update the following values to match your application needs.
@@ -98,6 +141,17 @@ android {
         versionCode = flutterVersionCode.toInteger()
         versionName = flutterVersionName
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+        applicationId "com.example.busbuddy"
+        // You can update the following values to match your application needs.
+        // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-build-configuration.
+        minSdkVersion 20
+        targetSdkVersion flutter.targetSdkVersion
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+        multiDexEnabled true
+
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
     }
 
     buildTypes {
@@ -105,23 +159,33 @@ android {
             // TODO: Add your own signing config for the release build.
             // Signing with the debug keys for now, so `flutter run --release` works.
 <<<<<<< HEAD
+<<<<<<< HEAD
             signingConfig signingConfigs.debug
 =======
             signingConfig = signingConfigs.debug
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+            signingConfig signingConfigs.debug
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
         }
     }
 }
 
 flutter {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
     source '../..'
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.android.support:multidex:1.0.3'
+<<<<<<< HEAD
 =======
     source = "../.."
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 }

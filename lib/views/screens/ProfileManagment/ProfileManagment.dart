@@ -731,6 +731,7 @@ import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
@@ -782,7 +783,412 @@ class _ProfilePageState extends State<ProfilePage> {
       );
     }
 =======
+<<<<<<< HEAD
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+=======
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({Key? key}) : super(key: key);
+
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  final _formKey = GlobalKey<FormState>();
+  bool _isEditing = false;
+
+  String? _base64Image;
+  // Form controllers
+  final _nameController = TextEditingController(text: 'John Doe');
+  final _ageController = TextEditingController(text: '22');
+  final _emailController = TextEditingController(text: 'john.doe@email.com');
+  final _phoneController = TextEditingController(text: '+1 234 567 8900');
+  final _schoolController = TextEditingController(text: 'Stanford University');
+  String _selectedGender = 'Male'; // Default value
+
+  Future<void> _pickImage() async {
+    final ImagePicker picker = ImagePicker();
+    try {
+      final XFile? image = await picker.pickImage(
+        source: ImageSource.gallery,
+        maxWidth: 512, // Reduce image size
+        maxHeight: 512,
+        imageQuality: 75, // Compress image
+      );
+
+      if (image != null) {
+        final bytes = await image.readAsBytes();
+        setState(() {
+          _base64Image = base64Encode(bytes);
+        });
+
+        
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(FirebaseAuth.instance.currentUser!.uid)
+            .update({'profilePicture': _base64Image});
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error picking image: $e')),
+      );
+    }
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+
+class ProfilePage extends StatefulWidget {
+  const ProfilePage({Key? key}) : super(key: key);
+
+  @override
+  State<ProfilePage> createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage> {
+  final _formKey = GlobalKey<FormState>();
+  bool _isEditing = false;
+
+  String? _base64Image;
+  // Form controllers
+  final _nameController = TextEditingController(text: 'John Doe');
+  final _ageController = TextEditingController(text: '22');
+  final _emailController = TextEditingController(text: 'john.doe@email.com');
+  final _phoneController = TextEditingController(text: '+1 234 567 8900');
+  final _schoolController = TextEditingController(text: 'Stanford University');
+  String _selectedGender = 'Male'; // Default value
+
+  Future<void> _pickImage() async {
+    final ImagePicker picker = ImagePicker();
+    try {
+      final XFile? image = await picker.pickImage(
+        source: ImageSource.gallery,
+        maxWidth: 512, // Reduce image size
+        maxHeight: 512,
+        imageQuality: 75, // Compress image
+      );
+
+      if (image != null) {
+        final bytes = await image.readAsBytes();
+        setState(() {
+          _base64Image = base64Encode(bytes);
+        });
+
+        
+        await FirebaseFirestore.instance
+            .collection('users')
+            .doc(FirebaseAuth.instance.currentUser!.uid)
+            .update({'profilePicture': _base64Image});
+      }
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Error picking image: $e')),
+      );
+    }
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _ageController.dispose();
+    _emailController.dispose();
+    _phoneController.dispose();
+    _schoolController.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+    final bool isSmallScreen = screenSize.width < 600;
+
+    return Scaffold(
+      body: Container(
+        decoration: BoxDecoration(),
+        child: SafeArea(
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal: screenSize.width * 0.05,
+              vertical: screenSize.height * 0.02,
+            ),
+            child: Form(
+              key: _formKey,
+              child: Column(
+                children: [
+                  // Custom top bar
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                    
+                      Center(
+                        child: Text(
+                          'Profile',
+                          style: TextStyle(
+                            fontSize: isSmallScreen ? 28 : 32,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black,
+                          ),
+                        ),
+                      ),
+                      IconButton(
+                        icon: Icon(
+                          _isEditing ? Icons.check : Icons.edit,
+                          color: Colors.blue.shade700,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            if (_isEditing &&
+                                _formKey.currentState!.validate()) {
+                              // Save the form
+                              _isEditing = false;
+                            } else {
+                              _isEditing = true;
+                            }
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+
+                  // Profile Image Section
+                  GestureDetector(
+                    onTap: _isEditing ? _pickImage : null,
+                    child: Stack(
+                      alignment: Alignment.bottomRight,
+                      children: [
+                        Container(
+                          width: isSmallScreen ? 120 : 150,
+                          height: isSmallScreen ? 120 : 150,
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                              color: Colors.white,
+                              width: 4,
+                            ),
+                          ),
+                          child: ClipOval(
+                            child: _base64Image != null
+                                ? Image.memory(
+                                    base64Decode(_base64Image!),
+                                    fit: BoxFit.cover,
+                                  )
+                                : Image.network(
+                                    'https://placeholder.com/150',
+                                    fit: BoxFit.cover,
+                                  ),
+                          ),
+                        ),
+                        if (_isEditing)
+                          CircleAvatar(
+                            radius: isSmallScreen ? 18 : 22,
+                            backgroundColor: Colors.blue.shade700,
+                            child: Icon(
+                              Icons.camera_alt,
+                              color: Colors.white,
+                              size: isSmallScreen ? 18 : 22,
+                            ),
+                          ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: screenSize.height * 0.005),
+
+                  // Profile Information Card
+                  Expanded(
+                    child: Container(
+                      width: double.infinity,
+                      padding: EdgeInsets.only(
+                        left: isSmallScreen ? 16 : 20,
+                        right: isSmallScreen ? 16 : 20,
+                        top: isSmallScreen ? 5 : 20,
+                        bottom: isSmallScreen ? 5 : 20,
+                      ),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withOpacity(0.05),
+                            spreadRadius: 1,
+                            blurRadius: 10,
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Personal Information',
+                            style: TextStyle(
+                              fontSize: isSmallScreen ? 18 : 20,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.blue.shade700,
+                            ),
+                          ),
+                          SizedBox(height: 16),
+                          _buildEditableField(
+                            label: 'Full Name',
+                            controller: _nameController,
+                            isEditing: _isEditing,
+                          ),
+                          _buildEditableField(
+                            label: 'Age',
+                            controller: _ageController,
+                            isEditing: _isEditing,
+                            keyboardType: TextInputType.number,
+                          ),
+                          _buildEditableField(
+                            label: 'Email',
+                            controller: _emailController,
+                            isEditing: _isEditing,
+                            keyboardType: TextInputType.emailAddress,
+                          ),
+                          _buildEditableField(
+                            label: 'Phone',
+                            controller: _phoneController,
+                            isEditing: _isEditing,
+                            keyboardType: TextInputType.phone,
+                          ),
+                          _buildEditableField(
+                            label: 'School',
+                            controller: _schoolController,
+                            isEditing: _isEditing,
+                          ),
+                          _buildGenderSelector(isEditing: _isEditing),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildEditableField({
+    required String label,
+    required TextEditingController controller,
+    required bool isEditing,
+    TextInputType keyboardType = TextInputType.text,
+  }) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 14,
+              color: Colors.grey.shade600,
+            ),
+          ),
+          if (isEditing)
+            TextFormField(
+              controller: controller,
+              keyboardType: keyboardType,
+              decoration: InputDecoration(
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Colors.grey.shade300),
+                ),
+              ),
+              validator: (value) {
+                if (value == null || value.isEmpty) {
+                  return 'This field is required';
+                }
+                return null;
+              },
+            )
+          else
+            Padding(
+              padding: const EdgeInsets.only(top: 4),
+              child: Text(
+                controller.text,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildGenderSelector({required bool isEditing}) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Gender',
+          style: TextStyle(
+            fontSize: 14,
+            color: Colors.grey.shade600,
+          ),
+        ),
+        if (isEditing)
+          Container(
+            padding: const EdgeInsets.only(top: 8),
+            child: DropdownButtonFormField<String>(
+              value: _selectedGender,
+              decoration: InputDecoration(
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(color: Colors.grey.shade300),
+                ),
+              ),
+              items: ['Male', 'Female', 'Other']
+                  .map((gender) => DropdownMenuItem(
+                        value: gender,
+                        child: Text(gender),
+                      ))
+                  .toList(),
+              onChanged: (value) {
+                setState(() {
+                  _selectedGender = value!;
+                });
+              },
+            ),
+          )
+        else
+          Padding(
+            padding: const EdgeInsets.only(top: 4),
+            child: Text(
+              _selectedGender,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+      ],
+    );
+  }
+=======
+import 'dart:convert';
+
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+
+import '../../../models/user.dart';
+import '../../../services/AuthService.dart';
 
 class EditProfileScreen extends StatefulWidget {
   const EditProfileScreen({Key? key}) : super(key: key);
@@ -801,15 +1207,58 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
   final _schoolController = TextEditingController();
   final _addressController = TextEditingController();
 
-  // Sample initial data - in real app, would be passed in or fetched
+  final UserService _userService = UserService();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  String? _profilePictureBase64;
   @override
   void initState() {
     super.initState();
-    _nameController.text = "John Doe";
-    _emailController.text = "john.doe@example.com";
-    _phoneController.text = "+1 (555) 123-4567";
+    // _nameController.text = "John Doe";
+    // _emailController.text = "john.doe@example.com";
+    // _phoneController.text = "+1 (555) 123-4567";
     _schoolController.text = "University of Example";
-    _addressController.text = "123 Student Street, City";
+    // _addressController.text = "123 Student Street, City";
+    _loadProfile();
+  }
+
+  Future<void> _loadProfile() async {
+    try {
+      final userID = _auth.currentUser!.uid;
+      UserModel? user = await _userService.fetchUser(userID);
+      if (user != null) {
+        _nameController.text = user.name;
+        _emailController.text = user.email;
+        _phoneController.text = user.phone;
+        // _schoolController.text = user.school;
+        _addressController.text = user.address!;
+      }
+
+      // String? profilePicture = await _userService.fetchProfilePicture(userID);
+      // if (profilePicture != null) {
+      //   setState(() {
+      //     _profilePictureBase64 = profilePicture;
+      //   });
+      // }
+    } catch (e) {
+      print(e);
+    }
+  }
+
+  Future<void> _updateProfilePicture() async {
+    try {
+      final userID = _auth.currentUser!.uid;
+      // await _userService.uploadProfilePicture(userID);
+      print("Profile picture uploaded successfully");
+      // Reload profile picture after upload
+      // String? profilePicture = await _userService.fetchProfilePicture(userID);
+      // if (profilePicture != null) {
+      //   setState(() {
+      //     _profilePictureBase64 = profilePicture;
+      //   });
+      // }
+    } catch (e) {
+      print("Error updating profile picture: $e");
+    }
   }
 
   @override
@@ -821,7 +1270,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         elevation: 0,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.black),
-          onPressed: () => Navigator.of(context).pop(),
+          onPressed: () {},
         ),
         title: const Text(
           'Edit Profile',
@@ -836,7 +1285,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         child: SingleChildScrollView(
           child: Padding(
             padding:
-                const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
+                const EdgeInsets.symmetric(horizontal: 24.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
@@ -848,25 +1297,33 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                     CircleAvatar(
                       radius: 60,
                       backgroundColor: Colors.grey[200],
-                      child: const Icon(
-                        Icons.person,
-                        size: 60,
-                        color: Colors.grey,
-                      ),
+                      backgroundImage: _profilePictureBase64 != null
+                          ? MemoryImage(base64Decode(_profilePictureBase64!))
+                          : null,
+                      child: _profilePictureBase64 == null
+                          ? const Icon(
+                              Icons.person,
+                              size: 60,
+                              color: Colors.grey,
+                            )
+                          : null,
                     ),
                     Positioned(
                       bottom: 0,
                       right: 0,
-                      child: Container(
-                        padding: const EdgeInsets.all(4),
-                        decoration: const BoxDecoration(
-                          color: Color(0xFF0047BA),
-                          shape: BoxShape.circle,
-                        ),
-                        child: const Icon(
-                          Icons.camera_alt,
-                          color: Colors.white,
-                          size: 20,
+                      child: GestureDetector(
+                        onTap: _updateProfilePicture,
+                        child: Container(
+                          padding: const EdgeInsets.all(4),
+                          decoration: const BoxDecoration(
+                            color: Color(0xFF0047BA),
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Icon(
+                            Icons.camera_alt,
+                            color: Colors.white,
+                            size: 20,
+                          ),
                         ),
                       ),
                     ),
@@ -1026,7 +1483,11 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
         style: TextStyle(fontSize: 16),
       ),
     );
+<<<<<<< HEAD
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
   }
 
   @override
@@ -1328,5 +1789,13 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
     _addressController.dispose();
     super.dispose();
   }
+<<<<<<< HEAD
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+<<<<<<< HEAD
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 }

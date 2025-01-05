@@ -4,18 +4,25 @@
 	classes = {
 	};
 <<<<<<< HEAD
+<<<<<<< HEAD
 	objectVersion = 50;
 =======
 	objectVersion = 54;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+	objectVersion = 50;
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		331C808B294A63AB00263BE5 /* RunnerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331C807B294A618700263BE5 /* RunnerTests.swift */; };
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858FAE1ED2DC5600515810 /* AppDelegate.swift */; };
 		97C146FC1CF9000F007C117D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FA1CF9000F007C117D /* Main.storyboard */; };
@@ -23,6 +30,7 @@
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 /* Begin PBXCopyFilesBuildPhase section */
 		9705A1C41CF9048500538489 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -53,10 +63,13 @@
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		331C807B294A618700263BE5 /* RunnerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunnerTests.swift; sourceTree = "<group>"; };
 		331C8081294A63A400263BE5 /* RunnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RunnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
 		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +95,7 @@
 
 /* Begin PBXGroup section */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		331C8082294A63A400263BE5 /* RunnerTests */ = {
 			isa = PBXGroup;
@@ -92,6 +106,8 @@
 			sourceTree = "<group>";
 		};
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 		9740EEB11CF90186004384FC /* Flutter */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,9 +126,12 @@
 				97C146F01CF9000F007C117D /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				331C8082294A63A400263BE5 /* RunnerTests */,
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 			);
 			sourceTree = "<group>";
 		};
@@ -121,9 +140,12 @@
 			children = (
 				97C146EE1CF9000F007C117D /* Runner.app */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				331C8081294A63A400263BE5 /* RunnerTests.xctest */,
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -147,6 +169,7 @@
 
 /* Begin PBXNativeTarget section */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		331C8080294A63A400263BE5 /* RunnerTests */ = {
 			isa = PBXNativeTarget;
@@ -166,6 +189,8 @@
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 		97C146ED1CF9000F007C117D /* Runner */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */;
@@ -193,6 +218,7 @@
 			isa = PBXProject;
 			attributes = {
 <<<<<<< HEAD
+<<<<<<< HEAD
 				LastUpgradeCheck = 1300;
 				ORGANIZATIONNAME = "";
 				TargetAttributes = {
@@ -206,6 +232,11 @@
 						TestTargetID = 97C146ED1CF9000F007C117D;
 					};
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+				LastUpgradeCheck = 1300;
+				ORGANIZATIONNAME = "";
+				TargetAttributes = {
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 					97C146ED1CF9000F007C117D = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 1100;
@@ -227,14 +258,18 @@
 			targets = (
 				97C146ED1CF9000F007C117D /* Runner */,
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				331C8080294A63A400263BE5 /* RunnerTests */,
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 		331C807F294A63A400263BE5 /* Resources */ = {
@@ -245,6 +280,8 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 		97C146EC1CF9000F007C117D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -262,17 +299,23 @@
 		3B06AD1E1E4923F5004D2608 /* Thin Binary */ = {
 			isa = PBXShellScriptBuildPhase;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 			alwaysOutOfDate = 1;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				"${TARGET_BUILD_DIR}/${INFOPLIST_PATH}",
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 			);
 			name = "Thin Binary";
 			outputPaths = (
@@ -284,9 +327,12 @@
 		9740EEB61CF901F6004384FC /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 			alwaysOutOfDate = 1;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -303,6 +349,7 @@
 
 /* Begin PBXSourcesBuildPhase section */
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 		331C807D294A63A400263BE5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -313,6 +360,8 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 		97C146EA1CF9000F007C117D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,6 +374,7 @@
 /* End PBXSourcesBuildPhase section */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 /* Begin PBXTargetDependency section */
 		331C8086294A63A400263BE5 /* PBXTargetDependency */ = {
@@ -335,6 +385,8 @@
 /* End PBXTargetDependency section */
 
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 /* Begin PBXVariantGroup section */
 		97C146FA1CF9000F007C117D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -360,9 +412,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -393,9 +448,12 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -405,10 +463,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 =======
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
@@ -431,10 +493,14 @@
 					"@executable_path/Frameworks",
 				);
 <<<<<<< HEAD
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.busbuddy;
 =======
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.busBuddy;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.busbuddy;
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -442,6 +508,7 @@
 			};
 			name = Profile;
 		};
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 		331C8088294A63A400263BE5 /* Debug */ = {
@@ -492,14 +559,19 @@
 			name = Profile;
 		};
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 		97C147031CF9000F007C117D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -530,9 +602,12 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -548,10 +623,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 =======
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -564,9 +643,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -597,9 +679,12 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -609,10 +694,14 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 <<<<<<< HEAD
+<<<<<<< HEAD
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 =======
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
@@ -637,10 +726,14 @@
 					"@executable_path/Frameworks",
 				);
 <<<<<<< HEAD
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.busbuddy;
 =======
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.busBuddy;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.busbuddy;
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -663,10 +756,14 @@
 					"@executable_path/Frameworks",
 				);
 <<<<<<< HEAD
+<<<<<<< HEAD
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.busbuddy;
 =======
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.busBuddy;
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.busbuddy;
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -677,6 +774,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+<<<<<<< HEAD
 <<<<<<< HEAD
 =======
 		331C8087294A63A400263BE5 /* Build configuration list for PBXNativeTarget "RunnerTests" */ = {
@@ -690,6 +788,8 @@
 			defaultConfigurationName = Release;
 		};
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 		97C146E91CF9000F007C117D /* Build configuration list for PBXProject "Runner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

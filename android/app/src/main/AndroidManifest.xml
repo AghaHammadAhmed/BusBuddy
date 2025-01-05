@@ -1,12 +1,24 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.busbuddy">
 <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+=======
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.busbuddy">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+=======
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
 <uses-permission android:name="android.permission.INTERNET"/>
 <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<<<<<<< HEAD
    <application
         android:label="busbuddy"
         android:name="${applicationName}"
@@ -28,14 +40,36 @@
         <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyDUV2wPCV8nEZRBe8fPrPcCWUKw5EgjxcE"/>
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+=======
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION"/>
+<<<<<<< HEAD
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+   <application
+        android:label="busbuddy"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher">
+        <meta-data android:name="com.google.android.geo.API_KEY"
+        android:value="AIzaSyDUV2wPCV8nEZRBe8fPrPcCWUKw5EgjxcE"/>
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleTop"
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             android:taskAffinity=""
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
             android:theme="@style/LaunchTheme"
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
@@ -46,7 +80,11 @@
                  the Android process has started. This theme is visible to the user
                  while the Flutter UI initializes. After that, this theme continues
                  to determine the Window background behind the Flutter UI. -->
+<<<<<<< HEAD
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
             <meta-data
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
@@ -63,6 +101,7 @@
             android:value="2" />
     </application>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     <!-- Required to query activities that can process text, see:
          https://developer.android.com/training/package-visibility and
@@ -76,4 +115,6 @@
         </intent>
     </queries>
 >>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
 </manifest>
