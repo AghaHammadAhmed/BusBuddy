@@ -1,4 +1,19 @@
+<<<<<<< HEAD
 // ignore_for_file: use_build_context_synchronously
+=======
+<<<<<<< HEAD
+// ignore_for_file: use_build_context_synchronously
+=======
+<<<<<<< HEAD
+// ignore_for_file: use_build_context_synchronously
+=======
+<<<<<<< HEAD
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -54,7 +69,22 @@ class _DriverDetailsScreenState extends State<DriverDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     final screenSize = MediaQuery.of(context).size;
+=======
+<<<<<<< HEAD
+    final screenSize = MediaQuery.of(context).size;
+=======
+<<<<<<< HEAD
+    final screenSize = MediaQuery.of(context).size;
+=======
+<<<<<<< HEAD
+    final screenSize = MediaQuery.of(context).size;
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
     return Scaffold(
       appBar: AppBar(
         //back button
@@ -63,13 +93,47 @@ class _DriverDetailsScreenState extends State<DriverDetailsScreen> {
         leading: IconButton(
           color: Colors.black,
           icon: const Icon(Icons.arrow_back),
+<<<<<<< HEAD
           onPressed: () {},
+=======
+<<<<<<< HEAD
+          onPressed: () {},
+=======
+<<<<<<< HEAD
+          onPressed: () {},
+=======
+<<<<<<< HEAD
+          onPressed: () {},
+=======
+          onPressed: () {
+            Navigator.pop(context);
+          },
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
         ),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
+<<<<<<< HEAD
             padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.06),
+=======
+<<<<<<< HEAD
+            padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.06),
+=======
+<<<<<<< HEAD
+            padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.06),
+=======
+<<<<<<< HEAD
+            padding: EdgeInsets.symmetric(horizontal: screenSize.width * 0.06),
+=======
+            padding: const EdgeInsets.symmetric(horizontal: 24.0),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
             child: Form(
               key: _formKey,
               child: Column(
@@ -83,11 +147,37 @@ class _DriverDetailsScreenState extends State<DriverDetailsScreen> {
                       color: Colors.black,
                     ),
                   ),
+<<<<<<< HEAD
                   SizedBox(height: screenSize.height * 0.02),
+=======
+<<<<<<< HEAD
+                  SizedBox(height: screenSize.height * 0.02),
+=======
+<<<<<<< HEAD
+                  SizedBox(height: screenSize.height * 0.02),
+=======
+<<<<<<< HEAD
+                  SizedBox(height: screenSize.height * 0.02),
+=======
+                  const SizedBox(height: 16),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
                   _buildTextField(
                     controller: _nameController,
                     label: 'Full Name',
                     icon: Icons.person_outline,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
                     validator: (value) {
                       if (value == null || value.trim().isEmpty) {
                         return 'Full Name is required.';
@@ -98,11 +188,34 @@ class _DriverDetailsScreenState extends State<DriverDetailsScreen> {
                     },
                   ),
                   SizedBox(height: screenSize.height * 0.02),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+                  ),
+                  const SizedBox(height: 16),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
                   _buildTextField(
                     controller: _ageController,
                     label: 'Age',
                     icon: Icons.cake_outlined,
                     keyboardType: TextInputType.number,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
                     validator: (value) {
                       if (value == null || value.trim().isEmpty) {
                         return 'Age is required.';
@@ -115,11 +228,34 @@ class _DriverDetailsScreenState extends State<DriverDetailsScreen> {
                     },
                   ),
                   SizedBox(height: screenSize.height * 0.02),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+                  ),
+                  const SizedBox(height: 16),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
                   _buildTextField(
                     controller: _phoneController,
                     label: 'Phone Number',
                     icon: Icons.phone_outlined,
                     keyboardType: TextInputType.phone,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
                     validator: (value) {
                       if (value == null || value.trim().isEmpty) {
                         return 'Phone Number is required.';
@@ -130,10 +266,33 @@ class _DriverDetailsScreenState extends State<DriverDetailsScreen> {
                     },
                   ),
                   SizedBox(height: screenSize.height * 0.02),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+                  ),
+                  const SizedBox(height: 16),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
                   _buildTextField(
                     controller: _vehicleNumberController,
                     label: 'Vehicle Number',
                     icon: Icons.directions_car_outlined,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
                     validator: (value) {
                       if (value == null || value.trim().isEmpty) {
                         return 'Vehicle Number is required.';
@@ -144,6 +303,21 @@ class _DriverDetailsScreenState extends State<DriverDetailsScreen> {
                   SizedBox(height: screenSize.height * 0.02),
                   _buildSeatCounter(),
                   SizedBox(height: screenSize.height * 0.02),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+                  ),
+                  const SizedBox(height: 16),
+                  _buildSeatCounter(),
+                  const SizedBox(height: 16),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
                   const Text(
                     "Preferred Areas/Schools",
                     style: TextStyle(
@@ -152,11 +326,37 @@ class _DriverDetailsScreenState extends State<DriverDetailsScreen> {
                       color: Colors.black,
                     ),
                   ),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
                   SizedBox(height: screenSize.height * 0.02),
                   _buildAreaInputField(),
                   SizedBox(height: screenSize.height * 0.02),
                   _buildAreaTags(),
                   SizedBox(height: screenSize.height * 0.04),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+                  const SizedBox(height: 16),
+                  _buildAreaInputField(),
+                  const SizedBox(height: 16),
+                  _buildAreaTags(),
+                  const SizedBox(height: 32),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
                   ElevatedButton(
                     onPressed: _submitDriverDetails,
                     style: ElevatedButton.styleFrom(
@@ -175,7 +375,23 @@ class _DriverDetailsScreenState extends State<DriverDetailsScreen> {
                       ),
                     ),
                   ),
+<<<<<<< HEAD
                   SizedBox(height: screenSize.height * 0.04),
+=======
+<<<<<<< HEAD
+                  SizedBox(height: screenSize.height * 0.04),
+=======
+<<<<<<< HEAD
+                  SizedBox(height: screenSize.height * 0.04),
+=======
+<<<<<<< HEAD
+                  SizedBox(height: screenSize.height * 0.04),
+=======
+                  const SizedBox(height: 32),
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
                 ],
               ),
             ),
@@ -230,7 +446,22 @@ class _DriverDetailsScreenState extends State<DriverDetailsScreen> {
     required String label,
     required IconData icon,
     TextInputType? keyboardType,
+<<<<<<< HEAD
     required String? Function(String?) validator,
+=======
+<<<<<<< HEAD
+    required String? Function(String?) validator,
+=======
+<<<<<<< HEAD
+    required String? Function(String?) validator,
+=======
+<<<<<<< HEAD
+    required String? Function(String?) validator,
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
     bool isPassword = false,
   }) {
     return TextFormField(
@@ -253,7 +484,28 @@ class _DriverDetailsScreenState extends State<DriverDetailsScreen> {
         filled: true,
         fillColor: Colors.grey[50],
       ),
+<<<<<<< HEAD
       validator: validator,
+=======
+<<<<<<< HEAD
+      validator: validator,
+=======
+<<<<<<< HEAD
+      validator: validator,
+=======
+<<<<<<< HEAD
+      validator: validator,
+=======
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter $label';
+        }
+        return null;
+      },
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
     );
   }
 

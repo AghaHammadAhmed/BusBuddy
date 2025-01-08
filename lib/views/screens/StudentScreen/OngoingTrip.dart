@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import 'dart:convert';
 import 'dart:developer';
 
@@ -10,6 +11,34 @@ import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:http/http.dart' as http;
 
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+import 'dart:convert';
+import 'dart:developer';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:http/http.dart' as http;
+<<<<<<< HEAD
+=======
+=======
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:geolocator/geolocator.dart';
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
 import '../../../models/user.dart';
 import '../../../services/AuthService.dart';
 
@@ -21,9 +50,17 @@ class TrackDriver extends StatefulWidget {
 }
 
 class _TrackDriverState extends State<TrackDriver> {
+<<<<<<< HEAD
   GoogleMapController? _mapController;
   final DatabaseReference _driverLocationsRef =
       FirebaseDatabase.instance.ref('driverLocations');
+=======
+<<<<<<< HEAD
+  GoogleMapController? _mapController;
+  final DatabaseReference _driverLocationsRef =
+      FirebaseDatabase.instance.ref('driverLocations');
+  final DatabaseReference _ridesRef = FirebaseDatabase.instance.ref('rides');
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
   final DatabaseReference _tripUpdatesRef =
       FirebaseDatabase.instance.ref('tripUpdates');
   final UserService _userService = UserService();
@@ -31,15 +68,44 @@ class _TrackDriverState extends State<TrackDriver> {
   LatLng? studentPosition;
   LatLng? studentDropOffLocation;
   bool isPickedUp = false;
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+  GoogleMapController? _mapController;
+=======
+  late GoogleMapController _mapController;
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+  final DatabaseReference _driverLocationsRef =
+      FirebaseDatabase.instance.ref('driverLocations');
+  final DatabaseReference _ridesRef = FirebaseDatabase.instance.ref('rides');
+  final UserService _userService = UserService();
+  LatLng? driverPosition;
+  LatLng? studentPosition;
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
 
   String? currentDriverId;
   String studentId = FirebaseAuth.instance.currentUser!.uid;
   String userId = FirebaseAuth.instance.currentUser!.uid;
+<<<<<<< HEAD
   final NotificationService _notificationService = NotificationService();
   BitmapDescriptor? _driverIcon;
   BitmapDescriptor? _studentIcon;
   BitmapDescriptor? _dropOffIcon;
   double? distanceInMeters;
+=======
+
+  BitmapDescriptor? _driverIcon;
+  BitmapDescriptor? _studentIcon;
+<<<<<<< HEAD
+  BitmapDescriptor? _dropOffIcon;
+  double? distanceInMeters;
+=======
+  double? distanceInMeters;
+<<<<<<< HEAD
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
   String? estimatedTime;
   bool isloading = false;
   // Add polylines state
@@ -68,21 +134,56 @@ class _TrackDriverState extends State<TrackDriver> {
       isloading = false;
     });
     print("Loading end");
+<<<<<<< HEAD
   }
 
   void initializeState() async {
+=======
+<<<<<<< HEAD
+  }
+
+  void initializeState() async {
+=======
+=======
+
+  @override
+  void initState() {
+    super.initState();
+    initializeState();
+    _loadCustomMarkers();
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+  }
+
+  void initializeState() async {
+    // Fetch user and update state
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
     UserModel? user = await _userService.fetchUser(userId);
     if (user != null) {
       setState(() {
         studentId = user.userID;
         currentDriverId = user.currentDriverId;
       });
+<<<<<<< HEAD
       _createInitialTripEntry();
     }
+=======
+<<<<<<< HEAD
+      _createInitialTripEntry();
+    }
+=======
+    }
+<<<<<<< HEAD
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
     // fetchCurrentDriverId();
     listenToDriverLocation();
     listenToStudentLocation();
     await getDirections();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
   }
 
   void _createInitialTripEntry() {
@@ -114,23 +215,63 @@ class _TrackDriverState extends State<TrackDriver> {
         }
       });
     }
+<<<<<<< HEAD
+=======
+=======
+=======
+    fetchCurrentDriverId();
+    listenToDriverLocation();
+    listenToStudentLocation();
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
   }
 
   void _loadCustomMarkers() async {
     final driverIcon = await BitmapDescriptor.fromAssetImage(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
       const ImageConfiguration(devicePixelRatio: 4 / 3),
       'assets/driver_marker.png',
     );
     final studentIcon = await BitmapDescriptor.fromAssetImage(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
         const ImageConfiguration(devicePixelRatio: 4 / 3),
         'assets/student_marker.png');
     final dropOffIcon = await BitmapDescriptor.fromAssetImage(
         const ImageConfiguration(devicePixelRatio: 4 / 3),
         'assets/student_marker.png');
+<<<<<<< HEAD
+=======
+=======
+      const ImageConfiguration(devicePixelRatio: 4 / 3),
+=======
+    const  ImageConfiguration(devicePixelRatio: 4/3),
+      'assets/driver_marker.png',
+    );
+    final studentIcon = await BitmapDescriptor.fromAssetImage(
+    const  ImageConfiguration(devicePixelRatio: 4 / 3),
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+      'assets/student_marker.png',
+    );
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
 
     setState(() {
       _driverIcon = driverIcon;
       _studentIcon = studentIcon;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
       _dropOffIcon = dropOffIcon;
     });
   }
@@ -146,7 +287,11 @@ class _TrackDriverState extends State<TrackDriver> {
       'pickupTime': DateTime.now().toIso8601String(),
     });
 
+<<<<<<< HEAD
   
+=======
+    // Recalculate route to dropoff location
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
     await getDirections();
   }
 
@@ -162,11 +307,31 @@ class _TrackDriverState extends State<TrackDriver> {
       if (studentDropOffLocation == null) return;
       destination = studentDropOffLocation!;
     }
+<<<<<<< HEAD
+=======
+=======
+    });
+  }
+
+<<<<<<< HEAD
+  // Add method to get directions
+  Future<void> getDirections() async {
+    if (driverPosition == null || studentPosition == null) return;
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
     // print("studentPosition: $studentPosition from getDirections");
     print("Getting directions...");
     String url = 'https://maps.googleapis.com/maps/api/directions/json?'
         'origin=${driverPosition!.latitude},${driverPosition!.longitude}'
+<<<<<<< HEAD
         '&destination=${destination.latitude},${destination.longitude}'
+=======
+<<<<<<< HEAD
+        '&destination=${destination.latitude},${destination.longitude}'
+=======
+        '&destination=${studentPosition!.latitude},${studentPosition!.longitude}'
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
         '&key=$GOOGLE_MAPS_API_KEY';
 
     var response = await http.get(Uri.parse(url));
@@ -187,6 +352,7 @@ class _TrackDriverState extends State<TrackDriver> {
         setState(() {
           polylineCoordinates = points;
           estimatedTime = duration;
+<<<<<<< HEAD
           log(estimatedTime!);
           distanceInMeters = double.parse(distance.split(' ')[0]) * 1000;
           _updatePolylines();
@@ -197,6 +363,17 @@ class _TrackDriverState extends State<TrackDriver> {
           }
         });
         _updateTripDetails();
+=======
+          distanceInMeters = double.parse(distance.split(' ')[0]) * 1000;
+          _updatePolylines();
+        });
+<<<<<<< HEAD
+        _updateTripDetails();
+=======
+
+        // Update camera to show entire route
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
         LatLngBounds bounds = _getBounds(points);
         _mapController
             ?.animateCamera(CameraUpdate.newLatLngBounds(bounds, 100));
@@ -236,6 +413,7 @@ class _TrackDriverState extends State<TrackDriver> {
     );
   }
 
+<<<<<<< HEAD
   // show local notification
   void showNotification(String title) {
     _notificationService.showNotification(
@@ -244,6 +422,9 @@ class _TrackDriverState extends State<TrackDriver> {
       body: 'Driver is on the way',
     );
   }
+=======
+  //fetch the users coordinates from firebase firestore
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
 
   void fetchUser() {
     //firestore
@@ -257,6 +438,10 @@ class _TrackDriverState extends State<TrackDriver> {
         setState(() {
           studentPosition = LatLng(documentSnapshot['pickupLatitude'],
               documentSnapshot['pickupLongitude']);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
           studentDropOffLocation = LatLng(
             documentSnapshot['dropoffLatitude'],
             documentSnapshot['dropOffLongitude'],
@@ -264,10 +449,49 @@ class _TrackDriverState extends State<TrackDriver> {
         });
       } else {
         log('Document does not exist on the database');
+<<<<<<< HEAD
+=======
+=======
+        });
+      } else {
+       log('Document does not exist on the database');
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
       }
     });
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+  void fetchCurrentDriverId() async {
+    try {
+      final rideSnapshot = await _ridesRef.once();
+      final Map ridesData = rideSnapshot.snapshot.value as Map;
+
+      // Find the current driver for the student
+      ridesData.forEach((driverId, studentData) {
+        if (studentData[studentId] != null) {
+          setState(() {
+            currentDriverId = driverId;
+            final coordinates = studentData[studentId]['coordinates'];
+            studentPosition = LatLng(
+              coordinates['latitude'],
+              coordinates['longitude'],
+            );
+          });
+        }
+      });
+    } catch (e) {
+      print('Error fetching ride data: $e');
+    }
+  }
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
   void listenToStudentLocation() {
     FirebaseDatabase.instance
         .ref('studentLocations')
@@ -280,10 +504,27 @@ class _TrackDriverState extends State<TrackDriver> {
         if (studentPosition == null || studentPosition != updatedPosition) {
           setState(() {
             studentPosition = updatedPosition;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
             // print("listenToStudentLocation: $studentPosition");
           });
           // updateDistance(); // Update distance when student location changes
           getDirections(); // Update directions when student location changes
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+          });
+          updateDistance(); // Update distance when student location changes
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
         }
       }
     });
@@ -298,15 +539,61 @@ class _TrackDriverState extends State<TrackDriver> {
         setState(() {
           driverPosition = LatLng(data['latitude'], data['longitude']);
         });
+<<<<<<< HEAD
         // updateDistance();
         getDirections();
+=======
+<<<<<<< HEAD
+        // updateDistance();
+        getDirections();
+=======
+<<<<<<< HEAD
+        // updateDistance();
+        getDirections();
+=======
+        updateDistance(); // Update distance when driver location changes
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
       }
     });
   }
 
+<<<<<<< HEAD
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+=======
+<<<<<<< HEAD
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+=======
+<<<<<<< HEAD
+  
+=======
+  void updateDistance() {
+    if (driverPosition != null && studentPosition != null) {
+      final distance = Geolocator.distanceBetween(
+        driverPosition!.latitude,
+        driverPosition!.longitude,
+        studentPosition!.latitude,
+        studentPosition!.longitude,
+      );
+
+      setState(() {
+        distanceInMeters = distance;
+      });
+    }
+  }
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+<<<<<<< HEAD
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
       body: isloading
           ? const Center(child: CircularProgressIndicator())
           : Stack(
@@ -386,9 +673,22 @@ class _TrackDriverState extends State<TrackDriver> {
                             children: [
                               Row(
                                 children: const [
+<<<<<<< HEAD
                                   Icon(Icons.location_on, color: Colors.blue),
                                   SizedBox(width: 8),
                                   Text(
+=======
+<<<<<<< HEAD
+                                  Icon(Icons.location_on, color: Colors.blue),
+                                  SizedBox(width: 8),
+                                  Text(
+=======
+                                  const Icon(Icons.location_on,
+                                      color: Colors.blue),
+                                  const SizedBox(width: 8),
+                                  const Text(
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
                                     'Trip Details',
                                     style: TextStyle(
                                       fontSize: 20,
@@ -453,6 +753,10 @@ class _TrackDriverState extends State<TrackDriver> {
                   ),
               ],
             ),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
     );
   }
 
@@ -465,4 +769,78 @@ class _TrackDriverState extends State<TrackDriver> {
   //   }
   //   super.dispose();
   // }
+<<<<<<< HEAD
+=======
+=======
+=======
+      body: Stack(
+        children: [
+          GoogleMap(
+            onMapCreated: (controller) => _mapController = controller,
+            initialCameraPosition: CameraPosition(
+              target: studentPosition ??
+                  const LatLng(25.3855763128842, 68.32784470170736),
+              zoom: 15,
+            ),
+            markers: {
+              if (studentPosition != null)
+                Marker(
+                  markerId: const MarkerId('student'),
+                  position: studentPosition!,
+                  icon: _studentIcon ??
+                      BitmapDescriptor.defaultMarkerWithHue(
+                          BitmapDescriptor.hueGreen),
+                  infoWindow: const InfoWindow(title: 'You'),
+                ),
+              if (driverPosition != null)
+                Marker(
+                  zIndex: 1,
+                  markerId: const MarkerId('driver'),
+                  position: driverPosition!,
+                  icon: _driverIcon ??
+                      BitmapDescriptor.defaultMarkerWithHue(
+                          BitmapDescriptor.hueRed),
+                  infoWindow: const InfoWindow(title: 'Driver'),
+                ),
+            },
+          ),
+          if (distanceInMeters != null)
+            Positioned(
+              bottom: 16,
+              left: 16,
+              right: 16,
+              child: Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Distance Between Driver and Student',
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Distance: ${(distanceInMeters! / 1000).toStringAsFixed(2)} km',
+                        style: const TextStyle(fontSize: 16),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+        ],
+      ),
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+    );
+  }
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
 }
