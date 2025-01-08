@@ -1,0 +1,11 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "uninstall-flutter-app",
+      "type": "shell",
+      "command": "flutter",
+      "args": ["uninstall"]
+    }
+  ]
+}
