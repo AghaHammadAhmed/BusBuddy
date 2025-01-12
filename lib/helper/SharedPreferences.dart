@@ -48,5 +48,8 @@ class SharedPrefsHelper {
     return _prefs.getString('userType');
   }
 }
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1

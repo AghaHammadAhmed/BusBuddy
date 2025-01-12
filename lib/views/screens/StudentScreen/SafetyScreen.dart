@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
 // import 'package:flutter/material.dart';
 
 // class SafetyScreen extends StatelessWidget {
@@ -126,6 +130,11 @@
 //   }
 // }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
 import 'package:flutter/material.dart';
 
 class SafetyScreen extends StatelessWidget {
@@ -134,6 +143,10 @@ class SafetyScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
         backgroundColor: const Color(0xFF8A1538),
         title: const Text(
           'Safety',
@@ -142,6 +155,19 @@ class SafetyScreen extends StatelessWidget {
         centerTitle: true,
         leading: IconButton(
           icon: const Icon(Icons.arrow_back, color: Colors.white),
+<<<<<<< HEAD
+=======
+=======
+        backgroundColor: Colors.transparent,
+        title: const Text(
+          'Safety',
+          style: TextStyle(color: Colors.black),
+        ),
+        centerTitle: true,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.black),
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
           onPressed: () {
             Navigator.pop(context);
           },
@@ -156,32 +182,73 @@ class SafetyScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 _buildButton(Icons.support_agent, 'Support'),
+<<<<<<< HEAD
                 _buildButton(Icons.contacts, 'Emergency Contacts'),
+=======
+<<<<<<< HEAD
+                _buildButton(Icons.contacts, 'Emergency Contacts'),
+=======
+                _buildButton(Icons.contacts, 'Emergency contacts'),
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
               ],
             ),
             const SizedBox(height: 16),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
+<<<<<<< HEAD
                 backgroundColor: Color.fromARGB(255, 255, 0, 0),
+=======
+<<<<<<< HEAD
+                backgroundColor: Color.fromARGB(255, 255, 0, 0),
+=======
+                backgroundColor: Colors.redAccent,
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
                 padding: const EdgeInsets.symmetric(vertical: 16),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
               onPressed: () {
                 // Handle emergency call action
               },
               icon: const Icon(Icons.warning, color: Colors.white),
               label: const Text(
                 'Call Emergency',
+<<<<<<< HEAD
+=======
+=======
+              onPressed: () {},
+              icon: const Icon(Icons.warning, color: Colors.white),
+              label: const Text(
+                'Call emergency',
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
                 style: TextStyle(color: Colors.white, fontSize: 18),
               ),
             ),
             const SizedBox(height: 24),
             const Text(
+<<<<<<< HEAD
               'How You Are Protected',
               style: TextStyle(
                 color: Color(0xFF8A1538),
+=======
+<<<<<<< HEAD
+              'How You Are Protected',
+              style: TextStyle(
+                color: Color(0xFF8A1538),
+=======
+              'How you are protected',
+              style: TextStyle(
+                color: Colors.black,
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
@@ -190,6 +257,10 @@ class SafetyScreen extends StatelessWidget {
             Expanded(
               child: GridView.count(
                 crossAxisCount: 2,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 12,
                 children: [
@@ -200,6 +271,21 @@ class SafetyScreen extends StatelessWidget {
                   _buildGridTile(Icons.chat, '24/7 Emergency Chat'),
                   _buildGridTile(Icons.car_repair, 'How We Check Cars'),
                   _buildGridTile(Icons.message, 'Safe Communications'),
+<<<<<<< HEAD
+=======
+=======
+                crossAxisSpacing: 8,
+                mainAxisSpacing: 8,
+                children: [
+                  _buildGridTile(Icons.info, 'Before the ride'),
+                  _buildGridTile(Icons.verified_user,
+                      'Driver identity and selfie verification'),
+                  _buildGridTile(Icons.shield, 'Safety features'),
+                  _buildGridTile(Icons.chat, '24/7 emergency chat'),
+                  _buildGridTile(Icons.car_repair, 'How we check cars'),
+                  _buildGridTile(Icons.message, 'Safe communications'),
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
                 ],
               ),
             ),
@@ -212,15 +298,33 @@ class SafetyScreen extends StatelessWidget {
   Widget _buildButton(IconData icon, String label) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
+<<<<<<< HEAD
         backgroundColor: const Color(0xFF8A1538),
+=======
+<<<<<<< HEAD
+        backgroundColor: const Color(0xFF8A1538),
+=======
+        backgroundColor: Colors.grey[850],
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
         padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 32),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8),
         ),
       ),
+<<<<<<< HEAD
       onPressed: () {
         // Handle button action
       },
+=======
+<<<<<<< HEAD
+      onPressed: () {
+        // Handle button action
+      },
+=======
+      onPressed: () {},
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -239,6 +343,10 @@ class SafetyScreen extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
         color: const Color(0xFF8A1538),
         borderRadius: BorderRadius.circular(8),
         boxShadow: [
@@ -248,20 +356,45 @@ class SafetyScreen extends StatelessWidget {
             offset: const Offset(0, 4),
           ),
         ],
+<<<<<<< HEAD
+=======
+=======
+        color: Colors.grey[850],
+        borderRadius: BorderRadius.circular(8),
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+<<<<<<< HEAD
           Icon(icon, color: Colors.white, size: 36),
+=======
+<<<<<<< HEAD
+          Icon(icon, color: Colors.white, size: 36),
+=======
+          Icon(icon, color: Colors.green, size: 36),
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
           const SizedBox(height: 8),
           Text(
             label,
             textAlign: TextAlign.center,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
             style: const TextStyle(
               color: Colors.white,
               fontSize: 14,
               fontWeight: FontWeight.w600,
             ),
+<<<<<<< HEAD
+=======
+=======
+            style: const TextStyle(color: Colors.white),
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
           ),
         ],
       ),

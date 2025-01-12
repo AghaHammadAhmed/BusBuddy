@@ -5,7 +5,23 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
+<<<<<<< HEAD
 	<string>Busbuddy</string>
+=======
+<<<<<<< HEAD
+	<string>Busbuddy</string>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+	<string>Busbuddy</string>
+=======
+	<string>Bus Buddy</string>
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+	<string>Busbuddy</string>
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -13,7 +29,23 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
+<<<<<<< HEAD
 	<string>busbuddy</string>
+=======
+<<<<<<< HEAD
+	<string>busbuddy</string>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+	<string>busbuddy</string>
+=======
+	<string>bus_buddy</string>
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+	<string>busbuddy</string>
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -41,8 +73,26 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+<<<<<<< HEAD
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+=======
+<<<<<<< HEAD
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+=======
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
 	<key>CADisableMinimumFrameDurationOnPhone</key>
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>

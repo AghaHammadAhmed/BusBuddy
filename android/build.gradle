@@ -1,5 +1,29 @@
+<<<<<<< HEAD
 buildscript {
     ext.kotlin_version = '1.7.0'
+=======
+<<<<<<< HEAD
+buildscript {
+    ext.kotlin_version = '1.7.0'
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+buildscript {
+    ext.kotlin_version = '1.7.0'
+=======
+buildscript {
+<<<<<<< HEAD
+    ext.kotlin_version = '1.7.0'
+=======
+    ext.kotlin_version = '1.6.10'
+<<<<<<< HEAD
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
     repositories {
         google()
         mavenCentral()
@@ -11,6 +35,17 @@ buildscript {
     }
 }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
 allprojects {
     repositories {
         google()
@@ -18,14 +53,56 @@ allprojects {
     }
 }
 
+<<<<<<< HEAD
 rootProject.buildDir = '../build'
+=======
+<<<<<<< HEAD
+rootProject.buildDir = '../build'
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+rootProject.buildDir = '../build'
+=======
+rootProject.buildDir = "../build"
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+rootProject.buildDir = '../build'
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
 subprojects {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
     project.evaluationDependsOn(':app')
 }
 
 task clean(type: Delete) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+    project.evaluationDependsOn(':app')
+}
+
+task clean(type: Delete) {
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
     delete rootProject.buildDir
 }

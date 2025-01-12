@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
 
   // Future<void> _bookDriver(String driverId) async {
   //   final TextEditingController durationController = TextEditingController();
@@ -149,4 +156,23 @@
   //       ],
   //     ),
   //   );
+<<<<<<< HEAD
   // }
+=======
+<<<<<<< HEAD
+  // }
+=======
+  // }
+=======
+// Define your data model here
+<<<<<<< HEAD
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+<<<<<<< HEAD
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1

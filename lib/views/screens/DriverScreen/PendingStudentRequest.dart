@@ -103,22 +103,76 @@ class _PendingStudentReqeustState extends State<PendingStudentReqeust> {
   }
 
   Widget _buildBookingRequestsSection() {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
     // if (_isLoading) {
     //   return const Center(
     //     child: CircularProgressIndicator(),
     //   );
     // }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+    if (_isLoading) {
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    }
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
         stream: _firestore
             .collection('booking_requests')
             .where('driver_id', isEqualTo: _driver?.driverID)
+<<<<<<< HEAD
             .where('status', isEqualTo: 'pending')
             .snapshots(),
         builder: (context, snapshot) {
+=======
+<<<<<<< HEAD
+            .where('status', isEqualTo: 'pending')
+            .snapshots(),
+        builder: (context, snapshot) {
+=======
+<<<<<<< HEAD
+            .where('status', isEqualTo: 'pending')
+            .snapshots(),
+        builder: (context, snapshot) {
+=======
+            .where('status', whereIn: ['pending']).snapshots(),
+        builder: (context, snapshot) {
+          final bookingRequests = snapshot.data!.docs
+              .map((doc) => {'id': doc.id, ...doc.data()})
+              .toList();
+
+          if (snapshot.hasError) {
+            return const Center(
+              child: Text('Error fetching booking requests.'),
+            );
+          }
+
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
               child: CircularProgressIndicator(),
             );
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
           } else if (snapshot.hasError) {
             return const Center(
               child: Text('Error fetching booking requests.'),
@@ -129,6 +183,20 @@ class _PendingStudentReqeustState extends State<PendingStudentReqeust> {
           final bookingRequests = snapshot.data!.docs
               .map((doc) => {'id': doc.id, ...doc.data()})
               .toList();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+          }
+
+          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+            return Text('No booking requests found');
+          }
+
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
           return ListView.builder(
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),

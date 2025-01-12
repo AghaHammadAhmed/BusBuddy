@@ -1,10 +1,25 @@
+<<<<<<< HEAD
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+=======
+<<<<<<< HEAD
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+=======
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class TransportationCalendarPage extends StatefulWidget {
+<<<<<<< HEAD
   
+=======
+<<<<<<< HEAD
+  
+=======
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
   @override
   _TransportationCalendarPageState createState() =>
       _TransportationCalendarPageState();
@@ -13,20 +28,43 @@ class TransportationCalendarPage extends StatefulWidget {
 class _TransportationCalendarPageState
     extends State<TransportationCalendarPage> {
   late DateTime _currentDate;
+<<<<<<< HEAD
   FirebaseAuth auth = FirebaseAuth.instance;
   Set<int> _selectedDates = {};
   String? userId;
+=======
+<<<<<<< HEAD
+  FirebaseAuth auth = FirebaseAuth.instance;
+  Set<int> _selectedDates = {};
+  String? userId;
+=======
+  Set<int> _selectedDates = {};
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
 
   @override
   void initState() {
     super.initState();
+<<<<<<< HEAD
     setState(() {
       userId = auth.currentUser!.uid;
     });
+=======
+<<<<<<< HEAD
+    setState(() {
+      userId = auth.currentUser!.uid;
+    });
+=======
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
     _currentDate = DateTime.now();
     _initializeDefaultSelection();
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
   void _initializeDefaultSelection() async {
     // Replace with the actual user ID
     final userDoc =
@@ -43,6 +81,21 @@ class _TransportationCalendarPageState
       super.initState();
       _currentDate = DateTime.now();
       _initializeDefaultSelection(); // Default logic for weekdays
+<<<<<<< HEAD
+=======
+=======
+  void _initializeDefaultSelection() {
+    // Select all weekdays in the current month by default
+    int daysInMonth =
+        DateTime(_currentDate.year, _currentDate.month + 1, 0).day;
+
+    for (int day = 1; day <= daysInMonth; day++) {
+      DateTime date = DateTime(_currentDate.year, _currentDate.month, day);
+      if (date.weekday >= DateTime.monday && date.weekday <= DateTime.friday) {
+        _selectedDates.add(day);
+      }
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
     }
   }
 
@@ -63,6 +116,10 @@ class _TransportationCalendarPageState
     });
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
   void _saveSchedule() async {
     try {
       final userID = userId; // Replace with the actual user ID
@@ -86,6 +143,19 @@ class _TransportationCalendarPageState
         ),
       );
     }
+<<<<<<< HEAD
+=======
+=======
+  void _saveSchedule() {
+    // Implement your save logic here
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('Schedule saved for ${_selectedDates.length} days'),
+        duration: const Duration(seconds: 2),
+      ),
+    );
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
   }
 
   @override
@@ -170,16 +240,36 @@ class _TransportationCalendarPageState
                     decoration: BoxDecoration(
                       color: isWeekend
                           ? Colors.grey[300]
+<<<<<<< HEAD
                           : (isSelected
                               ? const Color(0xFF0047BA)
                               : Colors.white),
+=======
+<<<<<<< HEAD
+                          : (isSelected
+                              ? const Color(0xFF0047BA)
+                              : Colors.white),
+=======
+                          : (isSelected ? const Color(0xFF0047BA) : Colors.white),
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
                       borderRadius: BorderRadius.circular(8),
                       border: Border.all(
                         color: isWeekend
                             ? Colors.grey[300]!
+<<<<<<< HEAD
                             : (isSelected
                                 ? const Color(0xFF0047BA)
                                 : Colors.grey),
+=======
+<<<<<<< HEAD
+                            : (isSelected
+                                ? const Color(0xFF0047BA)
+                                : Colors.grey),
+=======
+                            : (isSelected ? const Color(0xFF0047BA) : Colors.grey),
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
                       ),
                     ),
                     child: Center(
@@ -198,6 +288,14 @@ class _TransportationCalendarPageState
             ),
           ),
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+          // Weekday Headers
+
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
           // Action Buttons
           Padding(
             padding: const EdgeInsets.all(16.0),
@@ -218,9 +316,21 @@ class _TransportationCalendarPageState
                 Expanded(
                   child: ElevatedButton(
                     onPressed: _saveSchedule,
+<<<<<<< HEAD
                     style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF0047BA)),
                     child: const Text('Save Schedule'),
+=======
+<<<<<<< HEAD
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF0047BA)),
+                    child: const Text('Save Schedule'),
+=======
+                    child: const Text('Save Schedule'),
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: const Color(0xFF0047BA)),
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
                   ),
                 ),
               ],
