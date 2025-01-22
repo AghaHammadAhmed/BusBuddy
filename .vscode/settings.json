@@ -1,0 +1,8 @@
+{
+  "git.ignoreLimitWarning": true,
+  "editor.accessibilityPageSize": 30,
+  "editor.fontSize": 16,
+  "dart.sdkPath": null,
+  "dart.flutterSdkPaths": ["H:\\development\\flutter"],
+  "dart.flutterSdkPath": "H:\\development\\flutter"
+}
