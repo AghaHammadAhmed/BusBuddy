@@ -39,6 +39,10 @@ class _DriverPickUpLocationState extends State<DriverPickUpLocation> {
 
   final TextEditingController _pickupController = TextEditingController();
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
   @override
   void initState() {
     super.initState();
@@ -159,7 +163,11 @@ class _DriverPickUpLocationState extends State<DriverPickUpLocation> {
       //     user.currentDriverId!, userID, pickupCoordinates, dropoffCoordinates);
 
       // Navigate to main navigation screen
+<<<<<<< HEAD
       Navigator.pushNamed(context, '/mainNavigation2');
+=======
+      Navigator.pushNamed(context, '/driverHome');
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
       // Show success message
       _showSuccessDialog('Location saved successfully');
     } catch (e) {
@@ -324,7 +332,11 @@ class _DriverPickUpLocationState extends State<DriverPickUpLocation> {
                     onTap: () {
                       setState(() {
                         _isPickupMode = true;
+<<<<<<< HEAD
                       },);
+=======
+                      });
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
                     },
                   ),
 
@@ -336,7 +348,11 @@ class _DriverPickUpLocationState extends State<DriverPickUpLocation> {
                     child: ElevatedButton(
                       onPressed: _saveLocation,
                       style: ElevatedButton.styleFrom(
+<<<<<<< HEAD
                         backgroundColor: const Color(0xFF8A1538),
+=======
+                        backgroundColor: const Color(0xFF0047BA),
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),

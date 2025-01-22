@@ -1,11 +1,45 @@
 # This file tracks properties of this Flutter project.
 # Used by Flutter tool to assess capabilities and perform upgrades etc.
 #
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
 # This file should be version controlled.
 
 version:
   revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
   channel: stable
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+# This file should be version controlled and should not be manually edited.
+
+version:
+  revision: "a14f74ff3a1cbd521163c5f03d68113d50af93d3"
+  channel: "stable"
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+# This file should be version controlled.
+
+version:
+  revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+  channel: stable
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
 
 project_type: app
 
@@ -13,6 +47,17 @@ project_type: app
 migration:
   platforms:
     - platform: root
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
       create_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
       base_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
     - platform: android
@@ -33,6 +78,46 @@ migration:
     - platform: windows
       create_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
       base_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+      create_revision: a14f74ff3a1cbd521163c5f03d68113d50af93d3
+      base_revision: a14f74ff3a1cbd521163c5f03d68113d50af93d3
+=======
+      create_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+      base_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+    - platform: android
+      create_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+      base_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+    - platform: ios
+      create_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+      base_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+    - platform: linux
+      create_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+      base_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+    - platform: macos
+      create_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+      base_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+    - platform: web
+      create_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+      base_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+    - platform: windows
+<<<<<<< HEAD
+      create_revision: a14f74ff3a1cbd521163c5f03d68113d50af93d3
+      base_revision: a14f74ff3a1cbd521163c5f03d68113d50af93d3
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+      create_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+      base_revision: 6928314d505d2bb4777be05e45d7808a5aa91d2a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
 
   # User provided section
 
