@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 import 'package:busbuddy/views/navigation_bar2.dart';
+=======
+<<<<<<< HEAD
+import 'package:busbuddy/views/navigation_bar2.dart';
+=======
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
 import 'package:flutter/material.dart';
 import 'package:busbuddy/views/screens/StudentScreen/OngoingTrip.dart';
 import 'package:busbuddy/views/screens/AuthScreen/SignInScreen.dart';
@@ -69,9 +76,18 @@ class RouteGenerator {
           builder: (_) => const MainNavigation(),
         );
 
+<<<<<<< HEAD
       case '/mainNavigation2':
         return MaterialPageRoute(builder: (_) => const MainNavigation2());
 
+=======
+<<<<<<< HEAD
+      case '/mainNavigation2':
+        return MaterialPageRoute(builder: (_) => const MainNavigation2());
+
+=======
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
       case '/signUp':
         return MaterialPageRoute(
           builder: (_) => const SignUpScreen(),

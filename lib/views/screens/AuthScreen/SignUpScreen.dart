@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
 // import 'package:flutter/material.dart';
 // import '../../../../models/user.dart';
 // import '../../../services/AuthService.dart';
@@ -265,6 +269,11 @@
 //   }
 // }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
 import 'package:flutter/material.dart';
 import '../../../../models/user.dart';
 import '../../../services/AuthService.dart';
@@ -285,7 +294,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _phoneController = TextEditingController();
   final _passwordController = TextEditingController();
   String? _selectedRole;
+<<<<<<< HEAD
   String? _selectedSchool;
+=======
+<<<<<<< HEAD
+  String? _selectedSchool;
+=======
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
 
   final UserService _userService = UserService();
 
@@ -294,11 +310,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+<<<<<<< HEAD
       backgroundColor: const Color(0xFF8A1538),
+=======
+<<<<<<< HEAD
+      backgroundColor: const Color(0xFF8A1538),
+=======
+      backgroundColor: Colors.white,
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
             padding:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
                 const EdgeInsets.symmetric(horizontal: 24.0, vertical: 10.0),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -327,6 +355,33 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ),
                 const SizedBox(height: 20),
+<<<<<<< HEAD
+=======
+=======
+                const EdgeInsets.symmetric(horizontal: 24.0, vertical: 32.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 20),
+                const Text(
+                  'Create Account',
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black,
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Text(
+                  'Please fill in the form to continue',
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.grey[600],
+                  ),
+                ),
+                const SizedBox(height: 40),
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
                 Form(
                   key: _formKey,
                   child: Column(
@@ -359,11 +414,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         icon: Icons.lock_outline,
                         isPassword: true,
                       ),
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
                       const SizedBox(height: 16),
                       _buildSchoolDropdown(),
                       const SizedBox(height: 32),
                       _buildSignUpButton(),
                       // const SizedBox(height: 24),
+<<<<<<< HEAD
+=======
+=======
+                      const SizedBox(height: 32),
+                      _buildSignUpButton(),
+                      const SizedBox(height: 24),
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
                       _buildSignInButton(),
                     ],
                   ),
@@ -387,6 +454,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
       controller: controller,
       obscureText: isPassword,
       keyboardType: keyboardType,
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
         labelText: label,
@@ -402,6 +473,26 @@ class _SignUpScreenState extends State<SignUpScreen> {
         ),
         filled: true,
         fillColor: const Color(0xFF8A1538),
+<<<<<<< HEAD
+=======
+=======
+      style: const TextStyle(color: Colors.black),
+      decoration: InputDecoration(
+        labelText: label,
+        labelStyle: TextStyle(color: Colors.grey[600]),
+        prefixIcon: Icon(icon, color: Colors.grey[600]),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Colors.grey[300]!),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: Colors.black, width: 2),
+        ),
+        filled: true,
+        fillColor: Colors.grey[50],
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {
@@ -426,6 +517,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
         }
         return null;
       },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
       dropdownColor: const Color(0xFF8A1538),
       style: const TextStyle(color: Colors.white),
       decoration: InputDecoration(
@@ -493,6 +588,36 @@ class _SignUpScreenState extends State<SignUpScreen> {
         DropdownMenuItem(
             value: 'karachi grammar', child: Text('Karachi Grammar')),
         //get me more pakistani schools
+<<<<<<< HEAD
+=======
+=======
+      decoration: InputDecoration(
+        labelText: 'Select Role',
+        labelStyle: TextStyle(color: Colors.grey[600]),
+        prefixIcon:
+            Icon(Icons.account_circle_outlined, color: Colors.grey[600]),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: Colors.grey[300]!),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: Colors.black, width: 2),
+        ),
+        filled: true,
+        fillColor: Colors.grey[50],
+      ),
+      items: const [
+        DropdownMenuItem(
+          value: 'student',
+          child: Text('Student'),
+        ),
+        DropdownMenuItem(
+          value: 'driver',
+          child: Text('Driver'),
+        ),
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
       ],
     );
   }
@@ -501,17 +626,39 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return ElevatedButton(
       onPressed: _isLoading ? null : _handleSignUp,
       style: ElevatedButton.styleFrom(
+<<<<<<< HEAD
         backgroundColor: Colors.white,
         foregroundColor: const Color(0xFF8A1538),
+=======
+<<<<<<< HEAD
+        backgroundColor: Colors.white,
+        foregroundColor: const Color(0xFF8A1538),
+=======
+        backgroundColor: const Color.fromARGB(255, 0, 71, 186),
+        foregroundColor: Colors.white,
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
         minimumSize: const Size(double.infinity, 54),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),
       ),
       child: _isLoading
+<<<<<<< HEAD
           ? const CircularProgressIndicator(color: Color(0xFF8A1538))
           : const Text(
               'Sign Up',
+=======
+<<<<<<< HEAD
+          ? const CircularProgressIndicator(color: Color(0xFF8A1538))
+          : const Text(
+              'Sign Up',
+=======
+          ? const CircularProgressIndicator(color: Colors.white)
+          : const Text(
+              'Create Account',
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
     );
@@ -521,9 +668,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+<<<<<<< HEAD
         const Text(
           'Already have an account? ',
           style: TextStyle(color: Colors.white70),
+=======
+<<<<<<< HEAD
+        const Text(
+          'Already have an account? ',
+          style: TextStyle(color: Colors.white70),
+=======
+        Text(
+          'Already have an account? ',
+          style: TextStyle(color: Colors.grey[600]),
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
         ),
         TextButton(
           onPressed: () {
@@ -532,7 +691,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
           child: const Text(
             'Sign In',
             style: TextStyle(
+<<<<<<< HEAD
               color: Colors.white,
+=======
+<<<<<<< HEAD
+              color: Colors.white,
+=======
+              color: Colors.black,
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -551,7 +718,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
         email: _emailController.text.trim(),
         age: 0, // Replace with age if required
         role: _selectedRole!,
+<<<<<<< HEAD
         school: _selectedSchool!,
+=======
+<<<<<<< HEAD
+        school: _selectedSchool!,
+=======
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
         gender: 'Unspecified',
         phone: _phoneController.text.trim(),
         address: 'Unspecified', // Replace with address if required
@@ -561,6 +735,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
       final result = await _userService.registerUser(
           user, _passwordController.text.trim());
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+      // navigate to the home page
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
       Navigator.pushNamed(context, '/login');
       _showMessage(result);
 

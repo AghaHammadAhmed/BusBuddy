@@ -1,6 +1,9 @@
 import 'package:busbuddy/models/driver.dart';
 import 'package:busbuddy/services/driverService.dart';
+<<<<<<< HEAD
 import 'package:busbuddy/views/screens/DriverScreen/DriverAdditionDetails.dart';
+=======
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:geolocator/geolocator.dart';
@@ -40,6 +43,13 @@ class _DriverPickUpLocationState extends State<DriverPickUpLocation> {
 
   final TextEditingController _pickupController = TextEditingController();
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
   @override
   void initState() {
     super.initState();
@@ -160,8 +170,16 @@ class _DriverPickUpLocationState extends State<DriverPickUpLocation> {
       //     user.currentDriverId!, userID, pickupCoordinates, dropoffCoordinates);
 
       // Navigate to main navigation screen
+<<<<<<< HEAD
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => AddDriverDetailsScreen()));
+=======
+<<<<<<< HEAD
+      Navigator.pushNamed(context, '/mainNavigation2');
+=======
+      Navigator.pushNamed(context, '/driverHome');
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
       // Show success message
       _showSuccessDialog('Location saved successfully');
     } catch (e) {
@@ -324,11 +342,21 @@ class _DriverPickUpLocationState extends State<DriverPickUpLocation> {
                       ),
                     ),
                     onTap: () {
+<<<<<<< HEAD
                       setState(
                         () {
                           _isPickupMode = true;
                         },
                       );
+=======
+                      setState(() {
+                        _isPickupMode = true;
+<<<<<<< HEAD
+                      },);
+=======
+                      });
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
                     },
                   ),
 
@@ -340,7 +368,15 @@ class _DriverPickUpLocationState extends State<DriverPickUpLocation> {
                     child: ElevatedButton(
                       onPressed: _saveLocation,
                       style: ElevatedButton.styleFrom(
+<<<<<<< HEAD
                         backgroundColor: const Color(0xFF8A1538),
+=======
+<<<<<<< HEAD
+                        backgroundColor: const Color(0xFF8A1538),
+=======
+                        backgroundColor: const Color(0xFF0047BA),
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
                         padding: const EdgeInsets.symmetric(vertical: 16),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),

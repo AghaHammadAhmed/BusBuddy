@@ -9,6 +9,7 @@ import 'package:geolocator/geolocator.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:http/http.dart' as http;
 
+<<<<<<< HEAD
 class DriverLiveLocationTest extends StatefulWidget {
   final String driverId;
   const DriverLiveLocationTest({Key? key, required this.driverId})
@@ -19,6 +20,18 @@ class DriverLiveLocationTest extends StatefulWidget {
 }
 
 class _DriverLiveLocationTestState extends State<DriverLiveLocationTest> {
+=======
+class DriverLiveLocation extends StatefulWidget {
+  final String driverId;
+  const DriverLiveLocation({Key? key, required this.driverId})
+      : super(key: key);
+
+  @override
+  _DriverLiveLocationState createState() => _DriverLiveLocationState();
+}
+
+class _DriverLiveLocationState extends State<DriverLiveLocation> {
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
   late GoogleMapController _mapController;
   final DatabaseReference _database = FirebaseDatabase.instance.ref();
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -137,7 +150,10 @@ class _DriverLiveLocationTestState extends State<DriverLiveLocationTest> {
 
   Future<void> _fetchRoute(LatLng destination) async {
     const String apiKey = 'AIzaSyAZK08jqjlFmCVI2eIVK1TJ-kHYKEwROy4';
+<<<<<<< HEAD
     
+=======
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
     final Uri uri = Uri.parse(
         'https://maps.googleapis.com/maps/api/directions/json?origin=${_driverLocation.latitude},${_driverLocation.longitude}&destination=${destination.latitude},${destination.longitude}&key=$apiKey');
 
