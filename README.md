@@ -1,22 +1,4 @@
-<<<<<<< HEAD
-# busbuddy
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-BusBuddy: Van Management App
+# BusBuddy: Van Management App
 📚 Project Overview
 BusBuddy is an advanced shuttle management system tailored for educational institutions such as schools and colleges. It offers a safe, transparent, and efficient solution for commuting by integrating cutting-edge technologies. With features like real-time van tracking, proximity alerts, payment management, and notifications, BusBuddy enhances user experience and simplifies transportation operations for students, parents, staff, and administrators.
 ________________________________________
@@ -78,4 +60,4 @@ This project is licensed under the MIT License. See the LICENSE file for more de
 ________________________________________
 🌟 Acknowledgments
 Special thanks to our mentors, testers, and the development community for their guidance and support in building BusBuddy.
->>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+
