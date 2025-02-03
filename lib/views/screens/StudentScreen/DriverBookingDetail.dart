@@ -1,15 +1,90 @@
 // ignore_for_file: must_be_immutable, prefer_const_constructors
 
+<<<<<<< HEAD
 import 'dart:developer';
 
 import 'package:busbuddy/views/screens/StudentScreen/PaymentScreen.dart';
+=======
+<<<<<<< HEAD
+import 'dart:developer';
+
+=======
+<<<<<<< HEAD
+import 'dart:developer';
+
+=======
+<<<<<<< HEAD
+import 'dart:developer';
+
+=======
+<<<<<<< HEAD
+import 'dart:developer';
+
+=======
+<<<<<<< HEAD
+import 'dart:developer';
+
+=======
+<<<<<<< HEAD
+import 'dart:developer';
+
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+<<<<<<< HEAD
 import '../../../models/driver.dart';
 import '../../../models/user.dart';
 import '../../../services/LocationService.dart';
+=======
+<<<<<<< HEAD
+import '../../../models/driver.dart';
+import '../../../models/user.dart';
+import '../../../services/LocationService.dart';
+=======
+<<<<<<< HEAD
+import '../../../models/driver.dart';
+import '../../../models/user.dart';
+import '../../../services/LocationService.dart';
+=======
+<<<<<<< HEAD
+import '../../../models/driver.dart';
+import '../../../models/user.dart';
+import '../../../services/LocationService.dart';
+=======
+<<<<<<< HEAD
+import '../../../models/driver.dart';
+import '../../../models/user.dart';
+import '../../../services/LocationService.dart';
+=======
+<<<<<<< HEAD
+import '../../../models/driver.dart';
+import '../../../models/user.dart';
+import '../../../services/LocationService.dart';
+=======
+<<<<<<< HEAD
+import '../../../models/driver.dart';
+import '../../../models/user.dart';
+import '../../../services/LocationService.dart';
+=======
+
+import '../../../models/driver.dart';
+import '../../../models/user.dart';
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
 import '../../../services/driverService.dart';
 
 class DriverBookingDetail extends StatefulWidget {
@@ -23,11 +98,53 @@ class DriverBookingDetail extends StatefulWidget {
 class _DriverBookingDetailState extends State<DriverBookingDetail> {
   // final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final DriverService _driverService = DriverService();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   final LocationService _locationService = LocationService();
   // final CollectionReference _driverCollection =
   //     FirebaseFirestore.instance.collection('drivers');
   Map<String, dynamic>? userBooking;
   UserModel? _user;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+  // final CollectionReference _driverCollection =
+  //     FirebaseFirestore.instance.collection('drivers');
+  Map<String, dynamic>? userBooking;
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
 
 //initial state
   @override
@@ -38,8 +155,41 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
 
   final userID = FirebaseAuth.instance.currentUser!.uid;
 
+<<<<<<< HEAD
   //fetch the user details
 
+=======
+<<<<<<< HEAD
+  //fetch the user details
+
+=======
+<<<<<<< HEAD
+  //fetch the user details
+
+=======
+<<<<<<< HEAD
+  //fetch the user details
+
+=======
+<<<<<<< HEAD
+  //fetch the user details
+
+=======
+<<<<<<< HEAD
+  //fetch the user details
+
+=======
+<<<<<<< HEAD
+  //fetch the user details
+
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   Stream<UserModel?> _userStream(String userId) {
     return FirebaseFirestore.instance
         .collection('users')
@@ -74,8 +224,41 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     try {
       final FirebaseAuth auth = FirebaseAuth.instance;
       final User? user = auth.currentUser;
+<<<<<<< HEAD
       _user =
           UserModel.fromMap(await _driverService.fetchUserDetails(user!.uid));
+=======
+<<<<<<< HEAD
+      _user =
+          UserModel.fromMap(await _driverService.fetchUserDetails(user!.uid));
+=======
+<<<<<<< HEAD
+      _user =
+          UserModel.fromMap(await _driverService.fetchUserDetails(user!.uid));
+=======
+<<<<<<< HEAD
+      _user =
+          UserModel.fromMap(await _driverService.fetchUserDetails(user!.uid));
+=======
+<<<<<<< HEAD
+      _user =
+          UserModel.fromMap(await _driverService.fetchUserDetails(user!.uid));
+=======
+<<<<<<< HEAD
+      _user =
+          UserModel.fromMap(await _driverService.fetchUserDetails(user!.uid));
+=======
+<<<<<<< HEAD
+      _user =
+          UserModel.fromMap(await _driverService.fetchUserDetails(user!.uid));
+=======
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
 
       if (user == null) return;
 
@@ -492,7 +675,38 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     );
   }
 
+<<<<<<< HEAD
   void _launchDialer(String phoneNumber) {}
+=======
+<<<<<<< HEAD
+  void _launchDialer(String phoneNumber) {}
+=======
+<<<<<<< HEAD
+  void _launchDialer(String phoneNumber) {}
+=======
+<<<<<<< HEAD
+  void _launchDialer(String phoneNumber) {}
+=======
+<<<<<<< HEAD
+  void _launchDialer(String phoneNumber) {}
+=======
+<<<<<<< HEAD
+  void _launchDialer(String phoneNumber) {}
+=======
+<<<<<<< HEAD
+  void _launchDialer(String phoneNumber) {}
+=======
+
+  void _launchDialer(String phoneNumber) {
+
+  }
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
 
   Widget _buildDetailRow({
     required IconData icon,
@@ -536,20 +750,108 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     return StreamBuilder<Map<String, dynamic>>(
       stream: bookingStream,
       builder: (context, snapshot) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+     
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
         if (snapshot.connectionState == ConnectionState.waiting) {
           return Center(child: CircularProgressIndicator());
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+      
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
         if (snapshot.hasError) {
           return Center(
             child: Text("Error loading booking details: ${snapshot.error}"),
           );
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
         if (!snapshot.hasData || snapshot.data == null) {
           return Center(child: Text("No booking details found."));
         }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+   
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
         Map<String, dynamic> booking = snapshot.data!;
         String bookingId = booking['id'];
         String status = booking['status'];
@@ -571,6 +873,28 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+              
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -601,7 +925,38 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
                     ),
                   ],
                 ),
+<<<<<<< HEAD
                 SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+
+                SizedBox(height: screenWidth * 0.04),
+
+              
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
                 _buildDetailRowBook(
                   icon: Icons.location_on,
                   title: 'Pickup',
@@ -614,12 +969,74 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
                   subtitle: booking['dropoff_location'],
                   screenWidth: screenWidth,
                 ),
+<<<<<<< HEAD
                 SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+
+                SizedBox(height: screenWidth * 0.04),
+
+         
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
                 _buildFareSection(
                     driverProposedFare: driverProposedFare,
                     studentCounterFare: studentCounterFare,
                     screenWidth: screenWidth),
+<<<<<<< HEAD
                 SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+<<<<<<< HEAD
+                SizedBox(height: screenWidth * 0.04),
+=======
+
+                SizedBox(height: screenWidth * 0.04),
+
+           
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
                 _buildActionButtons(context, bookingId, status,
                     driverProposedFare, screenWidth),
               ],
@@ -630,6 +1047,28 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     );
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   Widget _buildDetailRowBook({
     required IconData icon,
     required String title,
@@ -670,6 +1109,28 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     );
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   Widget _buildFareSection({
     required double driverProposedFare,
     double? studentCounterFare,
@@ -732,19 +1193,57 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     );
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   Widget _buildActionButtons(BuildContext context, String bookingId,
       String status, double driverProposedFare, double screenWidth) {
     bool isPending = status == 'pending';
     bool isStudentAccepted = status == 'student_accepted';
+<<<<<<< HEAD
     bool isPaymentPending = status == 'payment_pending';
     bool isConfirmed = status == 'confirmed';
+=======
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+  Widget _buildActionButtons(BuildContext context, String bookingId,
+      String status, double driverProposedFare, double screenWidth) {
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
     return Row(
       children: [
         Expanded(
           child: ElevatedButton(
+<<<<<<< HEAD
             onPressed: isPending || isStudentAccepted
                 ? () => _cancelBooking(bookingId)
                 : null,
+=======
+<<<<<<< HEAD
+            onPressed: isPending || isStudentAccepted
+                ? () => _cancelBooking(bookingId)
+                : null,
+=======
+            onPressed:
+                status == 'pending' ? () => _cancelBooking(bookingId) : null,
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.red,
               foregroundColor: Colors.white,
@@ -758,6 +1257,7 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
         SizedBox(width: screenWidth * 0.03),
         Expanded(
           child: ElevatedButton(
+<<<<<<< HEAD
             onPressed: () {
               if (isPending) {
                 _showBookingOptions(context, bookingId, driverProposedFare);
@@ -775,11 +1275,24 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: isConfirmed ? Colors.grey : Colors.green,
+=======
+<<<<<<< HEAD
+            onPressed: isPending
+=======
+            onPressed: status == 'pending'
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+                ? () =>
+                    _showBookingOptions(context, bookingId, driverProposedFare)
+                : null,
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Colors.green,
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
               foregroundColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
+<<<<<<< HEAD
             child: Text(
               isPending ? 'Action' : 
               isPaymentPending ? 'Pay Fee' : 
@@ -789,18 +1302,50 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
                 fontSize: 10,
               ),
             ),
+=======
+<<<<<<< HEAD
+            child: Text(isPending ? 'Action' : 'Waiting for Driver'),
+=======
+            child: const Text('Action'),
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
           ),
         ),
       ],
     );
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   Color _getStatusColor(String status) {
     switch (status) {
       case 'pending':
         return Colors.orange;
+<<<<<<< HEAD
       case 'payment_pending':
         return Colors.blue;
+=======
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
       case 'confirmed':
         return Colors.green;
       case 'cancelled':
@@ -810,6 +1355,28 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
     }
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   void _showBookingOptions(
       BuildContext context, String bookingId, double driverProposedFare) {
     showModalBottomSheet(
@@ -831,6 +1398,25 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
             ),
             SizedBox(height: 16),
             ElevatedButton(
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
               onPressed: () {
                 final pickupCoordinates = {
                   'latitude': _user!.pickupLatitude,
@@ -856,6 +1442,27 @@ class _DriverBookingDetailState extends State<DriverBookingDetail> {
                   log('Error allocating driver to student: $e');
                 }
               },
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+              onPressed: () => _acceptFare(bookingId, driverProposedFare),
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
               style: ElevatedButton.styleFrom(backgroundColor: Colors.green),
               child: const Text('Accept Fare'),
             ),

@@ -68,6 +68,22 @@ class NotificationService {
         ?.createNotificationChannel(channel);
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
    Future<void> showNotification(
       {required int id, required String title, required String body}) async {
     const AndroidNotificationDetails androidDetails =
@@ -84,6 +100,23 @@ class NotificationService {
     await _localNotifications.show(id, title, body, details);
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   void _handleForegroundMessage(RemoteMessage message) {
     RemoteNotification? notification = message.notification;
     AndroidNotification? android = notification?.android;

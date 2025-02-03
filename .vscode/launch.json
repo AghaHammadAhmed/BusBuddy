@@ -1,0 +1,67 @@
+{
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "busbuddy",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main.dart",
+     "preLaunchTask": "uninstall-flutter-app"
+        
+    },
+    {
+      "name": "busbuddy (profile mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "busbuddy (release mode)",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    }
+  ]
+}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+     // Use IntelliSense to learn about possible attributes.
+     // Hover to view descriptions of existing attributes.
+     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+     "version": "0.2.0",
+     "configurations": [
+          {
+               "name": "busbuddy",
+               "request": "launch",
+               "type": "dart"
+          },
+          {
+               "name": "busbuddy (profile mode)",
+               "request": "launch",
+               "type": "dart",
+               "flutterMode": "profile"
+          },
+          {
+               "name": "busbuddy (release mode)",
+               "request": "launch",
+               "type": "dart",
+               "flutterMode": "release"
+          }
+     ]
+}
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e

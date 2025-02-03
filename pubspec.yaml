@@ -1,9 +1,57 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
 name: busbuddy
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+name: busbuddy
+description: A new Flutter project.
+
+=======
+name: bus_buddy
+description: "A new Flutter project."
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+name: busbuddy
+description: A new Flutter project.
+
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+# The following line prevents the package from being accidentally published to
+# pub.dev using `flutter pub publish`. This is preferred for private packages.
+<<<<<<< HEAD
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+=======
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -20,7 +68,40 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
+<<<<<<< HEAD
   sdk: ">=2.18.2 <3.0.0"
+=======
+<<<<<<< HEAD
+  sdk: ">=2.18.2 <3.0.0"
+=======
+<<<<<<< HEAD
+  sdk: ">=2.18.2 <3.0.0"
+=======
+<<<<<<< HEAD
+  sdk: ">=2.18.2 <3.0.0"
+=======
+<<<<<<< HEAD
+  sdk: ">=2.18.2 <3.0.0"
+=======
+<<<<<<< HEAD
+  sdk: ">=2.18.2 <3.0.0"
+=======
+<<<<<<< HEAD
+  sdk: ">=3.4.1 <4.0.0"
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+<<<<<<< HEAD
+  sdk: ">=2.18.2 <3.0.0"
+=======
+  sdk: '>=2.18.2 <3.0.0'
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -32,6 +113,37 @@ dependencies:
   flutter:
     sdk: flutter
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+=======
+<<<<<<< HEAD
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+=======
+<<<<<<< HEAD
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   cupertino_icons: ^1.0.2
   permission_handler: ^11.0.1
   geolocator: ^11.1.0
@@ -42,11 +154,45 @@ dependencies:
   firebase_auth: ^4.16.0
   firebase_core: ^2.24.2
   firebase_database: ^10.4.0
+<<<<<<< HEAD
   flutter_polyline_points: ^1.0.0
+=======
+<<<<<<< HEAD
+  flutter_polyline_points: ^1.0.0
+=======
+<<<<<<< HEAD
+  flutter_polyline_points: ^1.0.0
+=======
+<<<<<<< HEAD
+  flutter_polyline_points: ^1.0.0
+=======
+<<<<<<< HEAD
+  flutter_polyline_points: ^1.0.0
+=======
+<<<<<<< HEAD
+  flutter_polyline_points: ^1.0.0
+=======
+<<<<<<< HEAD
+  flutter_polyline_points: ^1.0.0
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  flutter_polyline_points: ^1.0.0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   firebase_messaging: ^14.7.10
   flutter_local_notifications: ^17.2.4
   shared_preferences: ^2.2.0
   image_picker: ^1.0.2
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   http: ^0.13.5
   url_launcher: ^6.1.11
   rxdart: ^0.28.0
@@ -60,6 +206,51 @@ dependencies:
 
 dependency_overrides:
   win32: ^5.5.4
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+  http: ^0.13.5
+  url_launcher: ^6.1.11
+  flutter_native_splash: ^2.2.18
+  rxdart: ^0.28.0
+  tuple: ^2.0.2
+=======
+<<<<<<< HEAD
+  http: ^0.13.5
+  url_launcher: ^6.1.11
+  flutter_native_splash: ^2.2.18
+=======
+<<<<<<< HEAD
+  http: ^0.13.5
+  url_launcher: ^6.1.11
+  flutter_native_splash: ^2.2.18
+=======
+<<<<<<< HEAD
+=======
+  cupertino_icons: ^1.0.6
+
+  intl: ^0.19.0
+  google_maps_flutter: ^2.10.0
+  geolocator: ^13.0.2
+  permission_handler: ^11.3.1
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+<<<<<<< HEAD
+=======
+  # image_picker: ^1.0.2
+>>>>>>> f14665d864e51132ab3f6380a09b0d255bafd81e
+=======
+  # image_picker: ^1.0.2
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
 
 dev_dependencies:
   flutter_test:
@@ -70,19 +261,86 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
+<<<<<<< HEAD
   flutter_lints: ^2.0.0
+=======
+<<<<<<< HEAD
+  flutter_lints: ^2.0.0
+=======
+<<<<<<< HEAD
+  flutter_lints: ^2.0.0
+=======
+<<<<<<< HEAD
+  flutter_lints: ^2.0.0
+=======
+<<<<<<< HEAD
+  flutter_lints: ^2.0.0
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+  flutter_lints: ^2.0.0
+=======
+  flutter_lints: ^3.0.0
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+  flutter_lints: ^2.0.0
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
+<<<<<<< HEAD
 # The following section is specific to Flutter packages.
 flutter:
+=======
+<<<<<<< HEAD
+# The following section is specific to Flutter packages.
+flutter:
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+flutter_native_splash:
+  ios: true
+  android: true
+  color: "#FFFFFF"
+  color_dark: "#FFFFFF"
+  image: assets/splash.png
+# The following section is specific to Flutter packages.
+flutter:
+<<<<<<< HEAD
+=======
+=======
+# The following section is specific to Flutter packages.
+flutter:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   assets:
     - assets/
 
@@ -111,6 +369,49 @@ flutter_icons:
   # To add custom icons to your application, add a custom section, like this:
   # An image asset can refer to one orpl more resolution-specific "variants", see
   # https://flutter.dev/assets-and-imaghes/#resolution-aware
+<<<<<<< HEAD
+=======
+=======
+<<<<<<< HEAD
+  assets:
+    - assets/
+=======
+<<<<<<< HEAD
+  assets:
+    - assets/
+=======
+<<<<<<< HEAD
+  assets:
+    - assets/
+=======
+<<<<<<< HEAD
+  assets:
+    - assets/
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+  assets:
+    - assets/
+=======
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+  # assets:
+  #   - images/a_dot_burr.jpeg
+  #   - images/a_dot_ham.jpeg
+
+<<<<<<< HEAD
+>>>>>>> 91ada8e3ae45d451fda9917c6d014f925e30e54c
+=======
+>>>>>>> 35279862e86385b28ab01148b276f1b391af24d0
+>>>>>>> 68562972bec7d14ae995e33f438c8332a2044b6a
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+  # An image asset can refer to one or more resolution-specific "variants", see
+  # https://flutter.dev/assets-and-images/#resolution-aware
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages

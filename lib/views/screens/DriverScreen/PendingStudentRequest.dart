@@ -94,12 +94,33 @@ class _PendingStudentReqeustState extends State<PendingStudentReqeust> {
       appBar: AppBar(
         title: const Text('Pending Student Request'),
       ),
+<<<<<<< HEAD
       body: Container(
         child: _buildBookingRequestsSection(),
+=======
+<<<<<<< HEAD
+      body: Container(
+        child: _buildBookingRequestsSection(),
+=======
+<<<<<<< HEAD
+      body: Container(
+        child: _buildBookingRequestsSection(),
+=======
+      body: Center(
+        child: Container(
+          child: _buildBookingRequestsSection(),
+        ),
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
       ),
     );
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   //
 
   Widget _buildBookingRequestsSection() {
@@ -238,6 +259,220 @@ class _PendingStudentReqeustState extends State<PendingStudentReqeust> {
       default:
         return Colors.grey;
     }
+<<<<<<< HEAD
+=======
+=======
+  Widget _buildBookingRequestsSection() {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+    // if (_isLoading) {
+    //   return const Center(
+    //     child: CircularProgressIndicator(),
+    //   );
+    // }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+    if (_isLoading) {
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    }
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+    return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
+        stream: _firestore
+            .collection('booking_requests')
+            .where('driver_id', isEqualTo: _driver?.driverID)
+<<<<<<< HEAD
+            .where('status', isEqualTo: 'pending')
+            .snapshots(),
+        builder: (context, snapshot) {
+          final bookingRequests = snapshot.data!.docs
+              .map((doc) => {'id': doc.id, ...doc.data()})
+              .toList();
+=======
+<<<<<<< HEAD
+            .where('status', isEqualTo: 'pending')
+            .snapshots(),
+        builder: (context, snapshot) {
+=======
+<<<<<<< HEAD
+            .where('status', isEqualTo: 'pending')
+            .snapshots(),
+        builder: (context, snapshot) {
+=======
+<<<<<<< HEAD
+            .where('status', isEqualTo: 'pending')
+            .snapshots(),
+        builder: (context, snapshot) {
+=======
+            .where('status', whereIn: ['pending']).snapshots(),
+        builder: (context, snapshot) {
+          final bookingRequests = snapshot.data!.docs
+              .map((doc) => {'id': doc.id, ...doc.data()})
+              .toList();
+
+          if (snapshot.hasError) {
+            return const Center(
+              child: Text('Error fetching booking requests.'),
+            );
+          }
+
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+<<<<<<< HEAD
+          }
+          if (_isLoading) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+          } else if (snapshot.hasError) {
+            return const Center(
+              child: Text('Error fetching booking requests.'),
+            );
+          } else if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+            return Text('No booking requests found');
+<<<<<<< HEAD
+          }
+
+=======
+          } 
+          final bookingRequests = snapshot.data!.docs
+              .map((doc) => {'id': doc.id, ...doc.data()})
+              .toList();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+          }
+
+          if (!snapshot.hasData || snapshot.data!.docs.isEmpty) {
+            return Text('No booking requests found');
+          }
+
+>>>>>>> 4d8a1679c8fd3545bb711970263e6223a7d445a4
+>>>>>>> 931b82405e7a8edfc4743cbab7ab90b315791c7c
+>>>>>>> 7ba61d27233680a6f95338ab6f282461ebdf19c1
+>>>>>>> f5b3073b2ee2890b4e12e83149e551d98825494e
+          return ListView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: bookingRequests.length,
+            itemBuilder: (context, index) {
+              final booking = bookingRequests[index];
+
+              return Card(
+                elevation: 2,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Pickup: ${booking['pickup_location']}',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                      Text(
+                        'Dropoff: ${booking['dropoff_location']}',
+                        style: const TextStyle(color: Colors.grey),
+                      ),
+                      const SizedBox(height: 8),
+                      Text(
+                        'Proposed Fare by Driver: ${booking['fare_proposed_by_driver'].toStringAsFixed(2)}',
+                        style: const TextStyle(fontSize: 14),
+                      ),
+                      Text(
+                        'Proposed Fare by Student: ${booking['fare_counter_by_student'].toStringAsFixed(2)}',
+                        style: const TextStyle(fontSize: 14),
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          ElevatedButton(
+                            onPressed: () async {
+                              final proposedFare = await _showFareDialog(
+                                  context, 'Propose Fare');
+                              if (proposedFare != null) {
+                                await _respondToBookingByDriver(
+                                    booking['id'], proposedFare);
+                              }
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.blue,
+                            ),
+                            child: const Text('Propose Fare'),
+                          ),
+                          const SizedBox(width: 8),
+                          ElevatedButton(
+                            onPressed: () async {
+                              final agreedFare =
+                                  (booking['fare_counter_by_student'] as num)
+                                      .toDouble();
+                              print("Agreed Fare: $agreedFare");
+                              await _finalizeAgreement(
+                                  booking['id'], agreedFare);
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.green,
+                            ),
+                            child: const Text('Accept'),
+                          ),
+                          const SizedBox(width: 8),
+                          ElevatedButton(
+                            onPressed: () => _rejectOffer(booking['id']),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.red,
+                            ),
+                            child: const Text('Reject'),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+          );
+        });
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   }
 
   Future<double?> _showFareDialog(BuildContext context, String title) async {
@@ -279,6 +514,10 @@ class _PendingStudentReqeustState extends State<PendingStudentReqeust> {
     );
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   // Future<void> _respondToBookingByDriver(
   //     String bookingId, double proposedFare) async {
   //   try {
@@ -293,6 +532,11 @@ class _PendingStudentReqeustState extends State<PendingStudentReqeust> {
   //   }
   // }
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   Future<void> _respondToBookingByDriver(
       String bookingId, double proposedFare) async {
     try {
@@ -307,6 +551,10 @@ class _PendingStudentReqeustState extends State<PendingStudentReqeust> {
     }
   }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   // Future<void> _finalizeAgreement(String bookingId, double agreedFare) async {
   //   try {
   //     await _driverService.acceptFare(bookingId, agreedFare);
@@ -346,11 +594,29 @@ class _PendingStudentReqeustState extends State<PendingStudentReqeust> {
     } catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Failed to finalize agreement: $e')),
+<<<<<<< HEAD
+=======
+=======
+  Future<void> _finalizeAgreement(String bookingId, double agreedFare) async {
+    try {
+      await _driverService.acceptFare(bookingId, agreedFare);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Fare accepted and booking confirmed.')),
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Failed to accept fare: $e')),
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
       );
     }
   }
 
 // Reject the booking request
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
   // Future<void> _rejectOffer(String bookingId) async {
   //   try {
   //     await _driverService.rejectOffer(bookingId);
@@ -389,17 +655,40 @@ class _PendingStudentReqeustState extends State<PendingStudentReqeust> {
     try {
       await _driverService.rejectOffer(bookingId);
       // Update the user's current driver ID to null
+<<<<<<< HEAD
+=======
+=======
+  Future<void> _rejectOffer(String bookingId) async {
+    try {
+      await _driverService.rejectOffer(bookingId);
+      // update the user current driver id to null
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
       await _firestore
           .collection("drivers")
           .where("userID", isEqualTo: _auth.currentUser!.uid)
           .get()
           .then((value) {
         value.docs.forEach((element) async {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+          print("Driver ID: ${element.id}");
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
           await _firestore
               .collection("users")
               .where("currentDriverId", isEqualTo: element.id)
               .get()
               .then((value) => value.docs.forEach((element) {
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+                    print("User ID: ${element.id}");
+>>>>>>> cea5cac4621c798d25577eac3c7ecf2e652850e2
+>>>>>>> 4fa568564cf43395c9f8cab03b3b027cc7d84a33
                     _firestore.collection("users").doc(element.id).update({
                       "currentDriverId": null,
                     });
